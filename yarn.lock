@@ -2,6 +2,53 @@
 # yarn lockfile v1
 
 
+"@ant-design/colors@^7.0.0":
+  version "7.0.0"
+  resolved "https://tech-npm.tezign.com/@ant-design%2fcolors/-/colors-7.0.0.tgz#eb7eecead124c3533aea05d61254f0a17f2b61b3"
+  integrity sha512-iVm/9PfGCbC0dSMBrz7oiEXZaaGH7ceU40OJEfKmyuzR9R5CRimJYPlRiFtMQGQcbNMea/ePcoIebi4ASGYXtg==
+  dependencies:
+    "@ctrl/tinycolor" "^3.4.0"
+
+"@ant-design/cssinjs@^1.5.6", "@ant-design/cssinjs@^1.6.0":
+  version "1.6.0"
+  resolved "https://tech-npm.tezign.com/@ant-design%2fcssinjs/-/cssinjs-1.6.0.tgz#4e258dbc682ca8183eaa96ee276b4a669fba55a0"
+  integrity sha512-QSGz+Tk7P+oqywv+K5yNI6cX32iYBNrn5+OTKs7drrNj5fiXzo+7BOALnWSPHeq4ykcec9gb1JGLGMPeFnWk7w==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    "@emotion/hash" "^0.8.0"
+    "@emotion/unitless" "^0.7.5"
+    classnames "^2.3.1"
+    csstype "^3.0.10"
+    rc-util "^5.27.0"
+    stylis "^4.0.13"
+
+"@ant-design/icons-svg@^4.2.1":
+  version "4.2.1"
+  resolved "https://tech-npm.tezign.com/@ant-design%2ficons-svg/-/icons-svg-4.2.1.tgz#8630da8eb4471a4aabdaed7d1ff6a97dcb2cf05a"
+  integrity sha1-hjDajrRHGkqr2u19H/apfcss8Fo=
+
+"@ant-design/icons@^5.0.0":
+  version "5.0.1"
+  resolved "https://tech-npm.tezign.com/@ant-design%2ficons/-/icons-5.0.1.tgz#febb1fdc5776f58187b2c953ac9a4496069d045b"
+  integrity sha512-ZyF4ksXCcdtwA/1PLlnFLcF/q8/MhwxXhKHh4oCHDA4Ip+ZzAHoICtyp4wZWfiCVDP0yuz3HsjyvuldHFb3wjA==
+  dependencies:
+    "@ant-design/colors" "^7.0.0"
+    "@ant-design/icons-svg" "^4.2.1"
+    "@babel/runtime" "^7.11.2"
+    classnames "^2.2.6"
+    rc-util "^5.9.4"
+
+"@ant-design/react-slick@~1.0.0":
+  version "1.0.0"
+  resolved "https://tech-npm.tezign.com/@ant-design%2freact-slick/-/react-slick-1.0.0.tgz#4696eecaa2dea0429e47ae24c267015cfd6df35c"
+  integrity sha512-OKxZsn8TAf8fYxP79rDXgLs9zvKMTslK6dJ4iLhDXOujUqC5zJPBRszyrcEHXcMPOm1Sgk40JgyF3yiL/Swd7w==
+  dependencies:
+    "@babel/runtime" "^7.10.4"
+    classnames "^2.2.5"
+    json2mq "^0.2.0"
+    resize-observer-polyfill "^1.5.1"
+    throttle-debounce "^5.0.0"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4":
   version "7.18.6"
   resolved "https://tech-npm.tezign.com/@babel%2fcode-frame/-/code-frame-7.18.6.tgz#3b25d38c89600baa2dcc219edfa88a74eb2c427a"
@@ -22,6 +69,13 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     chalk "^2.0.0"
     js-tokens "^4.0.0"
+
+"@babel/runtime@^7.10.1", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.16.7", "@babel/runtime@^7.18.0", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.0":
+  version "7.21.0"
+  resolved "https://tech-npm.tezign.com/@babel%2fruntime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
+  integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
+  dependencies:
+    regenerator-runtime "^0.13.11"
 
 "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.20.7":
   version "7.20.7"
@@ -203,6 +257,21 @@
   resolved "https://tech-npm.tezign.com/@csstools%2fselector-specificity/-/selector-specificity-2.0.2.tgz#1bfafe4b7ed0f3e4105837e056e0a89b108ebe36"
   integrity sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==
 
+"@ctrl/tinycolor@^3.4.0", "@ctrl/tinycolor@^3.6.0":
+  version "3.6.0"
+  resolved "https://tech-npm.tezign.com/@ctrl%2ftinycolor/-/tinycolor-3.6.0.tgz#53fa5fe9c34faee89469e48f91d51a3766108bc8"
+  integrity sha512-/Z3l6pXthq0JvMYdUFyX9j0MaCltlIn6mfh9jLyQwg5aPKxkyNa0PTHtU1AlFXLNk55ZuAeJRcpvq+tmLfKmaQ==
+
+"@emotion/hash@^0.8.0":
+  version "0.8.0"
+  resolved "https://tech-npm.tezign.com/@emotion%2fhash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
+  integrity sha1-u7/2iXj+/b5ozLUzvIy+HRr7VBM=
+
+"@emotion/unitless@^0.7.5":
+  version "0.7.5"
+  resolved "https://tech-npm.tezign.com/@emotion%2funitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
+  integrity sha1-dyESkcGQCnALinjPr9oxYNdpSe0=
+
 "@eslint-community/eslint-utils@^4.1.2":
   version "4.1.2"
   resolved "https://tech-npm.tezign.com/@eslint-community%2feslint-utils/-/eslint-utils-4.1.2.tgz#14ca568ddaa291dd19a4a54498badc18c6cfab78"
@@ -224,6 +293,18 @@
     js-yaml "^4.1.0"
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
+
+"@headlessui/react@^1.7.7":
+  version "1.7.7"
+  resolved "https://tech-npm.tezign.com/@headlessui%2freact/-/react-1.7.7.tgz#d6f8708d8943ae8ebb1a6929108234e4515ac7e8"
+  integrity sha512-BqDOd/tB9u2tA0T3Z0fn18ktw+KbVwMnkxxsGPIH2hzssrQhKB5n/6StZOyvLYP/FsYtvuXfi9I0YowKPv2c1w==
+  dependencies:
+    client-only "^0.0.1"
+
+"@heroicons/react@^2.0.13":
+  version "2.0.13"
+  resolved "https://tech-npm.tezign.com/@heroicons%2freact/-/react-2.0.13.tgz#9b1cc54ff77d6625c9565efdce0054a4bcd9074c"
+  integrity sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -377,6 +458,50 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
+"@rc-component/context@^1.3.0":
+  version "1.3.0"
+  resolved "https://tech-npm.tezign.com/@rc-component%2fcontext/-/context-1.3.0.tgz#608ccf0abcbec9406751b17a4b35db08e481c110"
+  integrity sha512-6QdaCJ7Wn5UZLJs15IEfqy4Ru3OaL5ctqpQYWd5rlfV9wwzrzdt6+kgAQZV/qdB0MUPN4nhyBfRembQCIvBf+w==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    rc-util "^5.27.0"
+
+"@rc-component/mini-decimal@^1.0.1":
+  version "1.0.1"
+  resolved "https://tech-npm.tezign.com/@rc-component%2fmini-decimal/-/mini-decimal-1.0.1.tgz#e5dbc20a6a5b0e234d279bc71ce730ab865d3910"
+  integrity sha512-9N8nRk0oKj1qJzANKl+n9eNSMUGsZtjwNuDCiZ/KA+dt1fE3zq5x2XxclRcAbOIXnZcJ53ozP2Pa60gyELXagA==
+  dependencies:
+    "@babel/runtime" "^7.18.0"
+
+"@rc-component/mutate-observer@^1.0.0":
+  version "1.0.0"
+  resolved "https://tech-npm.tezign.com/@rc-component%2fmutate-observer/-/mutate-observer-1.0.0.tgz#ce99af3239ed9c74ee3e7302f1c67098de920b46"
+  integrity sha512-okqRJSfNisXdI6CUeOLZC5ukBW/8kir2Ii4PJiKpUt+3+uS7dxwJUMxsUZquxA1rQuL8YcEmKVp/TCnR+yUdZA==
+  dependencies:
+    "@babel/runtime" "^7.18.0"
+    classnames "^2.3.2"
+    rc-util "^5.24.4"
+
+"@rc-component/portal@^1.0.0-6", "@rc-component/portal@^1.0.0-8", "@rc-component/portal@^1.0.0-9", "@rc-component/portal@^1.0.2":
+  version "1.1.0"
+  resolved "https://tech-npm.tezign.com/@rc-component%2fportal/-/portal-1.1.0.tgz#6b94450d2c2b00d50b141bd7a0be23bd96503dbe"
+  integrity sha512-tbXM9SB1r5FOuZjRCljERFByFiEUcMmCWMXLog/NmgCzlAzreXyf23Vei3ZpSMxSMavzPnhCovfZjZdmxS3d1w==
+  dependencies:
+    "@babel/runtime" "^7.18.0"
+    classnames "^2.3.2"
+    rc-util "^5.24.4"
+
+"@rc-component/tour@~1.6.0":
+  version "1.6.0"
+  resolved "https://tech-npm.tezign.com/@rc-component%2ftour/-/tour-1.6.0.tgz#ef3888c8ccc5d1a2e465d7d2615abd1d2dd51e27"
+  integrity sha512-b/s7LCb7bW4wxpWfZyNpl7khHUzSyObSlsLaIScRGd+W/v1wFVk8F7gRytl/z8ik9ZSXbLWx9EvexIuHoO/RcQ==
+  dependencies:
+    "@babel/runtime" "^7.18.0"
+    "@rc-component/portal" "^1.0.0-9"
+    classnames "^2.3.2"
+    rc-trigger "^5.3.4"
+    rc-util "^5.24.4"
+
 "@rushstack/eslint-patch@^1.1.3":
   version "1.2.0"
   resolved "https://tech-npm.tezign.com/@rushstack%2feslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
@@ -388,6 +513,18 @@
   integrity sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==
   dependencies:
     tslib "^2.4.0"
+
+"@tailwindcss/forms@^0.5.3":
+  version "0.5.3"
+  resolved "https://tech-npm.tezign.com/@tailwindcss%2fforms/-/forms-0.5.3.tgz#e4d7989686cbcaf416c53f1523df5225332a86e7"
+  integrity sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
+
+"@tailwindcss/line-clamp@^0.4.2":
+  version "0.4.2"
+  resolved "https://tech-npm.tezign.com/@tailwindcss%2fline-clamp/-/line-clamp-0.4.2.tgz#f353c5a8ab2c939c6267ac5b907f012e5ee130f9"
+  integrity sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==
 
 "@testing-library/dom@^8.11.1":
   version "8.20.0"
@@ -428,7 +565,7 @@
   resolved "https://tech-npm.tezign.com/@types%2faria-query/-/aria-query-5.0.1.tgz#3286741fb8f1e1580ac28784add4c7a1d49bdfbc"
   integrity sha512-XTIieEY+gvJ39ChLcB4If5zHtPxt3Syj5rgZR+e1ctpmK8NjPf0zFqsz4JpLJT0xla9GFDKjy8Cpu331nrmE1Q==
 
-"@types/json-schema@^7.0.9":
+"@types/json-schema@^7.0.8", "@types/json-schema@^7.0.9":
   version "7.0.11"
   resolved "https://tech-npm.tezign.com/@types%2fjson-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
@@ -580,6 +717,11 @@ JSONStream@^1.0.4:
     jsonparse "^1.2.0"
     through ">=2.2.7 <3"
 
+abbrev@1:
+  version "1.1.1"
+  resolved "https://tech-npm.tezign.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
+  integrity sha1-+PLIh60Qv2f2NPAFtph/7TF5qsg=
+
 acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://tech-npm.tezign.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
@@ -622,7 +764,12 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-ajv@^6.10.0, ajv@^6.12.4:
+ajv-keywords@^3.5.2:
+  version "3.5.2"
+  resolved "https://tech-npm.tezign.com/ajv-keywords/-/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
+  integrity sha1-MfKdpatuANHC0yms97WSlhTVAU0=
+
+ajv@^6.10.0, ajv@^6.12.4, ajv@^6.12.5:
   version "6.12.6"
   resolved "https://tech-npm.tezign.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha1-uvWmLoArB9l3A0WG+MO69a3ybfQ=
@@ -683,6 +830,59 @@ ansi-styles@^6.0.0:
   resolved "https://tech-npm.tezign.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
   integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
 
+antd@^5.2.3:
+  version "5.2.3"
+  resolved "https://tech-npm.tezign.com/antd/-/antd-5.2.3.tgz#049bdd5f654f2fd42584c9c0eb71152df9da6e3c"
+  integrity sha512-mUSVH4ZhzC8h3eLNyL7PWquKUmvDcWAVRZYi060MOw6uiKl0pqsB/FC8OpfwntpBlVYgGMk+y3GB0loqTMSmJA==
+  dependencies:
+    "@ant-design/colors" "^7.0.0"
+    "@ant-design/cssinjs" "^1.5.6"
+    "@ant-design/icons" "^5.0.0"
+    "@ant-design/react-slick" "~1.0.0"
+    "@babel/runtime" "^7.18.3"
+    "@ctrl/tinycolor" "^3.6.0"
+    "@rc-component/mutate-observer" "^1.0.0"
+    "@rc-component/tour" "~1.6.0"
+    classnames "^2.2.6"
+    copy-to-clipboard "^3.2.0"
+    dayjs "^1.11.1"
+    qrcode.react "^3.1.0"
+    rc-cascader "~3.8.0"
+    rc-checkbox "~2.3.0"
+    rc-collapse "~3.5.2"
+    rc-dialog "~9.0.2"
+    rc-drawer "~6.1.1"
+    rc-dropdown "~4.0.0"
+    rc-field-form "~1.27.0"
+    rc-image "~5.13.0"
+    rc-input "~0.2.1"
+    rc-input-number "~7.4.0"
+    rc-mentions "~2.0.0"
+    rc-menu "~9.8.2"
+    rc-motion "^2.6.1"
+    rc-notification "~5.0.0"
+    rc-pagination "~3.2.0"
+    rc-picker "~3.1.1"
+    rc-progress "~3.4.1"
+    rc-rate "~2.9.0"
+    rc-resize-observer "^1.2.0"
+    rc-segmented "~2.1.2"
+    rc-select "~14.2.0"
+    rc-slider "~10.1.0"
+    rc-steps "~6.0.0"
+    rc-switch "~4.0.0"
+    rc-table "~7.30.2"
+    rc-tabs "~12.5.6"
+    rc-textarea "~1.0.0"
+    rc-tooltip "~5.3.1"
+    rc-tree "~5.7.0"
+    rc-tree-select "~5.6.0"
+    rc-trigger "^5.3.4"
+    rc-upload "~4.3.0"
+    rc-util "^5.27.0"
+    scroll-into-view-if-needed "^3.0.3"
+    throttle-debounce "^5.0.0"
+
 anymatch@~3.1.2:
   version "3.1.3"
   resolved "https://tech-npm.tezign.com/anymatch/-/anymatch-3.1.3.tgz#790c58b19ba1720a84205b57c618d5ad8524973e"
@@ -728,6 +928,11 @@ array-includes@^3.1.5, array-includes@^3.1.6:
     es-abstract "^1.20.4"
     get-intrinsic "^1.1.3"
     is-string "^1.0.7"
+
+array-tree-filter@^2.1.0:
+  version "2.1.0"
+  resolved "https://tech-npm.tezign.com/array-tree-filter/-/array-tree-filter-2.1.0.tgz#873ac00fec83749f255ac8dd083814b4f6329190"
+  integrity sha512-4ROwICNlNw/Hqa9v+rk5h22KjmzB1JGTMVKP2AKJBOCgb0yL0ASf0+YvCcLNNwquOHNX48jkeZIJ3a+oOQqKcw==
 
 array-union@^2.1.0:
   version "2.1.0"
@@ -780,6 +985,11 @@ astral-regex@^2.0.0:
   resolved "https://tech-npm.tezign.com/astral-regex/-/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
   integrity sha1-SDFDxWeu7UeFdZwIZXhtx319LjE=
 
+async-validator@^4.1.0:
+  version "4.2.5"
+  resolved "https://tech-npm.tezign.com/async-validator/-/async-validator-4.2.5.tgz#c96ea3332a521699d0afaaceed510a54656c6339"
+  integrity sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==
+
 autoprefixer@^10.4.13:
   version "10.4.13"
   resolved "https://tech-npm.tezign.com/autoprefixer/-/autoprefixer-10.4.13.tgz#b5136b59930209a321e9fa3dca2e7c4d223e83a8"
@@ -818,6 +1028,11 @@ balanced-match@^2.0.0:
   version "2.0.0"
   resolved "https://tech-npm.tezign.com/balanced-match/-/balanced-match-2.0.0.tgz#dc70f920d78db8b858535795867bf48f820633d9"
   integrity sha1-3HD5INeNuLhYU1eVhnv0j4IGM9k=
+
+big.js@^5.2.2:
+  version "5.2.2"
+  resolved "https://tech-npm.tezign.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
+  integrity sha1-ZfCvOC9Xi83HQr2cKB6cstd2gyg=
 
 binary-extensions@^2.0.0:
   version "2.2.0"
@@ -928,7 +1143,7 @@ ci-info@^3.6.1:
   resolved "https://tech-npm.tezign.com/ci-info/-/ci-info-3.7.1.tgz#708a6cdae38915d597afdf3b145f2f8e1ff55f3f"
   integrity sha512-4jYS4MOAaCIStSRwiuxc4B8MYhIe676yO1sYGzARnjXkWpmzZMMYxY6zu8WYWDhSuth5zhrQ1rhNSibyyvv4/w==
 
-classnames@^2.3.2:
+classnames@2.x, classnames@^2.2.1, classnames@^2.2.3, classnames@^2.2.5, classnames@^2.2.6, classnames@^2.3.1, classnames@^2.3.2:
   version "2.3.2"
   resolved "https://tech-npm.tezign.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
@@ -968,7 +1183,7 @@ cli-truncate@^3.1.0:
     slice-ansi "^5.0.0"
     string-width "^5.0.0"
 
-client-only@0.0.1:
+client-only@0.0.1, client-only@^0.0.1:
   version "0.0.1"
   resolved "https://tech-npm.tezign.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
@@ -1029,6 +1244,11 @@ compare-func@^2.0.0:
     array-ify "^1.0.0"
     dot-prop "^5.1.0"
 
+compute-scroll-into-view@^3.0.0:
+  version "3.0.0"
+  resolved "https://tech-npm.tezign.com/compute-scroll-into-view/-/compute-scroll-into-view-3.0.0.tgz#95d2f2f4653e7edda74dd1e38edaaa897918e0f0"
+  integrity sha512-Yk1An4qzo5++Cu6peT9PsmRKIU8tALpmdoE09n//AfGQFcPfx21/tMGMsmKYmLJWaBJrGOJ5Jz5hoU+7cZZUWQ==
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://tech-npm.tezign.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -1062,6 +1282,13 @@ conventional-commits-parser@^3.2.2:
     meow "^8.0.0"
     split2 "^3.0.0"
     through2 "^4.0.0"
+
+copy-to-clipboard@^3.2.0:
+  version "3.3.3"
+  resolved "https://tech-npm.tezign.com/copy-to-clipboard/-/copy-to-clipboard-3.3.3.tgz#55ac43a1db8ae639a4bd99511c148cdd1b83a1b0"
+  integrity sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==
+  dependencies:
+    toggle-selection "^1.0.6"
 
 cosmiconfig-typescript-loader@^4.0.0:
   version "4.3.0"
@@ -1113,7 +1340,7 @@ cssesc@^3.0.0:
   resolved "https://tech-npm.tezign.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4=
 
-csstype@^3.0.2:
+csstype@^3.0.10, csstype@^3.0.2:
   version "3.1.1"
   resolved "https://tech-npm.tezign.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
@@ -1127,6 +1354,11 @@ dargs@^7.0.0:
   version "7.0.0"
   resolved "https://tech-npm.tezign.com/dargs/-/dargs-7.0.0.tgz#04015c41de0bcb69ec84050f3d9be0caf8d6d5cc"
   integrity sha1-BAFcQd4Ly2nshAUPPZvgyvjW1cw=
+
+dayjs@^1.11.1:
+  version "1.11.7"
+  resolved "https://tech-npm.tezign.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
+  integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
 
 debug@^3.2.7:
   version "3.2.7"
@@ -1215,6 +1447,21 @@ didyoumean@^1.2.2:
   resolved "https://tech-npm.tezign.com/didyoumean/-/didyoumean-1.2.2.tgz#989346ffe9e839b4555ecf5666edea0d3e8ad037"
   integrity sha1-mJNG/+noObRVXs9WZu3qDT6K0Dc=
 
+diff2html@^3.4.31:
+  version "3.4.31"
+  resolved "https://tech-npm.tezign.com/diff2html/-/diff2html-3.4.31.tgz#d2186f4321172806c2e20ae1780cf11d7994169f"
+  integrity sha512-bgL4kUUChpBqyFykgalwXRXbeW+zCkGmoH4Ftw6+WFP5JccBUJPNMapfX2WDEb+KOLflrE7eJwvb5r8+zutetw==
+  dependencies:
+    diff "5.1.0"
+    hogan.js "3.0.2"
+  optionalDependencies:
+    highlight.js "11.6.0"
+
+diff@5.1.0:
+  version "5.1.0"
+  resolved "https://tech-npm.tezign.com/diff/-/diff-5.1.0.tgz#bc52d298c5ea8df9194800224445ed43ffc87e40"
+  integrity sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==
+
 diff@^4.0.1:
   version "4.0.2"
   resolved "https://tech-npm.tezign.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
@@ -1251,6 +1498,11 @@ dom-accessibility-api@^0.5.9:
   resolved "https://tech-npm.tezign.com/dom-accessibility-api/-/dom-accessibility-api-0.5.15.tgz#357e74338704f36fada8b2e01a4bfc11ef436ac9"
   integrity sha512-8o+oVqLQZoruQPYy3uAAQtc6YbtSiRq5aPJBhJ82YTJRHvI6ofhYAkC81WmjFTnfUbqg6T3aCglIpU9p/5e7Cw==
 
+dom-align@^1.7.0:
+  version "1.12.4"
+  resolved "https://tech-npm.tezign.com/dom-align/-/dom-align-1.12.4.tgz#3503992eb2a7cfcb2ed3b2a6d21e0b9c00d54511"
+  integrity sha512-R8LUSEay/68zE5c8/3BDxiTEvgb4xZTF0RKmAHfiEVN3klfIpXfi2/QCoiWPccVQ0J/ZGdz9OjzL4uJEP/MRAw==
+
 dot-prop@^5.1.0:
   version "5.3.0"
   resolved "https://tech-npm.tezign.com/dot-prop/-/dot-prop-5.3.0.tgz#90ccce708cd9cd82cc4dc8c3ddd9abdd55b20e88"
@@ -1277,6 +1529,11 @@ emoji-regex@^9.2.2:
   version "9.2.2"
   resolved "https://tech-npm.tezign.com/emoji-regex/-/emoji-regex-9.2.2.tgz#840c8803b0d8047f4ff0cf963176b32d4ef3ed72"
   integrity sha1-hAyIA7DYBH9P8M+WMXazLU7z7XI=
+
+emojis-list@^3.0.0:
+  version "3.0.0"
+  resolved "https://tech-npm.tezign.com/emojis-list/-/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
+  integrity sha1-VXBmIEatKeLpFucariYKvf9Pang=
 
 enhanced-resolve@^5.10.0:
   version "5.12.0"
@@ -2006,6 +2263,11 @@ globrex@^0.1.2:
   resolved "https://tech-npm.tezign.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
   integrity sha1-3V2eyCYjJzDNZ5Ol4zqTApheYJg=
 
+goober@^2.1.10:
+  version "2.1.11"
+  resolved "https://tech-npm.tezign.com/goober/-/goober-2.1.11.tgz#bbd71f90d2df725397340f808dbe7acc3118e610"
+  integrity sha512-5SS2lmxbhqH0u9ABEWq7WPU69a4i2pYcHeCxqaNq6Cw3mnrF0ghWNM4tEGid4dKy8XNIAUbuThuozDHHKJVh3A==
+
 gopd@^1.0.1:
   version "1.0.1"
   resolved "https://tech-npm.tezign.com/gopd/-/gopd-1.0.1.tgz#29ff76de69dac7489b7c0918a5788e56477c332c"
@@ -2073,6 +2335,19 @@ has@^1.0.3:
   integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   dependencies:
     function-bind "^1.1.1"
+
+highlight.js@11.6.0:
+  version "11.6.0"
+  resolved "https://tech-npm.tezign.com/highlight.js/-/highlight.js-11.6.0.tgz#a50e9da05763f1bb0c1322c8f4f755242cff3f5a"
+  integrity sha512-ig1eqDzJaB0pqEvlPVIpSSyMaO92bH1N2rJpLMN/nX396wTpDA4Eq0uK+7I/2XG17pFaaKE0kjV/XPeGt7Evjw==
+
+hogan.js@3.0.2:
+  version "3.0.2"
+  resolved "https://tech-npm.tezign.com/hogan.js/-/hogan.js-3.0.2.tgz#4cd9e1abd4294146e7679e41d7898732b02c7bfd"
+  integrity sha1-TNnhq9QpQUbnZ55B14mHMrAse/0=
+  dependencies:
+    mkdirp "0.3.0"
+    nopt "1.0.10"
 
 hosted-git-info@^2.1.4:
   version "2.8.9"
@@ -2240,6 +2515,11 @@ is-docker@^2.0.0, is-docker@^2.1.1:
   version "2.2.1"
   resolved "https://tech-npm.tezign.com/is-docker/-/is-docker-2.2.1.tgz#33eeabe23cfe86f14bde4408a02c0cfb853acdaa"
   integrity sha1-M+6r4jz+hvFL3kQIoCwM+4U6zao=
+
+is-equal@~0.1.0:
+  version "0.1.0"
+  resolved "https://tech-npm.tezign.com/is-equal/-/is-equal-0.1.0.tgz#fcf6e0fdc9dca9a4d4768bae73b8cdaa5b3fab6e"
+  integrity sha1-/Pbg/cncqaTUdouuc7jNqls/q24=
 
 is-extglob@^2.1.1:
   version "2.1.1"
@@ -2421,6 +2701,13 @@ js-yaml@^4.1.0:
   dependencies:
     argparse "^2.0.1"
 
+jsdiff@^1.1.1:
+  version "1.1.1"
+  resolved "https://tech-npm.tezign.com/jsdiff/-/jsdiff-1.1.1.tgz#eaa6e7c16db9f64b979d28f986fa1ca457b222e5"
+  integrity sha512-a3k+sL1kZ9cGcEzu+4juqCp4QbEDibhu0mHSlBL/fNmekWyfRpffZ8tGhlxD3mBNVLa/GCYeTwxex351hGlerw==
+  dependencies:
+    is-equal "~0.1.0"
+
 jsesc@^3.0.2:
   version "3.0.2"
   resolved "https://tech-npm.tezign.com/jsesc/-/jsesc-3.0.2.tgz#bb8b09a6597ba426425f2e4a07245c3d00b9343e"
@@ -2451,12 +2738,29 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://tech-npm.tezign.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   integrity sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=
 
+json2mq@^0.2.0:
+  version "0.2.0"
+  resolved "https://tech-npm.tezign.com/json2mq/-/json2mq-0.2.0.tgz#b637bd3ba9eabe122c83e9720483aeb10d2c904a"
+  integrity sha1-tje9O6nqvhIsg+lyBIOusQ0skEo=
+  dependencies:
+    string-convert "^0.2.0"
+
 json5@^1.0.1:
   version "1.0.2"
   resolved "https://tech-npm.tezign.com/json5/-/json5-1.0.2.tgz#63d98d60f21b313b77c4d6da18bfa69d80e1d593"
   integrity sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==
   dependencies:
     minimist "^1.2.0"
+
+json5@^2.1.2:
+  version "2.2.3"
+  resolved "https://tech-npm.tezign.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
+  integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
+
+json_typegen_wasm@^0.7.0:
+  version "0.7.0"
+  resolved "https://tech-npm.tezign.com/json_typegen_wasm/-/json_typegen_wasm-0.7.0.tgz#65b31a125edbac3647232a83ecefad14adbb6c90"
+  integrity sha512-xTDD7jlMpXB8S/6lD00aqOmHPuVszG4vtrJTaED8Mb6ziryGtXmtkREWpuvJbWWj45aVFGO3O/WjwxRBLw8dUQ==
 
 jsonfile@^6.0.1:
   version "6.1.0"
@@ -2552,6 +2856,15 @@ listr2@^5.0.5:
     rxjs "^7.5.7"
     through "^2.3.8"
     wrap-ansi "^7.0.0"
+
+loader-utils@^2.0.0, loader-utils@^2.0.2:
+  version "2.0.4"
+  resolved "https://tech-npm.tezign.com/loader-utils/-/loader-utils-2.0.4.tgz#8b5cb38b5c34a9a018ee1fc0e6a066d1dfcc528c"
+  integrity sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==
+  dependencies:
+    big.js "^5.2.2"
+    emojis-list "^3.0.0"
+    json5 "^2.1.2"
 
 locate-path@^5.0.0:
   version "5.0.0"
@@ -2744,6 +3057,11 @@ min-indent@^1.0.0:
   resolved "https://tech-npm.tezign.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha1-pj9oFnOzBXH76LwlaGrnRu76mGk=
 
+mini-svg-data-uri@^1.2.3:
+  version "1.4.4"
+  resolved "https://tech-npm.tezign.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
+  integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
+
 minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://tech-npm.tezign.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
@@ -2764,6 +3082,23 @@ minimist@^1.2.0, minimist@^1.2.6:
   version "1.2.7"
   resolved "https://tech-npm.tezign.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
+
+mkdirp@0.3.0:
+  version "0.3.0"
+  resolved "https://tech-npm.tezign.com/mkdirp/-/mkdirp-0.3.0.tgz#1bbf5ab1ba827af23575143490426455f481fe1e"
+  integrity sha1-G79asbqCevI1dRQ0kEJkVfSB/h4=
+
+monaco-editor-webpack-plugin@^7.0.1:
+  version "7.0.1"
+  resolved "https://tech-npm.tezign.com/monaco-editor-webpack-plugin/-/monaco-editor-webpack-plugin-7.0.1.tgz#ba19c60aba990184e36ad8722b1ed6a564527c7c"
+  integrity sha512-M8qIqizltrPlIbrb73cZdTWfU9sIsUVFvAZkL3KGjAHmVWEJ0hZKa/uad14JuOckc0GwnCaoGHvMoYtJjVyCzw==
+  dependencies:
+    loader-utils "^2.0.2"
+
+monaco-editor@^0.34.1:
+  version "0.34.1"
+  resolved "https://tech-npm.tezign.com/monaco-editor/-/monaco-editor-0.34.1.tgz#1b75c4ad6bc4c1f9da656d740d98e0b850a22f87"
+  integrity sha512-FKc80TyiMaruhJKKPz5SpJPIjL+dflGvz4CpuThaPMc94AyN7SeC9HQ8hrvaxX7EyHdJcUY5i4D0gNyJj1vSZQ==
 
 ms@2.1.2:
   version "2.1.2"
@@ -2789,6 +3124,13 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://tech-npm.tezign.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
+
+next-transpile-modules@^10.0.0:
+  version "10.0.0"
+  resolved "https://tech-npm.tezign.com/next-transpile-modules/-/next-transpile-modules-10.0.0.tgz#7152880048835acb64d05fc7aa34910cbe7994da"
+  integrity sha512-FyeJ++Lm2Fq31gbThiRCrJlYpIY9QaI7A3TjuhQLzOix8ChQrvn5ny4MhfIthS5cy6+uK1AhDRvxVdW17y3Xdw==
+  dependencies:
+    enhanced-resolve "^5.10.0"
 
 next@13.1.2:
   version "13.1.2"
@@ -2819,6 +3161,13 @@ node-releases@^2.0.6:
   version "2.0.8"
   resolved "https://tech-npm.tezign.com/node-releases/-/node-releases-2.0.8.tgz#0f349cdc8fcfa39a92ac0be9bc48b7706292b9ae"
   integrity sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A==
+
+nopt@1.0.10:
+  version "1.0.10"
+  resolved "https://tech-npm.tezign.com/nopt/-/nopt-1.0.10.tgz#6ddd21bd2a31417b92727dd585f8a6f37608ebee"
+  integrity sha1-bd0hvSoxQXuScn3Vhfim83YI6+4=
+  dependencies:
+    abbrev "1"
 
 normalize-package-data@^2.5.0:
   version "2.5.0"
@@ -2863,6 +3212,11 @@ npm-run-path@^5.1.0:
   integrity sha512-sJOdmRGrY2sjNTRMbSvluQqg+8X7ZK61yvzBEIDhz4f8z1TZFYABsqjjCBd/0PUNE9M6QDgHJXQkGUEm7Q+l9Q==
   dependencies:
     path-key "^4.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://tech-npm.tezign.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 object-assign@^4.1.1:
   version "4.1.1"
@@ -3228,6 +3582,11 @@ q@^1.5.1:
   resolved "https://tech-npm.tezign.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
+qrcode.react@^3.1.0:
+  version "3.1.0"
+  resolved "https://tech-npm.tezign.com/qrcode.react/-/qrcode.react-3.1.0.tgz#5c91ddc0340f768316fbdb8fff2765134c2aecd8"
+  integrity sha512-oyF+Urr3oAMUG/OiOuONL3HXM+53wvuH3mtIWQrYmsXoAq0DkvZp2RYUWFSMFtbdOpuS++9v+WAkzNVkMlNW6Q==
+
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://tech-npm.tezign.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
@@ -3243,6 +3602,373 @@ quick-lru@^5.1.1:
   resolved "https://tech-npm.tezign.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha1-NmST5rPkKjpoheLpnRj4D7eoyTI=
 
+rc-align@^4.0.0:
+  version "4.0.15"
+  resolved "https://tech-npm.tezign.com/rc-align/-/rc-align-4.0.15.tgz#2bbd665cf85dfd0b0244c5a752b07565e9098577"
+  integrity sha512-wqJtVH60pka/nOX7/IspElA8gjPNQKIx/ZqJ6heATCkXpe1Zg4cPVrMD2vC96wjsFFL8WsmhPbx9tdMo1qqlIA==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    dom-align "^1.7.0"
+    rc-util "^5.26.0"
+    resize-observer-polyfill "^1.5.1"
+
+rc-cascader@~3.8.0:
+  version "3.8.1"
+  resolved "https://tech-npm.tezign.com/rc-cascader/-/rc-cascader-3.8.1.tgz#9adb547e6ae6ba45343e6ea302ba1f2449aecf19"
+  integrity sha512-VdsxbiNYmcbMqKzydODr8oehBzIvIk2ICMPu5S95b3SzuKspgkV2uSxBCUa6dsp26lUvRI/PA+k8Q00o5bsSZA==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    array-tree-filter "^2.1.0"
+    classnames "^2.3.1"
+    rc-select "~14.2.0"
+    rc-tree "~5.7.0"
+    rc-util "^5.6.1"
+
+rc-checkbox@~2.3.0:
+  version "2.3.2"
+  resolved "https://tech-npm.tezign.com/rc-checkbox/-/rc-checkbox-2.3.2.tgz#f91b3678c7edb2baa8121c9483c664fa6f0aefc1"
+  integrity sha1-+Rs2eMftsrqoEhyUg8Zk+m8K78E=
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.1"
+
+rc-collapse@~3.5.2:
+  version "3.5.2"
+  resolved "https://tech-npm.tezign.com/rc-collapse/-/rc-collapse-3.5.2.tgz#abb7d144ad55bd9cbd201fa95bc5b271da2aa7c3"
+  integrity sha512-/TNiT3DW1t3sUCiVD/DPUYooJZ3BLA93/2rZsB3eM2bGJCCla2X9D2E4tgm7LGMQGy5Atb2lMUn2FQuvQNvavQ==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-motion "^2.3.4"
+    rc-util "^5.27.0"
+
+rc-dialog@~9.0.0, rc-dialog@~9.0.2:
+  version "9.0.2"
+  resolved "https://tech-npm.tezign.com/rc-dialog/-/rc-dialog-9.0.2.tgz#aadfebdeba145f256c1fac9b9f509f893cdbb5b8"
+  integrity sha512-s3U+24xWUuB6Bn2Lk/Qt6rufy+uT+QvWkiFhNBcO9APLxcFFczWamaq7x9h8SCuhfc1nHcW4y8NbMsnAjNnWyg==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    "@rc-component/portal" "^1.0.0-8"
+    classnames "^2.2.6"
+    rc-motion "^2.3.0"
+    rc-util "^5.21.0"
+
+rc-drawer@~6.1.1:
+  version "6.1.3"
+  resolved "https://tech-npm.tezign.com/rc-drawer/-/rc-drawer-6.1.3.tgz#4b2277db09f059be7144dc82d5afede9c2ab2191"
+  integrity sha512-AvHisO90A+xMLMKBw2zs89HxjWxusM2BUABlgK60RhweIHF8W/wk0hSOrxBlUXoA9r1F+10na3g6GZ97y1qDZA==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    "@rc-component/portal" "^1.0.0-6"
+    classnames "^2.2.6"
+    rc-motion "^2.6.1"
+    rc-util "^5.21.2"
+
+rc-dropdown@~4.0.0:
+  version "4.0.1"
+  resolved "https://tech-npm.tezign.com/rc-dropdown/-/rc-dropdown-4.0.1.tgz#f65d9d3d89750241057db59d5a75e43cd4576b68"
+  integrity sha512-OdpXuOcme1rm45cR0Jzgfl1otzmU4vuBVb+etXM8vcaULGokAKVpKlw8p6xzspG7jGd/XxShvq+N3VNEfk/l5g==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    classnames "^2.2.6"
+    rc-trigger "^5.3.1"
+    rc-util "^5.17.0"
+
+rc-field-form@~1.27.0:
+  version "1.27.4"
+  resolved "https://tech-npm.tezign.com/rc-field-form/-/rc-field-form-1.27.4.tgz#53600714af5b28c226c70d34867a8c52ccd64d44"
+  integrity sha512-PQColQnZimGKArnOh8V2907+VzDCXcqtFvHgevDLtqWc/P7YASb/FqntSmdS8q3VND5SHX3Y1vgMIzY22/f/0Q==
+  dependencies:
+    "@babel/runtime" "^7.18.0"
+    async-validator "^4.1.0"
+    rc-util "^5.8.0"
+
+rc-image@~5.13.0:
+  version "5.13.0"
+  resolved "https://tech-npm.tezign.com/rc-image/-/rc-image-5.13.0.tgz#1ed9b852a40b5eff34786ba7d2f0e9d26eeab874"
+  integrity sha512-iZTOmw5eWo2+gcrJMMcnd7SsxVHl3w5xlyCgsULUdJhJbnuI8i/AL0tVOsE7aLn9VfOh1qgDT3mC2G75/c7mqg==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    "@rc-component/portal" "^1.0.2"
+    classnames "^2.2.6"
+    rc-dialog "~9.0.0"
+    rc-motion "^2.6.2"
+    rc-util "^5.0.6"
+
+rc-input-number@~7.4.0:
+  version "7.4.1"
+  resolved "https://tech-npm.tezign.com/rc-input-number/-/rc-input-number-7.4.1.tgz#f8f06e05a68d6ea8d280b21c98e065a3436b8a36"
+  integrity sha512-UwZOteqSKeWVuC6nMl/FZqbfVUR4G2PLMGNFrVeQMmq2iFHlIlDCb1Dh4i+EIPnb3d8k8+NL86KjG02LpYBS3w==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    "@rc-component/mini-decimal" "^1.0.1"
+    classnames "^2.2.5"
+    rc-util "^5.25.0"
+
+rc-input@^0.2.1, rc-input@^0.2.2, rc-input@~0.2.1:
+  version "0.2.2"
+  resolved "https://tech-npm.tezign.com/rc-input/-/rc-input-0.2.2.tgz#de1c3c0e090d15777a6b1a3fd4a9566e25b3fbee"
+  integrity sha512-xgkVcFgtRO0Hl9hmvslZhObNyxbSpTmy3nR1Tk4XrjjZ9lFJ7GcJBy6ss30Pdb0oX36cHzLN8I7VCjBGeRNB9A==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    classnames "^2.2.1"
+    rc-util "^5.18.1"
+
+rc-mentions@~2.0.0:
+  version "2.0.0"
+  resolved "https://tech-npm.tezign.com/rc-mentions/-/rc-mentions-2.0.0.tgz#688846d698943340334657d96c1448d8b57e5666"
+  integrity sha512-58NSeM6R5MrgYAhR2TH27JgAN7ivp3iBTmty3q6gvrrGHelPMdGxpJ5aH7AIlodCrPWLAm1lT4XoiuI4s9snXA==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.6"
+    rc-input "^0.2.2"
+    rc-menu "~9.8.0"
+    rc-textarea "^1.0.0"
+    rc-trigger "^5.0.4"
+    rc-util "^5.22.5"
+
+rc-menu@~9.8.0, rc-menu@~9.8.2:
+  version "9.8.2"
+  resolved "https://tech-npm.tezign.com/rc-menu/-/rc-menu-9.8.2.tgz#179df4ea0fc46fffb7a21e18d3cddb901ce35986"
+  integrity sha512-EahOJVjLuEnJsThoPN+mGnVm431RzVzDLZWHRS/YnXTQULa7OsgdJa/Y7qXxc3Z5sz8mgT6xYtgpmBXLxrZFaQ==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-motion "^2.4.3"
+    rc-overflow "^1.2.8"
+    rc-trigger "^5.1.2"
+    rc-util "^5.27.0"
+
+rc-motion@^2.0.0, rc-motion@^2.0.1, rc-motion@^2.3.0, rc-motion@^2.3.4, rc-motion@^2.4.3, rc-motion@^2.4.4, rc-motion@^2.6.0, rc-motion@^2.6.1, rc-motion@^2.6.2:
+  version "2.6.3"
+  resolved "https://tech-npm.tezign.com/rc-motion/-/rc-motion-2.6.3.tgz#e6d8ca06591c2c1bcd3391a8e7a822ebc4d94e9c"
+  integrity sha512-xFLkes3/7VL/J+ah9jJruEW/Akbx5F6jVa2wG5o/ApGKQKSOd5FR3rseHLL9+xtJg4PmCwo6/1tqhDO/T+jFHA==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    classnames "^2.2.1"
+    rc-util "^5.21.0"
+
+rc-notification@~5.0.0:
+  version "5.0.2"
+  resolved "https://tech-npm.tezign.com/rc-notification/-/rc-notification-5.0.2.tgz#31811ac90e9516d88990fd2a93dbe61cc1712eec"
+  integrity sha512-74wUFiLlyr6lRGEY1m1BaTiDp+0lIT4FRAblMnh9FApyK2JGdsSLbrQ/1rgM7d2N/IX5UIr8kLLW3TdXxFt/jQ==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-motion "^2.6.0"
+    rc-util "^5.20.1"
+
+rc-overflow@^1.0.0, rc-overflow@^1.2.8:
+  version "1.2.8"
+  resolved "https://tech-npm.tezign.com/rc-overflow/-/rc-overflow-1.2.8.tgz#40f140fabc244118543e627cdd1ef750d9481a88"
+  integrity sha512-QJ0UItckWPQ37ZL1dMEBAdY1dhfTXFL9k6oTTcyydVwoUNMnMqCGqnRNA98axSr/OeDKqR6DVFyi8eA5RQI/uQ==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    classnames "^2.2.1"
+    rc-resize-observer "^1.0.0"
+    rc-util "^5.19.2"
+
+rc-pagination@~3.2.0:
+  version "3.2.0"
+  resolved "https://tech-npm.tezign.com/rc-pagination/-/rc-pagination-3.2.0.tgz#4f2fdba9fdac0f48e5c9fb1141973818138af7e1"
+  integrity sha512-5tIXjB670WwwcAJzAqp2J+cOBS9W3cH/WU1EiYwXljuZ4vtZXKlY2Idq8FZrnYBz8KhN3vwPo9CoV/SJS6SL1w==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.1"
+
+rc-picker@~3.1.1:
+  version "3.1.5"
+  resolved "https://tech-npm.tezign.com/rc-picker/-/rc-picker-3.1.5.tgz#49953655a92cda3dee59678f4cbcdee61f5b0f0c"
+  integrity sha512-Hh3ml+u+5mxLfl4ahVWlRGiX5+0EJrALR6tSW9yP0eea+6j+YjvjfetbvuVidViMDMweZa38dr8HTfAFLG6GFw==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.1"
+    rc-trigger "^5.0.4"
+    rc-util "^5.27.0"
+
+rc-progress@~3.4.1:
+  version "3.4.1"
+  resolved "https://tech-npm.tezign.com/rc-progress/-/rc-progress-3.4.1.tgz#a9ffe099e88a4fc03afb09d8603162bf0760d743"
+  integrity sha512-eAFDHXlk8aWpoXl0llrenPMt9qKHQXphxcVsnKs0FHC6eCSk1ebJtyaVjJUzKe0233ogiLDeEFK1Uihz3s67hw==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.6"
+    rc-util "^5.16.1"
+
+rc-rate@~2.9.0:
+  version "2.9.2"
+  resolved "https://tech-npm.tezign.com/rc-rate/-/rc-rate-2.9.2.tgz#4a58965d1ecf91896ebae01d458b59056df0b4ea"
+  integrity sha512-SaiZFyN8pe0Fgphv8t3+kidlej+cq/EALkAJAc3A0w0XcPaH2L1aggM8bhe1u6GAGuQNAoFvTLjw4qLPGRKV5g==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.5"
+    rc-util "^5.0.1"
+
+rc-resize-observer@^1.0.0, rc-resize-observer@^1.1.0, rc-resize-observer@^1.2.0:
+  version "1.3.1"
+  resolved "https://tech-npm.tezign.com/rc-resize-observer/-/rc-resize-observer-1.3.1.tgz#b61b9f27048001243617b81f95e53d7d7d7a6a3d"
+  integrity sha512-iFUdt3NNhflbY3mwySv5CA1TC06zdJ+pfo0oc27xpf4PIOvfZwZGtD9Kz41wGYqC4SLio93RVAirSSpYlV/uYg==
+  dependencies:
+    "@babel/runtime" "^7.20.7"
+    classnames "^2.2.1"
+    rc-util "^5.27.0"
+    resize-observer-polyfill "^1.5.1"
+
+rc-segmented@~2.1.2:
+  version "2.1.2"
+  resolved "https://tech-npm.tezign.com/rc-segmented/-/rc-segmented-2.1.2.tgz#14c9077a1dae9c2ccb2ef5fbc5662c1c48c7ce8e"
+  integrity sha512-qGo1bCr83ESXpXVOCXjFe1QJlCAQXyi9KCiy8eX3rIMYlTeJr/ftySIaTnYsitL18SvWf5ZEHsfqIWoX0EMfFQ==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    classnames "^2.2.1"
+    rc-motion "^2.4.4"
+    rc-util "^5.17.0"
+
+rc-select@~14.2.0:
+  version "14.2.0"
+  resolved "https://tech-npm.tezign.com/rc-select/-/rc-select-14.2.0.tgz#60e83a7d5a5dae7fd9e3918d9b209074ea2c92d4"
+  integrity sha512-tvxHmbAA0EIhBkB7dyaRhcBUIWHocQbUFY/fBlezj2jg5p65a5VQ/UhBg2I9TA1wjpsr5CCx0ruZPkYcUMjDoQ==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-motion "^2.0.1"
+    rc-overflow "^1.0.0"
+    rc-trigger "^5.0.4"
+    rc-util "^5.16.1"
+    rc-virtual-list "^3.4.13"
+
+rc-slider@~10.1.0:
+  version "10.1.1"
+  resolved "https://tech-npm.tezign.com/rc-slider/-/rc-slider-10.1.1.tgz#5e82036e60b61021aba3ea0e353744dd7c74e104"
+  integrity sha512-gn8oXazZISEhnmRinI89Z/JD/joAaM35jp+gDtIVSTD/JJMCCBqThqLk1SVJmvtfeiEF/kKaFY0+qt4SDHFUDw==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.5"
+    rc-util "^5.27.0"
+
+rc-steps@~6.0.0:
+  version "6.0.0"
+  resolved "https://tech-npm.tezign.com/rc-steps/-/rc-steps-6.0.0.tgz#f7148f8097d5d135f19b96c1b4f4b50ad6093753"
+  integrity sha512-+KfMZIty40mYCQSDvYbZ1jwnuObLauTiIskT1hL4FFOBHP6ZOr8LK0m143yD3kEN5XKHSEX1DIwCj3AYZpoeNQ==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+    classnames "^2.2.3"
+    rc-util "^5.16.1"
+
+rc-switch@~4.0.0:
+  version "4.0.0"
+  resolved "https://tech-npm.tezign.com/rc-switch/-/rc-switch-4.0.0.tgz#55fbf99fc2d680791175037d379e170ba51fbe78"
+  integrity sha512-IfrYC99vN0gKaTyjQdqYuADU0eH00SAFHg3jOp8HrmUpJruhV1SohJzrCbPqPraZeX/6X/QKkdLfkdnUub05WA==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.1"
+    rc-util "^5.0.1"
+
+rc-table@~7.30.2:
+  version "7.30.4"
+  resolved "https://tech-npm.tezign.com/rc-table/-/rc-table-7.30.4.tgz#08da9ed849fa700a15a87d097c3a65f5622ca875"
+  integrity sha512-NXfitP7CEXAnnuxdEYZNwEMyWmWOSsv9WgiP2yI10pyy0BwomFn4aa8nX/9x832edLwuIlrYuL6ojfOK60An2w==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    "@rc-component/context" "^1.3.0"
+    classnames "^2.2.5"
+    rc-resize-observer "^1.1.0"
+    rc-util "^5.27.1"
+
+rc-tabs@~12.5.6:
+  version "12.5.7"
+  resolved "https://tech-npm.tezign.com/rc-tabs/-/rc-tabs-12.5.7.tgz#9175f5e27341416d3f572c8d9a40e300d0e2de6b"
+  integrity sha512-i9gY2TcwCNmBM+bXCDDTvb6mnRYIDkkNm+UGoIqrLOFnRRbAqjsSf+tgyvzhBvbK8XcSrMhzKKLaOMbGyND8YA==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    classnames "2.x"
+    rc-dropdown "~4.0.0"
+    rc-menu "~9.8.0"
+    rc-motion "^2.6.2"
+    rc-resize-observer "^1.0.0"
+    rc-util "^5.16.0"
+
+rc-textarea@^1.0.0, rc-textarea@~1.0.0:
+  version "1.0.1"
+  resolved "https://tech-npm.tezign.com/rc-textarea/-/rc-textarea-1.0.1.tgz#44b1e09eda37a7af19cf884251e530cc7b03050b"
+  integrity sha512-dtIm96apjJpCUcCeTtbnLGJaVlqbOqVgN0P9z+bqMSi7rcV5QVeUtBnG+jQTGk/uD183Z7jbhc8Dx7G3luDCwg==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.1"
+    rc-input "^0.2.1"
+    rc-resize-observer "^1.0.0"
+    rc-util "^5.27.0"
+
+rc-tooltip@~5.3.1:
+  version "5.3.1"
+  resolved "https://tech-npm.tezign.com/rc-tooltip/-/rc-tooltip-5.3.1.tgz#3dde4e1865f79cd23f202bba4e585c2a1173024b"
+  integrity sha512-e6H0dMD38EPaSPD2XC8dRfct27VvT2TkPdoBSuNl3RRZ5tspiY/c5xYEmGC0IrABvMBgque4Mr2SMZuliCvoiQ==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    classnames "^2.3.1"
+    rc-trigger "^5.3.1"
+
+rc-tree-select@~5.6.0:
+  version "5.6.0"
+  resolved "https://tech-npm.tezign.com/rc-tree-select/-/rc-tree-select-5.6.0.tgz#f34147f4c14341430bcece481804496d0abd3371"
+  integrity sha512-XG6pu0a9l6+mzhQqUYfR2VIONbe/3LjVc3wKt28k6uBMZsI1j+SSxRyt/7jWRq8Kok8jHJBQASlDg6ehr9Sp0w==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-select "~14.2.0"
+    rc-tree "~5.7.0"
+    rc-util "^5.16.1"
+
+rc-tree@~5.7.0:
+  version "5.7.2"
+  resolved "https://tech-npm.tezign.com/rc-tree/-/rc-tree-5.7.2.tgz#270ea7d9e1b2e5e81cd3659eba2fbd022a4831f6"
+  integrity sha512-nmnL6qLnfwVckO5zoqKL2I9UhwDqzyCtjITQCkwhimyz1zfuFkG5ZPIXpzD/Guzso94qQA/QrMsvzic5W6QDjg==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-motion "^2.0.1"
+    rc-util "^5.16.1"
+    rc-virtual-list "^3.4.8"
+
+rc-trigger@^5.0.4, rc-trigger@^5.1.2, rc-trigger@^5.3.1, rc-trigger@^5.3.4:
+  version "5.3.4"
+  resolved "https://tech-npm.tezign.com/rc-trigger/-/rc-trigger-5.3.4.tgz#6b4b26e32825677c837d1eb4d7085035eecf9a61"
+  integrity sha512-mQv+vas0TwKcjAO2izNPkqR4j86OemLRmvL2nOzdP9OWNWA1ivoTt5hzFqYNW9zACwmTezRiN8bttrC7cZzYSw==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    classnames "^2.2.6"
+    rc-align "^4.0.0"
+    rc-motion "^2.0.0"
+    rc-util "^5.19.2"
+
+rc-upload@~4.3.0:
+  version "4.3.4"
+  resolved "https://tech-npm.tezign.com/rc-upload/-/rc-upload-4.3.4.tgz#83ff7d3867631c37adbfd72ea3d1fd7e97ca84af"
+  integrity sha512-uVbtHFGNjHG/RyAfm9fluXB6pvArAGyAx8z7XzXXyorEgVIWj6mOlriuDm0XowDHYz4ycNK0nE0oP3cbFnzxiQ==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    classnames "^2.2.5"
+    rc-util "^5.2.0"
+
+rc-util@^5.0.1, rc-util@^5.0.6, rc-util@^5.15.0, rc-util@^5.16.0, rc-util@^5.16.1, rc-util@^5.17.0, rc-util@^5.18.1, rc-util@^5.19.2, rc-util@^5.2.0, rc-util@^5.20.1, rc-util@^5.21.0, rc-util@^5.21.2, rc-util@^5.22.5, rc-util@^5.24.4, rc-util@^5.25.0, rc-util@^5.26.0, rc-util@^5.27.0, rc-util@^5.27.1, rc-util@^5.6.1, rc-util@^5.8.0, rc-util@^5.9.4:
+  version "5.28.0"
+  resolved "https://tech-npm.tezign.com/rc-util/-/rc-util-5.28.0.tgz#9e5e441d5875b8bf0ba56c2f295042a28dcff580"
+  integrity sha512-KYDjhGodswVj29v0TRciKTqRPgumIFvFDndbCD227pitQ+0Cei196rxk+OXb/blu6V8zdTRK5RjCJn+WmHLvBA==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    react-is "^16.12.0"
+
+rc-virtual-list@^3.4.13, rc-virtual-list@^3.4.8:
+  version "3.4.13"
+  resolved "https://tech-npm.tezign.com/rc-virtual-list/-/rc-virtual-list-3.4.13.tgz#20acc934b263abcf7b7c161f50ef82281b2f7e8d"
+  integrity sha512-cPOVDmcNM7rH6ANotanMDilW/55XnFPw0Jh/GQYtrzZSy3AmWvCnqVNyNC/pgg3lfVmX2994dlzAhuUrd4jG7w==
+  dependencies:
+    "@babel/runtime" "^7.20.0"
+    classnames "^2.2.6"
+    rc-resize-observer "^1.0.0"
+    rc-util "^5.15.0"
+
 react-dom@18.2.0:
   version "18.2.0"
   resolved "https://tech-npm.tezign.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -3251,7 +3977,14 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-is@^16.13.1:
+react-hot-toast@^2.4.0:
+  version "2.4.0"
+  resolved "https://tech-npm.tezign.com/react-hot-toast/-/react-hot-toast-2.4.0.tgz#b91e7a4c1b6e3068fc599d3d83b4fb48668ae51d"
+  integrity sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA==
+  dependencies:
+    goober "^2.1.10"
+
+react-is@^16.12.0, react-is@^16.13.1:
   version "16.13.1"
   resolved "https://tech-npm.tezign.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
@@ -3364,6 +4097,11 @@ requireindex@^1.2.0:
   resolved "https://tech-npm.tezign.com/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
   integrity sha1-NGPNsi7hUZAmNapslTXU3pwu8e8=
 
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "https://tech-npm.tezign.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha1-DpAg3T0hAkRY1OvSfiPkAmmBBGQ=
+
 resolve-from@5.0.0, resolve-from@^5.0.0:
   version "5.0.0"
   resolved "https://tech-npm.tezign.com/resolve-from/-/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
@@ -3474,6 +4212,22 @@ scheduler@^0.23.0:
   integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
   dependencies:
     loose-envify "^1.1.0"
+
+schema-utils@^3.0.0:
+  version "3.1.1"
+  resolved "https://tech-npm.tezign.com/schema-utils/-/schema-utils-3.1.1.tgz#bc74c4b6b6995c1d88f76a8b77bea7219e0c8281"
+  integrity sha1-vHTEtraZXB2I92qLd76nIZ4MgoE=
+  dependencies:
+    "@types/json-schema" "^7.0.8"
+    ajv "^6.12.5"
+    ajv-keywords "^3.5.2"
+
+scroll-into-view-if-needed@^3.0.3:
+  version "3.0.6"
+  resolved "https://tech-npm.tezign.com/scroll-into-view-if-needed/-/scroll-into-view-if-needed-3.0.6.tgz#2c803a509c1036bc4a9c009fecc5c145f87e47cf"
+  integrity sha512-x+CW0kOzlFNOnseF0DBr0AJ5m+TgGmSOdEZwyiZW0gV87XBvxQKw5A8DvFFgabznA68XqLgVX+PwPX8OzsFvRA==
+  dependencies:
+    compute-scroll-into-view "^3.0.0"
 
 "semver@2 || 3 || 4 || 5":
   version "5.7.1"
@@ -3603,6 +4357,11 @@ string-argv@^0.3.1:
   version "0.3.1"
   resolved "https://tech-npm.tezign.com/string-argv/-/string-argv-0.3.1.tgz#95e2fbec0427ae19184935f816d74aaa4c5c19da"
   integrity sha1-leL77AQnrhkYSTX4FtdKqkxcGdo=
+
+string-convert@^0.2.0:
+  version "0.2.1"
+  resolved "https://tech-npm.tezign.com/string-convert/-/string-convert-0.2.1.tgz#6982cc3049fbb4cd85f8b24568b9d9bf39eeff97"
+  integrity sha1-aYLMMEn7tM2F+LJFaLnZvznu/5c=
 
 string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
@@ -3793,6 +4552,11 @@ stylelint@^14.16.1:
     v8-compile-cache "^2.3.0"
     write-file-atomic "^4.0.2"
 
+stylis@^4.0.13:
+  version "4.1.3"
+  resolved "https://tech-npm.tezign.com/stylis/-/stylis-4.1.3.tgz#fd2fbe79f5fed17c55269e16ed8da14c84d069f7"
+  integrity sha512-GP6WDNWf+o403jrEp9c5jibKavrtLW+/qYGhFxFrG8maXhwTBI7gLLhiBb0o7uFccWN+EOS9aMO6cGHWAO07OA==
+
 supports-color@^5.3.0:
   version "5.5.0"
   resolved "https://tech-npm.tezign.com/supports-color/-/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
@@ -3888,6 +4652,11 @@ text-table@^0.2.0:
   resolved "https://tech-npm.tezign.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
+throttle-debounce@^5.0.0:
+  version "5.0.0"
+  resolved "https://tech-npm.tezign.com/throttle-debounce/-/throttle-debounce-5.0.0.tgz#a17a4039e82a2ed38a5e7268e4132d6960d41933"
+  integrity sha512-2iQTSgkkc1Zyk0MeVrt/3BvuOXYPl/R8Z0U2xxo9rjwNciaHDG3R+Lm6dh4EeUci49DanvBnuqI6jshoQQRGEg==
+
 through2@^4.0.0:
   version "4.0.2"
   resolved "https://tech-npm.tezign.com/through2/-/through2-4.0.2.tgz#a7ce3ac2a7a8b0b966c80e7c49f0484c3b239764"
@@ -3914,6 +4683,11 @@ to-regex-range@^5.0.1:
   integrity sha1-FkjESq58jZiKMmAY7XL1tN0DkuQ=
   dependencies:
     is-number "^7.0.0"
+
+toggle-selection@^1.0.6:
+  version "1.0.6"
+  resolved "https://tech-npm.tezign.com/toggle-selection/-/toggle-selection-1.0.6.tgz#6e45b1263f2017fa0acc7d89d78b15b8bf77da32"
+  integrity sha1-bkWxJj8gF/oKzH2J14sVuL932jI=
 
 trim-newlines@^3.0.0:
   version "3.0.1"
@@ -4116,6 +4890,14 @@ word-wrap@^1.2.3:
   version "1.2.3"
   resolved "https://tech-npm.tezign.com/word-wrap/-/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
   integrity sha1-YQY29rH3A4kb00dxzLF/uTtHB5w=
+
+worker-loader@^3.0.8:
+  version "3.0.8"
+  resolved "https://tech-npm.tezign.com/worker-loader/-/worker-loader-3.0.8.tgz#5fc5cda4a3d3163d9c274a4e3a811ce8b60dbb37"
+  integrity sha1-X8XNpKPTFj2cJ0pOOoEc6LYNuzc=
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
 
 wrap-ansi@^6.2.0:
   version "6.2.0"
