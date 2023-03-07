@@ -3,6 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { Fragment } from "react";
 
 const user = {
@@ -12,11 +13,11 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "小链接", href: "/home", current: true },
-  { name: "小工具", href: "/toolboxes", current: false },
-  { name: "小练习", href: "/questions", current: false },
-  { name: "小作文", href: "/compositions", current: false },
-  { name: "小绘画", href: "/paints", current: false },
+  { name: "小链接", href: "/" },
+  { name: "小工具", href: "/toolboxes" },
+  { name: "小练习", href: "/questions" },
+  { name: "小作文", href: "/compositions" },
+  { name: "小绘画", href: "/paints" },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -32,10 +33,17 @@ export interface IHeaderProps {
  * 网页头部
  */
 export default function Header({ className }: IHeaderProps) {
+  const router = useRouter();
+
   return (
     <Disclosure
       as="nav"
-      className={classNames("h-[65px] bg-gray-800", { [className]: className })}
+      className={classNames(
+        "z-10 h-[65px] bg-gradient-to-r from-purple-800 to-indigo-700",
+        {
+          [className]: className,
+        }
+      )}
     >
       {({ open }) => (
         <>
@@ -59,12 +67,24 @@ export default function Header({ className }: IHeaderProps) {
                       <Link legacyBehavior key={item.name} href={item.href}>
                         <a
                           className={classNames(
-                            item.current
-                              ? "bg-gray-900 text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            (
+                              item.href === "/"
+                                ? router.asPath === item.href
+                                : router.asPath.startsWith(item.href)
+                            )
+                              ? "bg-purple-900 text-white"
+                              : "text-gray-300 hover:bg-purple-700 hover:text-white",
                             "rounded-md px-3 py-2 text-sm font-medium"
                           )}
-                          aria-current={item.current ? "page" : undefined}
+                          aria-current={
+                            (
+                              item.href === "/"
+                                ? router.asPath === item.href
+                                : router.asPath.startsWith(item.href)
+                            )
+                              ? "page"
+                              : undefined
+                          }
                         >
                           {item.name}
                         </a>
@@ -73,7 +93,8 @@ export default function Header({ className }: IHeaderProps) {
                   </div>
                 </div>
               </div>
-              <div className="hidden md:block">
+              {/* PC端 - 右侧个人信息 */}
+              <div className="hidden md:hidden">
                 <div className="ml-4 flex items-center md:ml-6">
                   <button
                     type="button"
@@ -127,7 +148,7 @@ export default function Header({ className }: IHeaderProps) {
               </div>
               <div className="-mr-2 flex md:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-purple-800 p-2 text-purple-400 hover:bg-purple-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-800">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -139,7 +160,7 @@ export default function Header({ className }: IHeaderProps) {
             </div>
           </div>
 
-          <Disclosure.Panel className="border-b border-gray-700 md:hidden">
+          <Disclosure.Panel className="border-b border-purple-700 bg-white md:hidden">
             <div className="space-y-1 px-2 py-3 sm:px-3">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -147,18 +168,30 @@ export default function Header({ className }: IHeaderProps) {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    (
+                      item.href === "/"
+                        ? router.asPath === item.href
+                        : router.asPath.startsWith(item.href)
+                    )
+                      ? "bg-purple-900 text-white"
+                      : "text-purple-400 hover:bg-purple-700 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={
+                    (
+                      item.href === "/"
+                        ? router.asPath === item.href
+                        : router.asPath.startsWith(item.href)
+                    )
+                      ? "page"
+                      : undefined
+                  }
                 >
                   {item.name}
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-gray-700 pt-4 pb-3">
+            <div className="border-t border-purple-700 pt-4 pb-3">
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
                   <img
@@ -168,16 +201,16 @@ export default function Header({ className }: IHeaderProps) {
                   />
                 </div>
                 <div className="ml-3">
-                  <div className="text-base font-medium leading-none text-white">
+                  <div className="text-base font-medium leading-none text-purple-500">
                     {user.name}
                   </div>
-                  <div className="text-sm font-medium leading-none text-gray-400">
+                  <div className="text-sm font-medium leading-none text-purple-400">
                     {user.email}
                   </div>
                 </div>
                 <button
                   type="button"
-                  className="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="ml-auto flex-shrink-0 rounded-full bg-purple-800 p-1 text-purple-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-800"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -189,7 +222,7 @@ export default function Header({ className }: IHeaderProps) {
                     key={item.name}
                     as="a"
                     href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-purple-400 hover:bg-purple-700 hover:text-white"
                   >
                     {item.name}
                   </Disclosure.Button>

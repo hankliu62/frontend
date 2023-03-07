@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import Head from "next/head";
 import { ReactNode } from "react";
 
 const Footer = dynamic(() => import("@/components/Footer"), {
@@ -25,7 +24,7 @@ export default function DefaultLayout({ children }: LayoutProps) {
         <Header />
 
         {/* Main content */}
-        <main className="flex-1 grow-[1] overflow-auto" style={{ flex: 1 }}>
+        <main className="flex-1 grow-[1]" style={{ flex: 1 }}>
           {children}
         </main>
 

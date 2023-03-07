@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 
-import { Avatar, Card, Tooltip } from "antd";
+import { Affix, Avatar, Card, Tooltip } from "antd";
 import classNames from "classnames";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
@@ -13,22 +13,21 @@ function useAnchor(navigations) {
   );
 
   const getHeadings = useCallback((navigations) => {
-    return navigations
-      .flatMap((node) => [
-        node.id,
-        ...node.children.map((child) => child.title),
-      ])
-      .map((id) => {
-        // eslint-disable-next-line unicorn/prefer-query-selector
-        const el = document.getElementById(id);
-        if (!el) return;
+    // .flatMap((node) => [
+    //   node.id,
+    //   ...node.children.map((child) => child.title),
+    // ])
+    return navigations.map(({ id }) => {
+      // eslint-disable-next-line unicorn/prefer-query-selector
+      const el = document.getElementById(id);
+      if (!el) return;
 
-        const style = window.getComputedStyle(el);
-        const scrollMt = Number.parseFloat(style.scrollMarginTop);
+      const style = window.getComputedStyle(el);
+      const scrollMt = Number.parseFloat(style.scrollMarginTop);
 
-        const top = window.scrollY + el.getBoundingClientRect().top - scrollMt;
-        return { id, top };
-      });
+      const top = window.scrollY + el.getBoundingClientRect().top - scrollMt;
+      return { id, top };
+    });
   }, []);
 
   useEffect(() => {
@@ -81,15 +80,28 @@ export default function Dashboard() {
         ```
       */}
       <div className="min-h-full">
-        <div className="bg-gray-800 pb-32">
-          <header className="py-10">
-            <div className="px-4 sm:px-6 lg:px-8">
-              <h1 className="text-3xl font-bold tracking-tight text-white">
-                Dashboard
-              </h1>
-            </div>
-          </header>
-        </div>
+        <header className="relative">
+          <div className="absolute inset-0">
+            <img
+              className="h-full w-full object-cover"
+              src="/dashboard/images/bg.png"
+              alt="People working on laptops"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700 mix-blend-multiply" />
+          </div>
+          <div className="relative py-16 px-6 sm:py-24 lg:py-32 lg:px-8">
+            <h1 className="animate__animated animate__bounceInDown text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              <span className="block text-white">前端技术网站</span>
+              <span className="block text-indigo-200"></span>
+            </h1>
+            <p className="animate__animated animate__bounceInLeft mx-auto mt-6 max-w-2xl break-all text-center text-xl text-indigo-200 sm:max-w-3xl">
+              <span>
+                快速便捷地找到自己需要的技术网站，以免浪费时间。网站持续更新中
+              </span>
+              <span className="inline-block w-[32px] text-left after:animate-[continue_3s_ease-in-out_infinite]"></span>
+            </p>
+          </div>
+        </header>
 
         <div className="max-w-8xl relative mx-auto flex justify-center sm:px-2 lg:px-8 xl:px-12">
           {/* 左侧导航条 */}
@@ -97,8 +109,8 @@ export default function Dashboard() {
             <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
             <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
             <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
-            <div className="sticky top-[4.5rem] -ml-0.5 overflow-y-auto overflow-x-hidden pt-8 pb-16 pl-0.5">
-              <nav aria-labelledby="on-this-page-title" className="w-56">
+            <div className="sticky top-[0] -ml-0.5 overflow-y-auto overflow-x-hidden pt-8 pb-16 pl-0.5">
+              <nav aria-labelledby="menu" className="w-56">
                 {navigations.length > 0 && (
                   <>
                     <h2
@@ -156,7 +168,7 @@ export default function Dashboard() {
           </div>
 
           {/* body */}
-          <div className="min-w-0 max-w-2xl flex-auto px-8 py-8 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-8">
+          <div className="min-w-0 flex-auto px-8 py-8 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-8">
             <ul>
               {navigations?.map((navigation) => (
                 <li
@@ -168,9 +180,10 @@ export default function Dashboard() {
                     {navigation.label}
                   </div>
                   {!!navigation.children?.length && (
-                    <div className="grid grid-cols-4 gap-6">
+                    <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
                       {navigation.children.map((item) => (
                         <Card
+                          className="link-card"
                           key={item.title}
                           onClick={() => {
                             window.open(item.siteUrl, "_blank");

@@ -51,6 +51,19 @@ const nextConfig = {
 
     return config;
   },
+  async headers() {
+    return [
+      {
+        source: "/styles/animate.css/@4.1.1/animate.css",
+        headers: [
+          {
+            key: "cache-control",
+            value: "public, immutable, max-age=31536000",
+          },
+        ],
+      },
+    ];
+  },
   plugins: [require("@tailwindcss/forms")],
 };
 

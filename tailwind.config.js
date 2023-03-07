@@ -5,7 +5,21 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        continue: {
+          "16%": { content: '"."' },
+          "33%": { content: '".."' },
+          "50%": { content: '"..."' },
+          "66%": { content: '"...."' },
+          "83%": { content: '"....."' },
+          "100%": { content: '"......"' },
+        },
+      },
+      screens: {
+        "3xl": "1920px",
+      },
+    },
   },
   plugins: [require("@tailwindcss/line-clamp")],
 };
