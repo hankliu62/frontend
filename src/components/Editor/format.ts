@@ -26,25 +26,33 @@ export function registerDocumentFormattingEditProviders() {
     },
   };
 
-  for (const id of [
-    "css",
-    "less",
-    "scss",
-    "javascript",
-    "typescript",
-    "html",
-  ]) {
+  // // override the built-in HTML formatter
+  // const _registerDocumentFormattingEditProvider =
+  //   monaco.languages.registerDocumentFormattingEditProvider;
+  // monaco.languages.registerDocumentFormattingEditProvider = (id, provider) => {
+  //   if ((['css','less','scss','javascript','typescript','html'].includes(id))) {
+  //     return _registerDocumentFormattingEditProvider(
+  //      ,
+  //       formattingEditProvider
+  //     );
+
+  //   }else{
+  //     return _registerDocumentFormattingEditProvider(id, provider);
+  //   }
+
+  // };
+  ["css", "less", "scss", "javascript", "typescript", "html"].forEach((id) => {
     disposables.push(
       monaco.languages.registerDocumentFormattingEditProvider(
         id,
         formattingEditProvider
       )
     );
-  }
+  });
 
   return {
     dispose() {
-      for (const disposable of disposables) disposable.dispose();
+      disposables.forEach((disposable) => disposable.dispose());
       if (prettierWorker) {
         prettierWorker.terminate();
       }

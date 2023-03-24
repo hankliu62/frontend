@@ -1,10 +1,20 @@
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import {
+  AdjustmentsHorizontalIcon,
+  Bars3Icon,
+  BellIcon,
+  CircleStackIcon,
+  CodeBracketSquareIcon,
+  VariableIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { Popover, Tooltip } from "antd";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 const user = {
   name: "Tom Cook",
@@ -13,11 +23,47 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "小链接", href: "/" },
-  { name: "小工具", href: "/toolboxes" },
-  { name: "小练习", href: "/questions" },
-  { name: "小作文", href: "/compositions" },
-  { name: "小绘画", href: "/paints" },
+  {
+    name: "小链接",
+    href: "/",
+    type: "link",
+  },
+  {
+    name: "小工具",
+    href: "/toolboxes",
+    type: "popover",
+    children: [
+      {
+        name: "内容差异",
+        description: "获得文本的差异，并以类似Github Diff效果的方式展示出来。",
+        href: "/toolboxes/diff",
+        icon: AdjustmentsHorizontalIcon,
+      },
+      {
+        name: "HTML2Markdown",
+        description: "工具主要实现从HTML转Markdown的方法",
+        href: "/toolboxes/h2d",
+        icon: VariableIcon,
+      },
+      {
+        name: "代码编辑器",
+        description:
+          "基于 VS Code 的代码编辑器，运行在浏览器环境中。编辑器提供代码提示，智能建议等功能。供开发人员远程更方便的编写代码。",
+        href: "/toolboxes/monaco-editor",
+        icon: CodeBracketSquareIcon,
+      },
+      {
+        name: "SQL编辑器",
+        description:
+          "基于 VS Code 的SQL编辑器，运行在浏览器环境中。编辑器提供SQL命令提示，智能建议等功能。供开发人员远程更方便的编写SQL。",
+        href: "/toolboxes/monaco-editor",
+        icon: CircleStackIcon,
+      },
+    ],
+  },
+  { name: "小练习", href: "/questions", type: "link" },
+  { name: "小作文", href: "/compositions", type: "link" },
+  { name: "小绘画", href: "/paints", type: "link" },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -34,6 +80,10 @@ export interface IHeaderProps {
  */
 export default function Header({ className }: IHeaderProps) {
   const router = useRouter();
+
+  const [openSubMenuPopover, setOpenSubMenuPopover] = useState<
+    Partial<Record<(typeof navigation)[number]["href"], boolean>>
+  >({});
 
   return (
     <Disclosure
@@ -63,8 +113,8 @@ export default function Header({ className }: IHeaderProps) {
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
-                    {navigation.map((item) => (
-                      <Link legacyBehavior key={item.name} href={item.href}>
+                    {navigation.map((item) => {
+                      const link = (
                         <a
                           className={classNames(
                             (
@@ -86,10 +136,93 @@ export default function Header({ className }: IHeaderProps) {
                               : undefined
                           }
                         >
-                          {item.name}
+                          {item.type === "popover" ? (
+                            <span className="flex items-center">
+                              <span>{item.name}</span>
+                              <ChevronDownIcon
+                                className="ml-1 h-5 w-5"
+                                aria-hidden="true"
+                              />
+                            </span>
+                          ) : (
+                            item.name
+                          )}
                         </a>
-                      </Link>
-                    ))}
+                      );
+                      return item.type === "link" ? (
+                        <Link legacyBehavior key={item.name} href={item.href}>
+                          {link}
+                        </Link>
+                      ) : (
+                        <Popover
+                          open={openSubMenuPopover[item.href]}
+                          onOpenChange={(open) => {
+                            setOpenSubMenuPopover((prev) => ({
+                              ...prev,
+                              [item.href]: open,
+                            }));
+                          }}
+                          trigger="click"
+                          placement="bottomLeft"
+                          arrow={false}
+                          key={item.name}
+                          content={
+                            <div className="relative grid grid-cols-2 gap-4 bg-white px-2 py-3 sm:gap-6 sm:p-4 2xl:grid-cols-3">
+                              {item.children.map((subItem) => {
+                                const subLink = (
+                                  <a
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                                    onClick={() => {
+                                      setOpenSubMenuPopover((prev) => ({
+                                        ...prev,
+                                        [item.href]: false,
+                                      }));
+                                    }}
+                                  >
+                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                      <subItem.icon
+                                        className="h-5 w-5"
+                                        aria-hidden="true"
+                                      />
+                                    </div>
+                                    <div className="ml-2 max-w-[150px] truncate">
+                                      <p className="truncate text-sm font-medium text-gray-900">
+                                        {subItem.name}
+                                      </p>
+                                      <p className="mt-1 truncate text-xs text-gray-500">
+                                        <Tooltip
+                                          placement="topLeft"
+                                          title={subItem.description}
+                                        >
+                                          <span>{subItem.description}</span>
+                                        </Tooltip>
+                                      </p>
+                                    </div>
+                                  </a>
+                                );
+
+                                // 判断是否为内部链接
+                                return subItem.href.startsWith(item.href) ? (
+                                  <Link
+                                    legacyBehavior
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                  >
+                                    {subLink}
+                                  </Link>
+                                ) : (
+                                  <span key={subItem.name}>{subLink}</span>
+                                );
+                              })}
+                            </div>
+                          }
+                        >
+                          {link}
+                        </Popover>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

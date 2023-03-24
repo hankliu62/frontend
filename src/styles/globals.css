@@ -18,7 +18,8 @@ a {
   text-decoration: none;
 }
 
-body > div {
+/* stylelint-disable-next-line selector-id-pattern */
+body > #__next {
   min-height: 100vh;
 }
 

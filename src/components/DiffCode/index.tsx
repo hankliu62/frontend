@@ -24,7 +24,7 @@ import {
 import yaml from "js-yaml";
 import React, { useEffect, useState } from "react";
 
-export interface IDiffCodeProps extends Partial<Diff2HtmlUIConfig> {
+interface IDiffCodeProps extends Partial<Diff2HtmlUIConfig> {
   isUseUi?: boolean; // 是否使用Diff2HtmlUI
   id?: string; // Diff2HtmlUI 挂载html的id，多实例的情况下，各个实例需要唯一id，防止页面冲突
   diffDataList: {
@@ -41,7 +41,7 @@ export interface IDiffCodeProps extends Partial<Diff2HtmlUIConfig> {
   headerExtraRender?: () => React.ReactNode;
 }
 
-const DiffCode = ({
+function DiffCode({
   diffDataList,
   isUseUi,
   id,
@@ -49,7 +49,7 @@ const DiffCode = ({
   icon,
   headerExtraRender,
   ...config
-}: IDiffCodeProps) => {
+}: IDiffCodeProps) {
   const [diffData, setDiffData] = useState("");
 
   const [outputFormat, setOutputFormat] = useState<
@@ -92,6 +92,7 @@ const DiffCode = ({
       const diffStr = createPatch(...args);
       // 差异json化
       const diffJson = parse(diffStr);
+
       diffJsonList.push(diffJson[0]);
     }
     if (isUseUi) {
@@ -152,6 +153,6 @@ const DiffCode = ({
       )}
     </div>
   );
-};
+}
 
 export default DiffCode;

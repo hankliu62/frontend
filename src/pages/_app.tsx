@@ -4,9 +4,9 @@ import "diff2html/bundles/css/diff2html.min.css";
 import "nprogress/nprogress.css";
 
 import { StyleProvider } from "@ant-design/cssinjs";
+import { Watermark } from "antd";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
@@ -14,10 +14,6 @@ import { ReactElement, ReactNode, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
 import DefaultLayout from "@/layouts/index";
-
-// const DefaultLayout = dynamic(() => import("@/layouts/index"), {
-//   ssr: false,
-// });
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -57,7 +53,12 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
       {getLayout(
         <StyleProvider hashPriority="high">
-          <Component {...pageProps} />
+          <Watermark
+            content="HankLiu Toolbox"
+            font={{ color: "rgba(0, 0, 0, 0.1)" }}
+          >
+            <Component {...pageProps} />
+          </Watermark>
           <Toaster />
         </StyleProvider>
       )}
