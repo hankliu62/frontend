@@ -2,11 +2,17 @@ import classNames from "classnames";
 import type { editor as MonacoEditor } from "monaco-editor";
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
 import { CommandsRegistry } from "monaco-editor/esm/vs/platform/commands/common/commands";
-import React, { useEffect, useRef } from "react";
+import React, {
+  forwardRef,
+  ForwardRefRenderFunction,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
 import { getTheme, onDidChangeTheme } from "@/utils/themes";
 
-import { registerDocumentFormattingEditProviders } from "./format";
+import { monacoSqlAutocomplete } from "./parsers";
 
 function setupKeybindings(editor) {
   const formatCommandId = "editor.action.formatDocument";
@@ -19,35 +25,70 @@ function setupKeybindings(editor) {
   );
 }
 
-registerDocumentFormattingEditProviders();
+export type Monaco = typeof monaco;
 
-interface Props {
+export interface ISqlEditorImperativeHandles {
+  getEditor: () => monaco.editor.IStandaloneCodeEditor | null;
+  monaco: Monaco;
+}
+
+interface ISqlEditorProps {
   value?: string;
   defaultValue?: string; // 初始值
   className?: string;
-  language: string;
-  options?: monaco.editor.IStandaloneEditorConstructionOptions;
   onChange?: (value: string) => void;
-  inRef?: (value: MonacoEditor.IStandaloneCodeEditor) => void;
+  onMount?: (
+    editor: monaco.editor.IStandaloneCodeEditor,
+    monaco: Monaco
+  ) => void;
 }
 
-function CodeEditor({
-  value = "",
-  defaultValue = "",
-  className,
-  language = "html",
-  options = {},
-  onChange = () => {},
-  inRef = () => {},
-}: Props) {
+/**
+ * 编排模版基本信息表单
+ *
+ * @param props
+ * @returns
+ */
+const SqlEditor: ForwardRefRenderFunction<
+  ISqlEditorImperativeHandles,
+  ISqlEditorProps
+> = (
+  {
+    value = "",
+    defaultValue = "",
+    className,
+    onChange = () => {},
+    onMount = (
+      editor: monaco.editor.IStandaloneCodeEditor,
+      monaco: Monaco
+    ) => {},
+  }: ISqlEditorProps,
+  ref
+) => {
   const editorContainer = useRef<HTMLDivElement | null>(null);
   const editor = useRef<MonacoEditor.IStandaloneCodeEditor | null>(null);
 
+  function getEditor(): MonacoEditor.IStandaloneCodeEditor | null {
+    return editor.current;
+  }
+
+  /**
+   * 导出方法
+   */
+  useImperativeHandle(
+    ref,
+    () => ({
+      getEditor,
+      monaco,
+    }),
+    []
+  );
+
   useEffect(() => {
-    if (editorContainer.current && language) {
+    if (editorContainer.current) {
       editor.current = monaco.editor.create(editorContainer.current!, {
         readOnly: false, // 是否可编辑 // 是否为只读模式
-        language: language, // 语言类型
+        language: "sql", // 语言类型
         acceptSuggestionOnCommitCharacter: true, // 接受关于提交字符的建议
         acceptSuggestionOnEnter: "on", // 接受输入建议 "on" | "off" | "smart" //-如果设置off 编辑器上的代码补全显示了,但却不补上
         accessibilityPageSize: 10, // 辅助功能页面大小 Number 说明：控制编辑器中可由屏幕阅读器读出的行数。警告：这对大于默认值的数字具有性能含义。
@@ -69,7 +110,7 @@ function CodeEditor({
         }, // 注释配置
         contextmenu: true, // 启用上下文菜单
         columnSelection: false, // 启用列编辑 按下shift键位然后按↑↓键位可以实现列选择 然后实现列编辑
-        autoSurround: "never", // 是否应自动环绕选择
+        autoSurround: "never", // 是否应自动环绕选择 'languageDefined' | 'quotes' | 'brackets' | 'never'
         copyWithSyntaxHighlighting: true, // 是否应将语法突出显示复制到剪贴板中 即 当你复制到word中是否保持文字高亮颜色
         cursorBlinking: "blink", // 光标动画样式
         cursorSmoothCaretAnimation: "off", // 是否启用光标平滑插入动画  当你在快速输入文字的时候 光标是直接平滑的移动还是直接"闪现"到当前文字所处位置
@@ -83,11 +124,10 @@ function CodeEditor({
         folding: true, // 是否启用代码折叠
         links: true, // 是否点击链接
         overviewRulerBorder: false, // 是否应围绕概览标尺绘制边框
-        renderLineHighlight: "line", // 当前行突出显示方式 'none' | 'gutter' | 'line' | 'all';
+        renderLineHighlight: "gutter", // 当前行突出显示方式 'none' | 'gutter' | 'line' | 'all';
         roundedSelection: false, // 选区是否有圆角
         scrollBeyondLastLine: false, // 设置编辑器是否可以滚动到最后一行之后
         theme: getTheme() === "light" ? "vs-dark" : "vs-light",
-        ...options,
       });
 
       // 监听文件内容修改
@@ -97,7 +137,9 @@ function CodeEditor({
 
       setupKeybindings(editor.current);
 
-      inRef(editor.current);
+      onMount(editor.current, monaco);
+
+      monacoSqlAutocomplete(monaco, editor.current);
     }
 
     return () => {
@@ -105,13 +147,6 @@ function CodeEditor({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (editor.current) {
-      const model = editor.current.getModel();
-      monaco.editor.setModelLanguage(model, language);
-    }
-  }, [language]);
 
   useEffect(() => {
     if (editor?.current) {
@@ -135,13 +170,11 @@ function CodeEditor({
 
   useEffect(() => {
     function handleThemeChange(theme) {
-      monaco.editor.setTheme(
-        options?.theme || theme === "light" ? "vs-dark" : "vs-light"
-      );
+      monaco.editor.setTheme(theme === "light" ? "vs-dark" : "vs-light");
     }
     const dispose = onDidChangeTheme(handleThemeChange);
     return () => dispose();
-  }, [options]);
+  }, []);
 
   useEffect(() => {
     const observer = new ResizeObserver(() => {
@@ -161,6 +194,8 @@ function CodeEditor({
       })}
     />
   );
-}
+};
 
-export default CodeEditor;
+SqlEditor.displayName = "SqlEditor";
+
+export default forwardRef(SqlEditor);

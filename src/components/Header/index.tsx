@@ -56,7 +56,7 @@ const navigation = [
         name: "SQL编辑器",
         description:
           "基于 VS Code 的SQL编辑器，运行在浏览器环境中。编辑器提供SQL命令提示，智能建议等功能。供开发人员远程更方便的编写SQL。",
-        href: "/toolboxes/monaco-editor",
+        href: "/toolboxes/sql-editor",
         icon: CircleStackIcon,
       },
     ],

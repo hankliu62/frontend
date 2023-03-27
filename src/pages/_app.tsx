@@ -56,6 +56,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           <Watermark
             content="HankLiu Toolbox"
             font={{ color: "rgba(0, 0, 0, 0.1)" }}
+            className="flex h-full flex-1 flex-col"
           >
             <Component {...pageProps} />
           </Watermark>

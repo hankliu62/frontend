@@ -17,14 +17,14 @@ export default function DefaultLayout({ children }: LayoutProps) {
   return (
     <>
       <div
-        className="flex h-full w-full flex-col"
-        style={{ flexDirection: "column" }}
+        className="flex h-full min-h-[100vh] w-full flex-col"
+        style={{ flexDirection: "column", minHeight: "100vh" }}
       >
         {/* header */}
         <Header />
 
         {/* Main content */}
-        <main className="flex-1 grow-[1]" style={{ flex: 1 }}>
+        <main className="flex flex-1 grow-[1] flex-col" style={{ flex: 1 }}>
           {children}
         </main>
 
