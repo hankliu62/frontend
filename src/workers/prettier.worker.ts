@@ -7,6 +7,8 @@ import parserHtml from "prettier/parser-html";
 import parserMarkdown from "prettier/parser-markdown";
 import parserPostcss from "prettier/parser-postcss";
 import parserTypescript from "prettier/parser-typescript";
+import parserYaml from "prettier/parser-yaml";
+import { format as formatSQL } from "sql-formatter";
 
 let current;
 
@@ -43,22 +45,30 @@ ctx.addEventListener("message", async (event) => {
   }
 
   try {
-    respond({
-      pretty: prettier.format(event.data.text, {
-        parser: langToParser[event.data.language],
-        plugins: [
-          parserMarkdown,
-          parserHtml,
-          parserTypescript,
-          parserPostcss,
-          parserAngular,
-          parserBabel,
-          parserGraphql,
-          parserFlow,
-        ],
-        printWidth: 80,
-      }),
-    });
+    if (langToParser[event.data.language]) {
+      respond({
+        pretty: prettier.format(event.data.text, {
+          parser: langToParser[event.data.language],
+          plugins: [
+            parserMarkdown,
+            parserHtml,
+            parserTypescript,
+            parserPostcss,
+            parserAngular,
+            parserBabel,
+            parserGraphql,
+            parserFlow,
+            parserYaml,
+          ],
+          printWidth: 80,
+        }),
+      });
+    } else if (event.data.language === "sql") {
+      // SQL格式化工具
+      respond({
+        pretty: formatSQL(event.data.text),
+      });
+    }
   } catch (error) {
     respond({ error });
   }

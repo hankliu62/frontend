@@ -2,8 +2,15 @@ import classNames from "classnames";
 import type { editor as MonacoEditor } from "monaco-editor";
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
 import { CommandsRegistry } from "monaco-editor/esm/vs/platform/commands/common/commands";
-import React, { useEffect, useRef } from "react";
+import React, {
+  forwardRef,
+  ForwardRefRenderFunction,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
+import { TEditorLanguage } from "@/types/editor";
 import { getTheme, onDidChangeTheme } from "@/utils/themes";
 
 import { registerDocumentFormattingEditProviders } from "./format";
@@ -11,6 +18,7 @@ import { registerDocumentFormattingEditProviders } from "./format";
 function setupKeybindings(editor) {
   const formatCommandId = "editor.action.formatDocument";
   const { handler, when } = CommandsRegistry.getCommand(formatCommandId);
+  // 监听保存，进行代码格式化
   editor._standaloneKeybindingService.addDynamicKeybinding(
     formatCommandId,
     monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
@@ -19,29 +27,68 @@ function setupKeybindings(editor) {
   );
 }
 
-registerDocumentFormattingEditProviders();
+export type Monaco = typeof monaco;
 
-interface Props {
+export interface ICodeEditorImperativeHandles {
+  getEditor: () => monaco.editor.IStandaloneCodeEditor | null;
+  monaco: Monaco;
+}
+
+interface ICodeEditorProps {
   value?: string;
   defaultValue?: string; // 初始值
   className?: string;
-  language: string;
+  language: TEditorLanguage;
   options?: monaco.editor.IStandaloneEditorConstructionOptions;
   onChange?: (value: string) => void;
-  inRef?: (value: MonacoEditor.IStandaloneCodeEditor) => void;
+  onMount?: (
+    editor: monaco.editor.IStandaloneCodeEditor,
+    monaco: Monaco
+  ) => void;
 }
 
-function CodeEditor({
-  value = "",
-  defaultValue = "",
-  className,
-  language = "html",
-  options = {},
-  onChange = () => {},
-  inRef = () => {},
-}: Props) {
+/**
+ * Code编辑器
+ *
+ * @param props
+ * @returns
+ */
+const SqlEditor: ForwardRefRenderFunction<
+  ICodeEditorImperativeHandles,
+  ICodeEditorProps
+> = (
+  {
+    value = "",
+    defaultValue = "",
+    className,
+    language = "html",
+    options = {},
+    onChange = () => {},
+    onMount = (
+      editor: monaco.editor.IStandaloneCodeEditor,
+      monaco: Monaco
+    ) => {},
+  }: ICodeEditorProps,
+  ref
+) => {
   const editorContainer = useRef<HTMLDivElement | null>(null);
   const editor = useRef<MonacoEditor.IStandaloneCodeEditor | null>(null);
+
+  function getEditor(): MonacoEditor.IStandaloneCodeEditor | null {
+    return editor.current;
+  }
+
+  /**
+   * 导出方法
+   */
+  useImperativeHandle(
+    ref,
+    () => ({
+      getEditor,
+      monaco,
+    }),
+    []
+  );
 
   useEffect(() => {
     if (editorContainer.current && language) {
@@ -87,6 +134,8 @@ function CodeEditor({
         roundedSelection: false, // 选区是否有圆角
         scrollBeyondLastLine: false, // 设置编辑器是否可以滚动到最后一行之后
         theme: getTheme() === "light" ? "vs-dark" : "vs-light",
+        tabSize: 2, // tab的空格个数
+        renderWhitespace: "all", // 始终显示空格
         ...options,
       });
 
@@ -97,11 +146,16 @@ function CodeEditor({
 
       setupKeybindings(editor.current);
 
-      inRef(editor.current);
+      onMount(editor.current, monaco);
     }
+
+    // 注册代码格式化提供者
+    const { dispose } = registerDocumentFormattingEditProviders();
 
     return () => {
       if (editor.current) editor.current!.dispose();
+
+      dispose();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -161,6 +215,6 @@ function CodeEditor({
       })}
     />
   );
-}
+};
 
-export default CodeEditor;
+export default forwardRef(SqlEditor);

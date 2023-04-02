@@ -6,6 +6,7 @@ import {
   BellIcon,
   CircleStackIcon,
   CodeBracketSquareIcon,
+  QrCodeIcon,
   VariableIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
@@ -58,6 +59,13 @@ const navigation = [
           "基于 VS Code 的SQL编辑器，运行在浏览器环境中。编辑器提供SQL命令提示，智能建议等功能。供开发人员远程更方便的编写SQL。",
         href: "/toolboxes/sql-editor",
         icon: CircleStackIcon,
+      },
+      {
+        name: "QRCode",
+        description:
+          "把二维码技术变成简单实用的产品，让每个人都可以快速复用成功案例经验，免费制作出能高效解决业务问题的二维码",
+        href: "/toolboxes/qrcode",
+        icon: QrCodeIcon,
       },
     ],
   },

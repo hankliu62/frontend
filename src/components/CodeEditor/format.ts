@@ -3,6 +3,11 @@ import PrettierWorker from "worker-loader!../../workers/prettier.worker.ts";
 
 import { createWorkerQueue } from "@/utils/workers";
 
+/**
+ * 注册代码格式化工具
+ *
+ * @returns
+ */
 export function registerDocumentFormattingEditProviders() {
   const disposables = [];
   let prettierWorker;
@@ -12,11 +17,14 @@ export function registerDocumentFormattingEditProviders() {
       if (!prettierWorker) {
         prettierWorker = createWorkerQueue(PrettierWorker);
       }
+      // 使用WebWorker进行代码格式化处理
       const { canceled, error, pretty } = await prettierWorker.emit({
         text: model.getValue(),
         language: model.getLanguageId(),
       });
+
       if (canceled || error) return [];
+
       return [
         {
           range: model.getFullModelRange(),
@@ -26,17 +34,33 @@ export function registerDocumentFormattingEditProviders() {
     },
   };
 
-  for (const id of [
+  // const supportLanguages = [
+  //   "css",
+  //   "less",
+  //   "scss",
+  //   "javascript",
+  //   "typescript",
+  //   "html",
+  // ];
+  const supportLanguages = [
+    "json",
+    "javascript",
+    "typescript",
     "css",
     "less",
     "scss",
-    "javascript",
-    "typescript",
+    "markdown",
+    "graphql",
+    "handlebars",
     "html",
-  ]) {
+    "yaml",
+    "sql",
+  ];
+
+  for (const lang of supportLanguages) {
     disposables.push(
       monaco.languages.registerDocumentFormattingEditProvider(
-        id,
+        lang,
         formattingEditProvider
       )
     );

@@ -77,7 +77,6 @@ export class DefaultOpts {
     cursorValue?: string,
     rootStatement?: IStatement
   ) => Promise<ICompletionItem[]> = (tableInfo) => {
-    console.log(tableInfo, "tableInfo----------------------------");
     const tableName =
       get(tableInfo, "namespace.value", "") +
       get(tableInfo, "tableName.value", "");

@@ -44,7 +44,7 @@ interface ISqlEditorProps {
 }
 
 /**
- * 编排模版基本信息表单
+ * SQL编辑器
  *
  * @param props
  * @returns

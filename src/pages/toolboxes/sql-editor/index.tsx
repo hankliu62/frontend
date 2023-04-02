@@ -24,7 +24,7 @@ export default function SqlEditorPage() {
   );
 
   useHotkeys(
-    "cmd+shift+f",
+    "cmd+shift+o",
     () => {
       onFormatSQL();
     },
