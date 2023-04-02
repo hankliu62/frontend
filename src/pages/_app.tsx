@@ -1,6 +1,9 @@
 import "@/styles/globals.css";
+// monaco-editor
 import "highlight.js/styles/googlecode.css";
 import "diff2html/bundles/css/diff2html.min.css";
+// video.js
+import "video.js/dist/video-js.min.css";
 import "nprogress/nprogress.css";
 
 import { StyleProvider } from "@ant-design/cssinjs";
