@@ -6,6 +6,7 @@ import {
   BellIcon,
   CircleStackIcon,
   CodeBracketSquareIcon,
+  PlayCircleIcon,
   QrCodeIcon,
   VariableIcon,
   XMarkIcon,
@@ -66,6 +67,13 @@ const navigation = [
           "把二维码技术变成简单实用的产品，让每个人都可以快速复用成功案例经验，免费制作出能高效解决业务问题的二维码",
         href: "/toolboxes/qrcode",
         icon: QrCodeIcon,
+      },
+      {
+        name: "VideoPlayer",
+        description:
+          "在线视频播放器，m3u8格式的视频在线播放器，提供在线m3u8视频播放服务",
+        href: "/toolboxes/video-player",
+        icon: PlayCircleIcon,
       },
     ],
   },

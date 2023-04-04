@@ -7,7 +7,7 @@ import React from "react";
 export default function Footer({ className }: { className?: string }) {
   return (
     <footer className={classNames("h-[62px]", { [className]: className })}>
-      <div className="px-4 sm:px-6">
+      <div className="px-3 sm:px-5">
         <div className="border-t border-gray-200 py-5 text-left text-sm text-gray-500 sm:text-center">
           <span className="block sm:inline">
             &copy; {new Date().getFullYear()} 卡鲁秋, Inc.

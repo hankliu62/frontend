@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "common-border": "#d9d9d9",
+      },
       keyframes: {
         continue: {
           "16%": { content: '"."' },

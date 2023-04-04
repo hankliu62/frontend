@@ -7,8 +7,9 @@ import "video.js/dist/video-js.min.css";
 import "nprogress/nprogress.css";
 
 import { StyleProvider } from "@ant-design/cssinjs";
-import { Watermark } from "antd";
-import type { NextPage } from "next";
+import { ConfigProvider as AntdConfigProvider, Watermark } from "antd";
+import zhCN from "antd/locale/zh_CN";
+import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Router from "next/router";
@@ -56,13 +57,15 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
       {getLayout(
         <StyleProvider hashPriority="high">
-          <Watermark
-            content="HankLiu Toolbox"
-            font={{ color: "rgba(0, 0, 0, 0.1)" }}
-            className="flex h-full flex-1 flex-col"
-          >
-            <Component {...pageProps} />
-          </Watermark>
+          <AntdConfigProvider locale={zhCN}>
+            <Watermark
+              content="HankLiu Toolbox"
+              font={{ color: "rgba(0, 0, 0, 0.1)" }}
+              className="flex h-full flex-1 flex-col"
+            >
+              <Component {...pageProps} />
+            </Watermark>
+          </AntdConfigProvider>
           <Toaster />
         </StyleProvider>
       )}

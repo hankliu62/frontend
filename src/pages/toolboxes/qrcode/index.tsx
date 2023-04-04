@@ -1,25 +1,20 @@
 import {
   CopyOutlined,
+  DeleteOutlined,
   FileAddOutlined,
-  FileTextOutlined,
+  UploadOutlined,
 } from "@ant-design/icons";
-import { InboxOutlined } from "@ant-design/icons";
-import type { UploadProps } from "antd";
-import { Button, message, Upload } from "antd";
-import { useCallback, useEffect, useState } from "react";
+import { Alert, Button, Image, Input, message, Tooltip, Upload } from "antd";
+import QRCode from "qrcode";
+import QrCodeParser from "qrcode-parser";
+import { useCallback, useState } from "react";
 import SplitPane from "react-split-pane";
+import { v4 as uuidv4 } from "uuid";
 
+import Clipboard from "@/components/Clipboard";
 import { CodeEditor } from "@/components/CodeEditor";
 
 const { Dragger } = Upload;
-
-// 转化方式
-enum EConvertWay {
-  H2M = "H2M",
-  Turndown = "Turndown",
-  HTML2markdown = "HTML2markdown",
-  HTMLToMd = "html-to-md",
-}
 
 /**
  * 在线二维码生成和解析工具
@@ -28,6 +23,114 @@ enum EConvertWay {
  */
 export default function QRCodePage() {
   const [content, setContent] = useState<string>();
+
+  const [qrCodes, setQrCodes] =
+    useState<{ uuid: string; content: string; image: string }[]>();
+
+  // 解析的二维码内容
+  const [parsedContent, setParsedContent] = useState<string>();
+  // 解析的二维码路径
+  const [parsedQrCode, setParsedQrCode] = useState<string>();
+  // 解析二维码时错误信息
+  const [parsedError, setParsedError] = useState<string>();
+
+  function resetParsedState() {
+    setParsedError(undefined);
+    setParsedContent(undefined);
+    setParsedQrCode(undefined);
+  }
+
+  /**
+   * 粘贴图片
+   */
+  const onParseClipboardImage = useCallback(async () => {
+    resetParsedState();
+
+    try {
+      const clipboardItems = await navigator.clipboard.read();
+
+      for (const clipboardItem of clipboardItems) {
+        if (!clipboardItem.types.includes("image/png")) {
+          throw new Error("Clipboard contains non-image data.");
+        }
+
+        const blob = await clipboardItem.getType("image/png");
+        const url = URL.createObjectURL(blob);
+        const qrCodeContent = await QrCodeParser(url);
+
+        setParsedContent(qrCodeContent);
+        setParsedQrCode(url);
+      }
+    } catch (error) {
+      setParsedError(error.message);
+      message.error(error.message);
+    }
+  }, []);
+
+  /**
+   * 监听上传文件修改事件
+   */
+  const onUploadChange = useCallback(async (info) => {
+    resetParsedState();
+
+    const { status, originFileObj } = info.file;
+    if (status !== "uploading") {
+      console.log(info.file, info.fileList);
+    }
+    if (status === "done") {
+      const file = originFileObj;
+
+      try {
+        const qrCodeContent = await QrCodeParser(file);
+        setParsedContent(qrCodeContent);
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setParsedQrCode(reader.result.toString());
+
+          message.success(`${info.file.name} 文件上传成功。`);
+        };
+        // eslint-disable-next-line unicorn/prefer-add-event-listener
+        reader.onerror = (error) => {
+          setParsedError(error?.target?.error?.message);
+          console.error(error);
+        };
+        reader.readAsDataURL(file);
+      } catch (error) {
+        setParsedError(error.message);
+        console.error(error);
+      }
+    } else if (status === "error") {
+      message.error(`${info.file.name} 文件上传失败。`);
+    }
+  }, []);
+
+  /**
+   * 生成QrCode
+   */
+  const onCreateQrCode = useCallback(async () => {
+    try {
+      const image = await QRCode.toDataURL(content, {
+        width: 300,
+      });
+
+      setQrCodes((prev) => [
+        ...(prev || []),
+        { uuid: uuidv4(), content, image },
+      ]);
+    } catch (error) {
+      message.error(error.message);
+    }
+  }, [content]);
+
+  /**
+   * 删除QrCode
+   */
+  const onDeleteQrCode = useCallback((index: number) => {
+    setQrCodes((prev) =>
+      (prev || []).filter((item, innerIndex) => index !== innerIndex)
+    );
+  }, []);
 
   return (
     <div className="relative flex h-full flex-1 flex-col bg-white">
@@ -40,20 +143,55 @@ export default function QRCodePage() {
               <Button
                 className="!inline-flex items-center"
                 icon={<FileAddOutlined />}
-                onClick={() => {}}
+                onClick={onCreateQrCode}
               >
                 生成
               </Button>
             </div>
           </div>
           <CodeEditor
+            className="h-60 min-h-0"
             value={content}
             language="plaintext"
             onChange={(val) => {
               setContent(val);
             }}
-            options={{ theme: "vs-light" }}
+            options={{ theme: "vs-dark" }}
           />
+
+          <div className="m-5 space-y-5">
+            {qrCodes?.map(({ uuid, content, image }, index) => (
+              <div
+                key={uuid}
+                className="flex items-start justify-between gap-2"
+              >
+                <div className="flex flex-1 items-stretch gap-2">
+                  <Image
+                    className="rounded border border-common-border"
+                    width={156}
+                    height={156}
+                    src={image}
+                    alt={content}
+                  />
+                  <div className="flex flex-1">
+                    <Input.TextArea
+                      className="h-full w-full flex-1 !bg-black/5"
+                      value={content}
+                      autoSize={false}
+                      readOnly
+                    />
+                  </div>
+                </div>
+                <div
+                  className="group p-2 text-[0px]"
+                  onClick={() => onDeleteQrCode(index)}
+                  aria-hidden="true"
+                >
+                  <DeleteOutlined className="cursor-pointer text-base group-hover:text-red-600" />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="overflow-y-auto">
           <div className="flex justify-between border-b border-black/20 px-6 py-4">
@@ -63,45 +201,73 @@ export default function QRCodePage() {
               <Button
                 className="!inline-flex items-center"
                 icon={<FileAddOutlined />}
-                onClick={() => {}}
+                onClick={onParseClipboardImage}
               >
                 粘贴图片
               </Button>
             </div>
           </div>
-          <Dragger
-            className="!my-5 !mx-10 block"
-            name="file"
-            multiple={true}
-            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-            onChange={(info) => {
-              const { status } = info.file;
-              if (status !== "uploading") {
-                console.log(info.file, info.fileList);
-              }
-              if (status === "done") {
-                message.success(
-                  `${info.file.name} file uploaded successfully.`
-                );
-              } else if (status === "error") {
-                message.error(`${info.file.name} file upload failed.`);
-              }
-            }}
-            onDrop={(e) => {
-              console.log("Dropped files", e.dataTransfer.files);
-            }}
-          >
-            <p className="ant-upload-drag-icon">
-              <InboxOutlined />
-            </p>
-            <p className="ant-upload-text">
-              Click or drag file to this area to upload
-            </p>
-            <p className="ant-upload-hint">
-              Support for a single or bulk upload. Strictly prohibited from
-              uploading company data or other banned files.
-            </p>
-          </Dragger>
+
+          <div className="m-5 space-y-5">
+            <Dragger
+              accept="image/*"
+              className="block"
+              name="file"
+              multiple={false}
+              onChange={onUploadChange}
+              onDrop={(e) => {
+                console.log("Dropped files", e.dataTransfer.files);
+              }}
+              showUploadList={false}
+            >
+              <p className="ant-upload-drag-icon">
+                <UploadOutlined />
+              </p>
+              <p className="ant-upload-text">点击选择图片文件 或 拖进来</p>
+              <p className="ant-upload-hint">
+                仅支持jpg、jpeg、png等图片格式，单个文件大小不超过10M
+              </p>
+            </Dragger>
+
+            {parsedError && (
+              <Alert
+                message="Error"
+                description={parsedError}
+                type="error"
+                showIcon
+                closable
+                onClose={() => setParsedError(undefined)}
+              />
+            )}
+
+            {parsedQrCode && (
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-stretch gap-2">
+                  <Image
+                    className="rounded border border-common-border"
+                    width={168}
+                    height={168}
+                    src={parsedQrCode}
+                    alt={parsedContent}
+                  />
+                  <div className="h-[168px] flex-1 overflow-y-auto whitespace-pre-wrap break-all rounded border border-common-border bg-black/5 py-1 px-3 leading-[20px]">
+                    {parsedContent}
+                  </div>
+                </div>
+
+                <Clipboard
+                  text={parsedContent}
+                  onSuccess={() => {
+                    message.success("复制成功");
+                  }}
+                >
+                  <div className="group p-2 text-[0px]">
+                    <CopyOutlined className="cursor-pointer text-base group-hover:text-blue-500" />
+                  </div>
+                </Clipboard>
+              </div>
+            )}
+          </div>
         </div>
       </SplitPane>
     </div>
