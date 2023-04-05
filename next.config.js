@@ -1,5 +1,10 @@
 /* eslint-disable unicorn/no-array-for-each */
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
+// 需要设置options，只移除@uiw库中的css等文件，不然nomaco-editor无样式
+const removeImports = require("next-remove-imports")({
+  test: /node_modules\/@uiw([\S\s]*?)\.(tsx|ts|js|mjs|jsx)$/,
+  matchImports: "\\.(less|css|scss|sass|styl)$",
+});
 const path = require("node:path");
 
 const withTM = require("next-transpile-modules")([
@@ -151,4 +156,4 @@ const nextConfig = {
   plugins: [require("@tailwindcss/forms")],
 };
 
-module.exports = withTM(nextConfig);
+module.exports = withTM(removeImports(nextConfig));

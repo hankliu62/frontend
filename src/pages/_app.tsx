@@ -5,6 +5,9 @@ import "diff2html/bundles/css/diff2html.min.css";
 // video.js
 import "video.js/dist/video-js.min.css";
 import "nprogress/nprogress.css";
+// markdown-editor
+import "@uiw/react-md-editor/markdown-editor.css";
+import "@uiw/react-markdown-preview/markdown.css";
 
 import { StyleProvider } from "@ant-design/cssinjs";
 import { ConfigProvider as AntdConfigProvider, Watermark } from "antd";

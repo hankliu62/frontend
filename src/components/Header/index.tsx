@@ -6,6 +6,7 @@ import {
   BellIcon,
   CircleStackIcon,
   CodeBracketSquareIcon,
+  DocumentTextIcon,
   PlayCircleIcon,
   QrCodeIcon,
   VariableIcon,
@@ -64,16 +65,23 @@ const navigation = [
       {
         name: "QRCode",
         description:
-          "把二维码技术变成简单实用的产品，让每个人都可以快速复用成功案例经验，免费制作出能高效解决业务问题的二维码",
+          "把二维码技术变成简单实用的产品，让每个人都可以快速复用成功案例经验，免费制作出能高效解决业务问题的二维码。",
         href: "/toolboxes/qrcode",
         icon: QrCodeIcon,
       },
       {
         name: "VideoPlayer",
         description:
-          "在线视频播放器，m3u8格式的视频在线播放器，提供在线m3u8视频播放服务",
+          "支持m3u8格式的在线视频播放器网站提供了便捷的视频播放服务，用户可以在网站上上传或输入m3u8格式的视频链接进行播放，涵盖了丰富的视频分类和资源，满足用户各种需求。同时，该网站还提供了多种播放模式、清晰度选择和画面比例调整等功能，用户可以根据自己的喜好自主进行设置，让视频观看更加舒适，是一款值得推荐的在线视频播放器网站。",
         href: "/toolboxes/video-player",
         icon: PlayCircleIcon,
+      },
+      {
+        name: "Markdown 编辑阅读器",
+        description:
+          "Markdown 编辑阅读器，为用户提供了在线编写Markdown文档的平台，用户只需打开网站，就可以在网页上直接编写 Markdown 文档，通过在线编辑器可以让用户快速方便地在线创作、编辑、预览 Markdown 文档，进一步提高编辑效率和文档质量。",
+        href: "/toolboxes/markdown",
+        icon: DocumentTextIcon,
       },
     ],
   },
