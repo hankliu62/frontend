@@ -3214,3 +3214,25 @@ export const locations = [
   { id: "810000", name: "香港特别行政区", superId: "0" },
   { id: "820000", name: "澳门特别行政区", superId: "0" },
 ];
+
+export type TLocation = (typeof locations)[number];
+
+export type TLocationIDNoMap = Record<TLocation["id"], TLocation>;
+// 身份证开头 - 省市区信息Map
+const locationMap: TLocationIDNoMap = {};
+
+export type TLocationNameIDNoMap = Record<TLocation["name"], TLocation["id"]>;
+
+// 省市区信息 - 省市区信息身份证开头Map
+const locationNameMap: TLocationNameIDNoMap = {};
+// eslint-disable-next-line unicorn/no-array-reduce
+locations.reduce(
+  (record: [TLocationIDNoMap, TLocationNameIDNoMap], item) => (
+    (record[0][item.id] = item), (record[1][item.name] = item.id), record
+  ),
+  [locationMap, locationNameMap]
+);
+
+export const locationIDNoMap = locationMap;
+
+export const locationNameIDNoMap = locationNameMap;

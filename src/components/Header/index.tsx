@@ -7,6 +7,7 @@ import {
   CircleStackIcon,
   CodeBracketSquareIcon,
   DocumentTextIcon,
+  IdentificationIcon,
   PlayCircleIcon,
   QrCodeIcon,
   VariableIcon,
@@ -82,6 +83,13 @@ const navigation = [
           "Markdown 编辑阅读器，为用户提供了在线编写Markdown文档的平台，用户只需打开网站，就可以在网页上直接编写 Markdown 文档，通过在线编辑器可以让用户快速方便地在线创作、编辑、预览 Markdown 文档，进一步提高编辑效率和文档质量。",
         href: "/toolboxes/markdown",
         icon: DocumentTextIcon,
+      },
+      {
+        name: "身份证生成器",
+        description:
+          "身份证号码生成器是按身份证验证规则生成虚拟身份证号，非真实身份证，仅供测试使用，请勿用于非法用途。",
+        href: "/toolboxes/id-no",
+        icon: IdentificationIcon,
       },
     ],
   },

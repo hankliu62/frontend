@@ -7,6 +7,7 @@ import PrettierWorker from "worker-loader!../../../workers/prettier.worker.ts";
 
 import { CodeEditor } from "@/components/CodeEditor";
 import { LanguageDemo, Languages } from "@/constants/editor";
+import { TEditorLanguage } from "@/types/editor";
 import { createWorkerQueue } from "@/utils/workers";
 
 const LanguagesOptions = Languages.map((item) => ({
@@ -16,7 +17,7 @@ const LanguagesOptions = Languages.map((item) => ({
 
 export default function MonacoEditorPage() {
   const [value, setValue] = useState<string>();
-  const [language, setLanguage] = useState<(typeof Languages)[number]>("html");
+  const [language, setLanguage] = useState<TEditorLanguage>("html");
   const editor = useRef<MonacoEditor.IStandaloneCodeEditor>();
 
   const prettierWorker = useRef<any>();

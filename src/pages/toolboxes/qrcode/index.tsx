@@ -137,7 +137,7 @@ export default function QRCodePage() {
       <SplitPane className="flex-1" split="vertical" minSize={50} maxSize={75}>
         <div className="overflow-y-auto">
           <div className="flex justify-between border-b border-black/20 px-6 py-4">
-            <h2 className="text-lg font-medium leading-[32px]">生产二维码</h2>
+            <h2 className="text-lg font-medium leading-[32px]">生成二维码</h2>
 
             <div className="flex items-center space-x-5">
               <Button
