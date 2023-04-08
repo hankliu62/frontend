@@ -219,9 +219,9 @@ export function generateIDNo(
       Math.floor(Math.random() * 10).toString() +
       Math.floor(Math.random() * 10).toString();
 
-    if (sex === ESex.Female && Number.parseInt(s, 10) % 2 === 0) {
+    if (sex === ESex.Female && Number.parseInt(randomStr, 10) % 2 === 0) {
       s = randomStr;
-    } else if (sex === ESex.Male && Number.parseInt(s, 10) % 2 !== 0) {
+    } else if (sex === ESex.Male && Number.parseInt(randomStr, 10) % 2 !== 0) {
       s = randomStr;
     }
   }

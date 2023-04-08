@@ -8,10 +8,12 @@ import "nprogress/nprogress.css";
 // markdown-editor
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
+import "dayjs/locale/zh-cn";
 
 import { StyleProvider } from "@ant-design/cssinjs";
 import { ConfigProvider as AntdConfigProvider, Watermark } from "antd";
 import zhCN from "antd/locale/zh_CN";
+import dayjs from "dayjs";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -21,6 +23,8 @@ import { ReactElement, ReactNode, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
 import DefaultLayout from "@/layouts/index";
+
+dayjs.locale("zh_CN");
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;

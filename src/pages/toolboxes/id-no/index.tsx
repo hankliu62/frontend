@@ -31,11 +31,11 @@ import { generateIDNo, IParseIDNoInfo, parseIDNoInfo } from "@/utils/tools";
  * @returns
  */
 export default function IDNoPage() {
-  // 出生地址(默认北京市 - 北京市 - 东城区)
+  // 出生地址(默认湖南省 - 娄底市 - 涟源市)
   const [location, setLocation] = useState<string[]>([
-    "110000",
-    "110100",
-    "110101",
+    "430000",
+    "431300",
+    "431382",
   ]);
   // 生日
   const [birthday, setBirthday] = useState<Dayjs>(
@@ -327,7 +327,7 @@ export default function IDNoPage() {
                                     parseIDNoInfoResult.city
                                   ] ? (
                                     <div className="text-lg">
-                                      {parseIDNoInfoResult.province}.
+                                      {parseIDNoInfoResult.province}·
                                       {parseIDNoInfoResult.city}
                                       身份证开头前6位:{" "}
                                       <span className="text-red-500">
@@ -364,8 +364,8 @@ export default function IDNoPage() {
                                     parseIDNoInfoResult.county
                                   ] ? (
                                     <div className="text-lg">
-                                      {parseIDNoInfoResult.province}.
-                                      {parseIDNoInfoResult.city}.
+                                      {parseIDNoInfoResult.province}·
+                                      {parseIDNoInfoResult.city}·
                                       {parseIDNoInfoResult.county}
                                       身份证开头前6位:{" "}
                                       <span className="text-red-500">

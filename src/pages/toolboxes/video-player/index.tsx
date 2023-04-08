@@ -37,6 +37,7 @@ export default function VideoPlayerPage() {
               autoSize={{ minRows: 3, maxRows: 20 }}
               value={source}
               onChange={(e) => setSource(e.target.value)}
+              placeholder="请输入视频数据源，支持m3u8、flv、rtmp、RTS等格式的视频"
             />
           </div>
         </div>
