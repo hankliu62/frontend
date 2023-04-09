@@ -23,7 +23,7 @@ import {
   TLocation,
 } from "@/components/Location/location";
 import { ESex } from "@/enums/common";
-import { generateIDNo, IParseIDNoInfo, parseIDNoInfo } from "@/utils/tools";
+import { IParseIDNoInfo, parseIDNoInfo, randomIDNo } from "@/utils/tools";
 
 /**
  * 在线身份证生成和解析工具
@@ -60,7 +60,7 @@ export default function IDNoPage() {
     const idNos = [];
     const address = location.at(-1); // 住址
     for (let i = 0; i < count; i++) {
-      idNos.push(generateIDNo(address, birthday.toDate(), sex));
+      idNos.push(randomIDNo(address, birthday.toDate(), sex));
     }
 
     setResult(idNos);
