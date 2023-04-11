@@ -1997,3 +1997,19 @@ export const bankList = [
     ],
   },
 ];
+
+// 银行卡类型
+export enum EBankCardType {
+  DC = "DC", // 储蓄卡
+  CC = "CC", // 信用卡
+  SCC = "SCC", // 准贷记卡
+  PC = "PC", // 预付费卡
+}
+
+// 银行卡类型名称
+export const BankCardTypeName = {
+  [EBankCardType.DC]: "储蓄卡",
+  [EBankCardType.CC]: "信用卡",
+  [EBankCardType.SCC]: "准贷记卡",
+  [EBankCardType.PC]: "预付费卡",
+};

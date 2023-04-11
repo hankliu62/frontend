@@ -2,7 +2,7 @@
 import dayjs from "dayjs";
 
 import { locationIDNoMap } from "@/components/Location/location";
-import { bankList } from "@/constants/bank";
+import { BankCardTypeName, bankList, EBankCardType } from "@/constants/bank";
 import { ESex } from "@/enums/common";
 
 // 身份证加权因子
@@ -241,80 +241,92 @@ export function randomIDNo(
 }
 
 /**
- * Luhn校验算法校验银行卡号；Luhm校验规则：16位银行卡号（19位通用）:1、将未带校验位的 15（或18）位卡号从右依次编号 1 到 15（18），位于奇数位号上的数字乘以 2；2、将奇位乘积的个十位全部相加，再加上所有偶数位上的数字。
+ * Luhn校验算法校验银行卡号；Luhn校验规则：16位银行卡号（19位通用）:1、将未带校验位的 15（或18）位卡号从右依次编号 1 到 15（18），位于奇数位号上的数字乘以 2；2、将奇位乘积的个十位全部相加，再加上所有偶数位上的数字。
  *
  * @param {string} bankNo 银行卡号
  *
  * @returns 是否为正确的银行卡号
  */
 export function verifyBankNo(bankNo: string) {
-  const lastNum = bankNo.slice(-1, bankNo.length - 1 + 1); //取出最后一位（与luhm进行比较）
-  const first15Num = bankNo.slice(0, Math.max(0, bankNo.length - 1)); //前15或18位
-  const newArr = [];
-  for (let i = first15Num.length - 1; i > -1; i--) {
+  const lastNum = bankNo.slice(-1, bankNo.length - 1 + 1); //取出最后一位（与Luhn进行比较）
+  const firstNumbers = bankNo.slice(0, Math.max(0, bankNo.length - 1)); //前15或18位
+  const prefixNumbers = [];
+  for (let i = firstNumbers.length - 1; i > -1; i--) {
     //前15或18位倒序存进数组
-    newArr.push(first15Num.substr(i, 1));
+    prefixNumbers.push(firstNumbers.substr(i, 1));
   }
-  const arrJiShu = []; //奇数位*2的积 <9
-  const arrJiShu2 = []; //奇数位*2的积 >9
-  const arrOuShu = []; //偶数位数组
-  for (const [j, element] of newArr.entries()) {
+  // 奇数位，且其值 * 2 < 9 的值组成数组
+  const minOddNumbers = []; // 奇数位*2的积 < 9
+  // 奇数位，且其值 * 2 > 9 的值组成数组
+  const maxOddNumbers = []; //奇数位*2的积 >9
+  // 偶数位值组成数组
+  const evenNumbers = [];
+  for (const [j, num] of prefixNumbers.entries()) {
+    // 奇数位
     if ((j + 1) % 2 === 1) {
-      //奇数位
-      if (Number.parseInt(element) * 2 < 9)
-        arrJiShu.push(Number.parseInt(element) * 2);
-      else arrJiShu2.push(Number.parseInt(element) * 2);
-    } //偶数位
-    else arrOuShu.push(element);
+      if (Number.parseInt(num) * 2 < 9) {
+        minOddNumbers.push(Number.parseInt(num) * 2);
+      } else {
+        maxOddNumbers.push(Number.parseInt(num) * 2);
+      }
+    } else {
+      // 偶数位
+      evenNumbers.push(num);
+    }
   }
-  const jishuChild1 = []; //奇数位*2 >9 的分割之后的数组个位数
-  const jishuChild2 = []; //奇数位*2 >9 的分割之后的数组十位数
-  for (const element of arrJiShu2) {
-    jishuChild1.push(Number.parseInt(element) % 10);
-    jishuChild2.push(Number.parseInt(element) / 10);
+  // 奇数位，且其值 * 2 > 9 的值, 值的个位组成的数组
+  const maxOddNumberOnesPlaces = []; // 奇数位*2 >9 的分割之后的数组个位数
+  // 奇数位，且其值 * 2 > 9 的值, 值的十位组成的数组
+  const maxOddNumberDecades = []; // 奇数位*2 >9 的分割之后的数组十位数
+  for (const num of maxOddNumbers) {
+    maxOddNumberOnesPlaces.push(Number.parseInt(num) % 10);
+    maxOddNumberDecades.push(Number.parseInt(num) / 10);
   }
-  let sumJiShu = 0; //奇数位*2 < 9 的数组之和
-  let sumOuShu = 0; //偶数位数组之和
-  let sumJiShuChild1 = 0; //奇数位*2 >9 的分割之后的数组个位数之和
-  let sumJiShuChild2 = 0; //奇数位*2 >9 的分割之后的数组十位数之和
+  // 奇数位，且其值 * 2 < 9 的值组成数组之和
+  let sumMinOddNumber = 0; // 奇数位*2 < 9 的数组之和
+  // 偶数位值组成数组之和
+  let sumEvenNumber = 0; // 偶数位数组之和
+  // 奇数位，且其值 * 2 > 9 的值, 值的个位组成的数组之和
+  let sumMaxOddNumberOnesPlaces = 0; // 奇数位*2 >9 的分割之后的数组个位数之和
+  // 奇数位，且其值 * 2 > 9 的值, 值的十位组成的数组之和
+  let sumMaxOddNumberDecades = 0; //奇数位*2 >9 的分割之后的数组十位数之和
   let sumTotal = 0;
-  for (const element of arrJiShu) {
-    sumJiShu = sumJiShu + Number.parseInt(element);
+  for (const num of minOddNumbers) {
+    sumMinOddNumber = sumMinOddNumber + Number.parseInt(num);
   }
-  for (const element of arrOuShu) {
-    sumOuShu = sumOuShu + Number.parseInt(element);
+  for (const num of evenNumbers) {
+    sumEvenNumber = sumEvenNumber + Number.parseInt(num);
   }
-  for (const [p, element] of jishuChild1.entries()) {
-    sumJiShuChild1 = sumJiShuChild1 + Number.parseInt(element);
-    sumJiShuChild2 = sumJiShuChild2 + Number.parseInt(jishuChild2[p]);
+  for (const [i, num] of maxOddNumberOnesPlaces.entries()) {
+    sumMaxOddNumberOnesPlaces =
+      sumMaxOddNumberOnesPlaces + Number.parseInt(num);
+    sumMaxOddNumberDecades =
+      sumMaxOddNumberDecades + Number.parseInt(maxOddNumberDecades[i]);
   }
   //计算总和
-  sumTotal = sumJiShu + sumOuShu + sumJiShuChild1 + sumJiShuChild2;
-  //计算Luhm值
+  sumTotal =
+    sumMinOddNumber +
+    sumEvenNumber +
+    sumMaxOddNumberOnesPlaces +
+    sumMaxOddNumberDecades;
+  //计算Luhn值
   const k = sumTotal % 10 === 0 ? 10 : sumTotal % 10;
-  const luhm = 10 - k;
-  // 是否通过Luhm验证
-  return Number.parseInt(lastNum) === luhm;
+  // 是否通过Luhn验证
+  return Number.parseInt(lastNum) === 10 - k;
 }
-
-const CardTypeMap = {
-  DC: "储蓄卡",
-  CC: "信用卡",
-  SCC: "准贷记卡",
-  PC: "预付费卡",
-};
 
 export interface IBankNoInfo {
   bankName: string; // 银行名称
   bankCode: string; // 银行代码
-  cardType: keyof typeof CardTypeMap; // 银行卡类型
+  cardType: EBankCardType; // 银行卡类型
   cardTypeName: string; // 银行卡类型名称
+  isValidateLuhn: boolean; // 是否符合Luhn(“模10算法”)校验
 }
 /**
  * 通过用户输入的银行卡号识别该银行卡所属开户行银行名称
  *
  * @param {string} bankNo 银行卡号
- * @returns 返回银行信息对象：{bankName: '银行名称', bankCode: '银行代码', cardType: '银行卡类型', cardTypeName: '银行卡类型名称'}
+ * @returns 返回银行信息对象：{bankName: '银行名称', bankCode: '银行代码', cardType: '银行卡类型', cardTypeName: '银行卡类型名称', isValidateLuhn: false}
  */
 export function parseBankNoInfo(bankNo: string): IBankNoInfo {
   for (let i = 0, len = bankList.length; i < len; i++) {
@@ -327,7 +339,8 @@ export function parseBankNoInfo(bankNo: string): IBankNoInfo {
           bankName: bankcard.bankName, // 银行名称
           bankCode: bankcard.bankCode, // 银行代码
           cardType: pattern.cardType as IBankNoInfo["cardType"], // 银行卡类型
-          cardTypeName: CardTypeMap[pattern.cardType], // 银行卡类型名称
+          cardTypeName: BankCardTypeName[pattern.cardType], // 银行卡类型名称
+          isValidateLuhn: verifyBankNo(bankNo), // 是否符合Luhn(“模10算法”)校验
         };
         return info;
       }
@@ -341,19 +354,26 @@ export function parseBankNoInfo(bankNo: string): IBankNoInfo {
  * 随机银行卡号
  *
  * @param bankCode 银行代码(银行简称)
+ * @param bankCardType 银行卡类型
  * @returns
  */
-export function randomBankNo(bankCode: string) {
+export function randomBankNo(bankCode: string, bankCardType: EBankCardType) {
   let prefix = "622200"; // 中国工商银行
   let suffixCount = 13; // 后面code长度
+  const bankType = bankCardType || EBankCardType.DC;
   const back =
     bankList.find((item) => item.bankCode === bankCode) || bankList[0];
 
-  if (back.patterns?.[0]?.reg) {
-    const matched = /^\^\((\d+)[^)]+\)\\d{(\d+)}\$$/.exec(back.patterns[0].reg);
-    if (matched && matched.length > 0 && matched[1] && matched[2]) {
-      prefix = matched[1];
-      suffixCount = Number.parseInt(matched[2]);
+  const patterns = back.patterns;
+  if (patterns && patterns.length > 0) {
+    const pattern = patterns.find((item) => item.cardType === bankType);
+    if (pattern?.reg) {
+      const matched = /^\^\(([\d|]+)[^)]+\)\\d{(\d+)}\$$/.exec(pattern.reg);
+      if (matched && matched.length > 0 && matched[1] && matched[2]) {
+        const prefixes = matched[1].split("|");
+        prefix = prefixes.sort(() => Math.random() - 0.5).pop();
+        suffixCount = Number.parseInt(matched[2]);
+      }
     }
   }
 
