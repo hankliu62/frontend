@@ -27,6 +27,6 @@ module.exports = {
     "scope-case": [2, "always", ["camel-case", "kebab-case", "pascal-case"]], // (scope)只能是数组中的集中类型[小驼峰，中划线，大驼峰]
     "subject-full-stop": [0, "never"],
     "subject-case": [0, "never"],
-    "header-max-length": [2, "always", 72], // header最长72
+    "header-max-length": [2, "always", 120], // header最长120
   },
 };
