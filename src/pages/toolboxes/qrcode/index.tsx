@@ -4,7 +4,7 @@ import {
   FileAddOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
-import { Alert, Button, Image, Input, message, Tooltip, Upload } from "antd";
+import { Alert, Button, Image, Input, message, Upload } from "antd";
 import QRCode from "qrcode";
 import QrCodeParser from "qrcode-parser";
 import { useCallback, useState } from "react";
@@ -250,7 +250,7 @@ export default function QRCodePage() {
                     src={parsedQrCode}
                     alt={parsedContent}
                   />
-                  <div className="h-[168px] flex-1 overflow-y-auto whitespace-pre-wrap break-all rounded border border-common-border bg-black/5 py-1 px-3 leading-[20px]">
+                  <div className="h-[168px] flex-1 overflow-y-auto whitespace-pre-wrap break-all rounded border border-common-border bg-black/5 px-3 py-1 leading-[20px]">
                     {parsedContent}
                   </div>
                 </div>
