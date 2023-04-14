@@ -1,3 +1,6 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable indentation */
+/* stylelint-disable selector-descendant-combinator-no-non-space */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,4 +47,17 @@ body > #__next {
 
 .ant-card.link-card .ant-card-body {
   @apply p-4;
+}
+
+.ant-select
+  .ant-select-selector
+  .ant-select-selection-item
+  .ant-space
+  .ant-space-item
+  .description {
+  @apply hidden;
+}
+
+.ant-select .ant-select-selector .ant-select-selection-item .description {
+  @apply hidden;
 }
