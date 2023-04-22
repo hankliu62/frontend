@@ -259,6 +259,10 @@ spec:
   progressDeadlineSeconds: 600
 `;
 
+/**
+ * 代码差异对比页面
+ * @returns
+ */
 export default function Diff() {
   return (
     <div className="bg-white p-6">
