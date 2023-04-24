@@ -9,6 +9,11 @@ import { format as formatSQL } from "sql-formatter";
 import Clipboard from "@/components/Clipboard";
 import { SqlEditor } from "@/components/SqlEditor";
 
+/**
+ * SQL在线编辑器页面
+ *
+ * @returns
+ */
 export default function SqlEditorPage() {
   const [value, setValue] = useState<string>();
   const editor = useRef<MonacoEditor.IStandaloneCodeEditor>();
