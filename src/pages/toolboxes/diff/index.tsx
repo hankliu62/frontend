@@ -1,5 +1,6 @@
 import DiffCode from "@/components/DiffCode";
 
+// 对比老字符串
 const prevData = `kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -131,6 +132,7 @@ spec:
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
 `;
+// 对比新字符串
 const newData = `kind: Deployment
 apiVersion: apps/v1
 metadata:
