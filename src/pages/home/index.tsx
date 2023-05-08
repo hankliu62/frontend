@@ -229,6 +229,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+/**
+ * 首页
+ *
+ * @returns
+ */
 export default function Home() {
   return (
     <div className="bg-white">
@@ -362,7 +367,7 @@ export default function Home() {
               className="absolute inset-x-0 top-0 z-30 origin-top-right transform p-2 transition md:hidden"
             >
               <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-                <div className="px-5 pt-5 pb-6">
+                <div className="px-5 pb-6 pt-5">
                   <div className="flex items-center justify-between">
                     <div>
                       <img
@@ -397,7 +402,7 @@ export default function Home() {
                     </nav>
                   </div>
                 </div>
-                <div className="py-6 px-5">
+                <div className="px-5 py-6">
                   <div className="grid grid-cols-2 gap-4">
                     <a
                       href="#"
@@ -453,7 +458,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700 mix-blend-multiply" />
               </div>
-              <div className="relative py-16 px-6 sm:py-24 lg:py-32 lg:px-8">
+              <div className="relative px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
                 <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                   <span className="block text-white">Take control of your</span>
                   <span className="block text-indigo-200">
@@ -488,7 +493,7 @@ export default function Home() {
 
         {/* Logo Cloud */}
         <div className="bg-gray-100">
-          <div className="py-16 px-6 lg:px-8">
+          <div className="px-6 py-16 lg:px-8">
             <p className="text-center text-base font-semibold text-gray-500">
               Trusted by over 5 very average small businesses
             </p>
@@ -533,14 +538,14 @@ export default function Home() {
         </div>
 
         {/* Alternating Feature Sections */}
-        <div className="relative overflow-hidden pt-16 pb-32">
+        <div className="relative overflow-hidden pb-32 pt-16">
           <div
             aria-hidden="true"
             className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100"
           />
           <div className="relative">
             <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-              <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
+              <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:py-16">
                 <div>
                   <div>
                     <span className="flex h-12 w-12 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600">
@@ -610,7 +615,7 @@ export default function Home() {
           </div>
           <div className="mt-24">
             <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-              <div className="mx-auto max-w-xl px-6 lg:col-start-2 lg:mx-0 lg:max-w-none lg:py-32 lg:px-0">
+              <div className="mx-auto max-w-xl px-6 lg:col-start-2 lg:mx-0 lg:max-w-none lg:px-0 lg:py-32">
                 <div>
                   <div>
                     <span className="flex h-12 w-12 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600">
@@ -657,7 +662,7 @@ export default function Home() {
 
         {/* Gradient Feature Section */}
         <div className="bg-gradient-to-r from-purple-800 to-indigo-700">
-          <div className="mx-auto max-w-4xl py-16 px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
+          <div className="mx-auto max-w-4xl px-6 py-16 sm:pb-24 sm:pt-20 lg:max-w-7xl lg:px-8 lg:pt-24">
             <h2 className="text-3xl font-bold tracking-tight text-white">
               Inbox support built for efficiency
             </h2>
@@ -709,7 +714,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto max-w-4xl px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-flow-col-dense xl:grid-cols-2 xl:gap-x-8">
-            <div className="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
+            <div className="relative pb-64 pt-12 sm:pb-64 sm:pt-24 xl:col-start-1 xl:pb-24">
               <h2 className="text-base font-semibold">
                 <span className="bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent">
                   Valuable Metrics
@@ -725,7 +730,7 @@ export default function Home() {
                 Dapibus laoreet amet lacus nibh integer quis. Eu vulputate diam
                 sit tellus quis at.
               </p>
-              <div className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
+              <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2">
                 {metrics.map((item) => (
                   <p key={item.id}>
                     <span className="block text-2xl font-bold text-white">
@@ -746,14 +751,14 @@ export default function Home() {
 
         {/* CTA Section */}
         <div className="bg-white">
-          <div className="mx-auto max-w-4xl py-16 px-6 sm:py-24 lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-8">
+          <div className="mx-auto max-w-4xl px-6 py-16 sm:py-24 lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-8">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               <span className="block">Ready to get started?</span>
               <span className="-mb-1 block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text pb-1 text-transparent">
                 Get in touch or create an account.
               </span>
             </h2>
-            <div className="mt-6 space-y-4 sm:flex sm:space-y-0 sm:space-x-5">
+            <div className="mt-6 space-y-4 sm:flex sm:space-x-5 sm:space-y-0">
               <a
                 href="#"
                 className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700"
@@ -775,7 +780,7 @@ export default function Home() {
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="px-6 pt-16 pb-8 lg:px-8 lg:pt-24">
+        <div className="px-6 pb-8 pt-16 lg:px-8 lg:pt-24">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="grid grid-cols-2 gap-8 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -867,10 +872,10 @@ export default function Home() {
                   id="email-address"
                   autoComplete="email"
                   required
-                  className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
+                  className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
                   placeholder="Enter your email"
                 />
-                <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                <div className="mt-3 rounded-md sm:ml-3 sm:mt-0 sm:flex-shrink-0">
                   <button
                     type="submit"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700"
