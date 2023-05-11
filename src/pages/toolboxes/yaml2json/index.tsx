@@ -16,8 +16,10 @@ import { LanguageDemo } from "@/constants/editor";
 export default function Yaml2JsonPage() {
   const [sourceLanguage, setSourceLanguage] = useState<"yaml" | "json">("yaml");
 
+  // yaml数据
   const [yaml, setYaml] = useState<string>();
 
+  // json数据
   const [json, setJson] = useState<string>();
 
   useEffect(() => {
