@@ -133,11 +133,6 @@ export default function Yaml2JsonPage() {
    */
   const onChangeTargetEditor = useCallback(
     (val) => {
-      // if (sourceLanguage === "yaml") {
-      //   setJson(val);
-      // } else {
-      //   setYaml(val);
-      // }
       console.log(
         `target ${{ json: "yaml", yaml: "json" }[sourceLanguage]} changed.`,
         val
