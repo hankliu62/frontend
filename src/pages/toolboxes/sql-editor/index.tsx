@@ -28,6 +28,7 @@ export default function SqlEditorPage() {
     [value]
   );
 
+  // 快捷键格式化SQL
   useHotkeys(
     "cmd+shift+o",
     () => {
