@@ -30,6 +30,7 @@ export default function HTML2Markdown() {
 
   const [markdown, setMarkdown] = useState<string>();
 
+  // 转换方式
   const [convertWay, setConvertWay] = useState<EConvertWay>(EConvertWay.H2M);
 
   useEffect(() => {
