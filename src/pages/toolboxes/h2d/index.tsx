@@ -34,6 +34,7 @@ export default function HTML2Markdown() {
   const [convertWay, setConvertWay] = useState<EConvertWay>(EConvertWay.H2M);
 
   useEffect(() => {
+    // 获得HTML转化成Markdown字符串
     const md = getMarkdownByWay(convertWay, html);
     setMarkdown(md);
   }, [html, convertWay]);
