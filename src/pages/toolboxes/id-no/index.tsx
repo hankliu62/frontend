@@ -57,6 +57,7 @@ export default function IDNoPage() {
       return;
     }
 
+    // 身份证号码列表
     const idNos = [];
     const address = location.at(-1); // 住址
     for (let i = 0; i < count; i++) {
@@ -115,7 +116,7 @@ export default function IDNoPage() {
           </div>
 
           <div className="m-4 rounded border border-common-border">
-            <div className="bg-[#d3ccd6] py-3 px-4 text-sm text-[#6f4b3e]">
+            <div className="bg-[#d3ccd6] px-4 py-3 text-sm text-[#6f4b3e]">
               在线随机身份证号码生成器
             </div>
             <div className="space-y-3 p-4">
@@ -224,7 +225,7 @@ export default function IDNoPage() {
           </div>
 
           <div className="m-4 rounded border border-common-border">
-            <div className="bg-[#d3ccd6] py-3 px-4 text-sm text-[#6f4b3e]">
+            <div className="bg-[#d3ccd6] px-4 py-3 text-sm text-[#6f4b3e]">
               身份证号大全
             </div>
             <div className="space-y-3 p-4">
