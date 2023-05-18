@@ -92,6 +92,7 @@ export default function IDNoPage() {
       return;
     }
 
+    // 解析获得身份证信息
     const IDNoInfo = parseIDNoInfo(parseIDNo);
     if (IDNoInfo.isTrue) {
       setParseIDNoInfoResult(IDNoInfo);
