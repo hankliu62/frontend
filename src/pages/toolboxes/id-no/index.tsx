@@ -94,6 +94,7 @@ export default function IDNoPage() {
 
     // 解析获得身份证信息
     const IDNoInfo = parseIDNoInfo(parseIDNo);
+    // 判断身份证是否正确
     if (IDNoInfo.isTrue) {
       setParseIDNoInfoResult(IDNoInfo);
     } else {
