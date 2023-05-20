@@ -87,6 +87,7 @@ export default function IDNoPage() {
     setParseIDNoInfoResult(undefined);
     setParseIDNoInfoError(undefined);
 
+    // 如果身份证号码不是18位，提示错误
     if (parseIDNo?.length !== 18) {
       message.error("请输入18位二代身份证号码");
       return;
