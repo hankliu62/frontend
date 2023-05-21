@@ -84,6 +84,7 @@ export default function IDNoPage() {
    * 解析身份证
    */
   const onSearchIDNo = useCallback(() => {
+    // 将结果先置空
     setParseIDNoInfoResult(undefined);
     setParseIDNoInfoError(undefined);
 
