@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
+/**
+ * 防抖state
+ *
+ * @param initialValue
+ * @param timeout
+ * @returns
+ */
 export function useDebouncedState(initialValue, timeout = 100) {
   const [value, setValue] = useState({ value: initialValue });
   const [debouncedValue, setDebouncedValue] = useState(initialValue);
