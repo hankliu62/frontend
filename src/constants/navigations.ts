@@ -1,3 +1,6 @@
+/**
+ * 技术导航列表
+ */
 export const navigations = [
   // {
   //   id: 1,
