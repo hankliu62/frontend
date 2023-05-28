@@ -34,6 +34,11 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
+/**
+ * 网站入口APP类
+ * @param param0
+ * @returns
+ */
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   useEffect(() => {
     const handleRouteStart = () => NProgress.start();
