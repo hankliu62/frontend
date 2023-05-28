@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
 export function useDebouncedState(initialValue, timeout = 100) {
   const [value, setValue] = useState({ value: initialValue });
   const [debouncedValue, setDebouncedValue] = useState(initialValue);
-  const handler = useRef();
+  const handler = useRef<number>();
 
   useEffect(() => {
     handler.current = window.setTimeout(() => {
