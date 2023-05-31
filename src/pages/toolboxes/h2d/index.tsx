@@ -87,6 +87,8 @@ export default function HTML2Markdown() {
 
   return (
     <div className="relative flex h-full flex-1 flex-col bg-white">
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
       <SplitPane className="flex-1" split="vertical" minSize={50} maxSize={75}>
         <div className="overflow-y-auto">
           <div className="flex justify-between border-b border-black/20 px-6 py-4">
