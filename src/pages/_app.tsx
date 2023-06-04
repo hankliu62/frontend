@@ -44,6 +44,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     const handleRouteStart = () => NProgress.start();
     const handleRouteDone = () => NProgress.done();
 
+    // add route change event handler
     Router.events.on("routeChangeStart", handleRouteStart);
     Router.events.on("routeChangeComplete", handleRouteDone);
     Router.events.on("routeChangeError", handleRouteDone);
