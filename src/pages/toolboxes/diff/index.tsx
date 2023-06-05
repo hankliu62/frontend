@@ -267,7 +267,7 @@ spec:
  */
 export default function Diff() {
   return (
-    <div className="bg-white p-6">
+    <div className="bg-white p-8">
       <DiffCode
         title="配置文件"
         diffDataList={[
