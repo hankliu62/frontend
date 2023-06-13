@@ -136,7 +136,7 @@ const SqlEditor: ForwardRefRenderFunction<
         theme: getTheme() === "light" ? "vs-dark" : "vs-light",
         tabSize: 2, // tab的空格个数
         renderWhitespace: "all", // 始终显示空格
-        ...options,
+        ...options, // 自定义选项
       });
 
       // 监听文件内容修改
