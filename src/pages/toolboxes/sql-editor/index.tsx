@@ -47,7 +47,7 @@ export default function SqlEditorPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<ThunderboltOutlined />}
+                icon={<ThunderboltOutlined rev={undefined} />}
                 onClick={() => {
                   onFormatSQL();
                 }}
@@ -63,7 +63,7 @@ export default function SqlEditorPage() {
               >
                 <Button
                   className="!inline-flex items-center"
-                  icon={<CopyOutlined />}
+                  icon={<CopyOutlined rev={undefined} />}
                 >
                   拷贝
                 </Button>

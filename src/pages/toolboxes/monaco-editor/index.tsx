@@ -89,7 +89,7 @@ export default function MonacoEditorPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<HourglassOutlined />}
+                icon={<HourglassOutlined rev={undefined} />}
                 onClick={onSetExample}
                 disabled={!LanguageDemo[language]}
               >
@@ -98,7 +98,7 @@ export default function MonacoEditorPage() {
 
               <Button
                 className="!inline-flex items-center"
-                icon={<ThunderboltOutlined />}
+                icon={<ThunderboltOutlined rev={undefined} />}
                 onClick={() => {
                   onFormatCode();
                 }}

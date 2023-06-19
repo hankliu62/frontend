@@ -10,6 +10,8 @@ export function setupTsxMode(content) {
 
   //  设置typescript 使用jsx 的编译方式
   monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     jsx: "react",
   });
 

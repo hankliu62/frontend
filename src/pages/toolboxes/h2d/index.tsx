@@ -97,7 +97,7 @@ export default function HTML2Markdown() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<FileTextOutlined />}
+                icon={<FileTextOutlined rev={undefined} />}
                 onClick={() => {
                   setHtml(LanguageDemo.html);
                 }}
@@ -112,7 +112,7 @@ export default function HTML2Markdown() {
               >
                 <Button
                   className="!inline-flex items-center"
-                  icon={<CopyOutlined />}
+                  icon={<CopyOutlined rev={undefined} />}
                 >
                   拷贝
                 </Button>
@@ -156,7 +156,7 @@ export default function HTML2Markdown() {
               >
                 <Button
                   className="!inline-flex items-center"
-                  icon={<CopyOutlined />}
+                  icon={<CopyOutlined rev={undefined} />}
                 >
                   拷贝
                 </Button>

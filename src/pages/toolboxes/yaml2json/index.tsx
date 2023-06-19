@@ -185,7 +185,7 @@ export default function Yaml2JsonPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<FileTextOutlined />}
+                icon={<FileTextOutlined rev={undefined} />}
                 onClick={onSetExample}
               >
                 案例
@@ -199,7 +199,7 @@ export default function Yaml2JsonPage() {
               >
                 <Button
                   className="!inline-flex items-center"
-                  icon={<CopyOutlined />}
+                  icon={<CopyOutlined rev={undefined} />}
                 >
                   拷贝
                 </Button>
@@ -248,7 +248,7 @@ export default function Yaml2JsonPage() {
               >
                 <Button
                   className="!inline-flex items-center"
-                  icon={<CopyOutlined />}
+                  icon={<CopyOutlined rev={undefined} />}
                 >
                   拷贝
                 </Button>

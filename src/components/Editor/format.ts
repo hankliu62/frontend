@@ -41,18 +41,25 @@ export function registerDocumentFormattingEditProviders() {
   //   }
 
   // };
-  ["css", "less", "scss", "javascript", "typescript", "html"].forEach((id) => {
+  for (const id of [
+    "css",
+    "less",
+    "scss",
+    "javascript",
+    "typescript",
+    "html",
+  ]) {
     disposables.push(
       monaco.languages.registerDocumentFormattingEditProvider(
         id,
         formattingEditProvider
       )
     );
-  });
+  }
 
   return {
     dispose() {
-      disposables.forEach((disposable) => disposable.dispose());
+      for (const disposable of disposables) disposable.dispose();
       if (prettierWorker) {
         prettierWorker.terminate();
       }

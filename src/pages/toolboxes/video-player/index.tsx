@@ -54,7 +54,7 @@ export default function VideoPlayerPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<PlaySquareOutlined />}
+                icon={<PlaySquareOutlined rev={undefined} />}
                 onClick={onPlay}
               >
                 立即播放

@@ -144,7 +144,7 @@ export default function QRCodePage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<FileAddOutlined />}
+                icon={<FileAddOutlined rev={undefined} />}
                 onClick={onCreateQrCode}
               >
                 生成
@@ -189,7 +189,10 @@ export default function QRCodePage() {
                   onClick={() => onDeleteQrCode(index)}
                   aria-hidden="true"
                 >
-                  <DeleteOutlined className="cursor-pointer text-base group-hover:text-red-600" />
+                  <DeleteOutlined
+                    className="cursor-pointer text-base group-hover:text-red-600"
+                    rev={undefined}
+                  />
                 </div>
               </div>
             ))}
@@ -202,7 +205,7 @@ export default function QRCodePage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<FileAddOutlined />}
+                icon={<FileAddOutlined rev={undefined} />}
                 onClick={onParseClipboardImage}
               >
                 粘贴图片
@@ -223,7 +226,7 @@ export default function QRCodePage() {
               showUploadList={false}
             >
               <p className="ant-upload-drag-icon">
-                <UploadOutlined />
+                <UploadOutlined rev={undefined} />
               </p>
               <p className="ant-upload-text">点击选择图片文件 或 拖进来</p>
               <p className="ant-upload-hint">
@@ -264,7 +267,10 @@ export default function QRCodePage() {
                   }}
                 >
                   <div className="group p-2 text-[0px]">
-                    <CopyOutlined className="cursor-pointer text-base group-hover:text-blue-500" />
+                    <CopyOutlined
+                      className="cursor-pointer text-base group-hover:text-blue-500"
+                      rev={undefined}
+                    />
                   </div>
                 </Clipboard>
               </div>
