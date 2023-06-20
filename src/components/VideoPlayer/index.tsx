@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import classNames from "classnames";
-import { odd } from "odd.player.js";
+// import odd from "odd.player.js";
 import {
   forwardRef,
   ForwardRefRenderFunction,
@@ -51,53 +51,52 @@ const VideoPlayer: ForwardRefRenderFunction<
           controls: true, // 显示播放的控件
         });
       } else {
-        videoPlayerNode.current.innerHTML = "";
-        videoPlayer.current = odd.player.ui.create({ mode: "file" });
-
-        videoPlayer.current.addGlobalListener(console.log);
-        videoPlayer.current.addEventListener("ready", () => {});
-        videoPlayer.current.addEventListener("click", () => {});
-        videoPlayer.current.addEventListener("screenshot", () => {});
-        videoPlayer.current.addEventListener("error", console.error);
-        videoPlayer.current.setup(videoPlayerNode.current, {
-          autoplay: false,
-          bufferLength: 0.5, // sec.
-          lowlatency: true, // ll-dash, ll-hls, ll-flv/fmp4 (auto reduce latency due to cumulative ack of tcp)
-          maxBufferLength: 1.5, // sec.
-          maxRetries: 0, // maximum number of retries while some types of error occurs. -1 means always
-          mode: "live", // live, vod
-          module: "FLV", // SRC, FLV, FMP4, DASH*, HLS*, RTC
-          objectfit: "contain", // fill, contain, cover, none, scale-down
-          retrying: 0, // ms. retrying interval
-          loader: {
-            name: "auto",
-            mode: "cors", // cors, no-cors, same-origin
-            credentials: "omit", // omit, include, same-origin
-          },
-          plugins: [
-            {
-              kind: "Poster",
-              // file: this.posterUrl,
-              cors: "anonymous", // anonymous, use-credentials
-              objectfit: "contain", // fill, contain, cover, none, scale-down
-              visibility: true,
-            },
-            {
-              kind: "Display",
-              layout:
-                "[Button:play=][Button:waiting=][Label:error=][Panel:info=][Panel:stats=]",
-              ondoubleclick: "fullscreen",
-              visibility: true,
-            },
-            {
-              kind: "Controlbar",
-              layout:
-                "[Slider:timebar=Preview]|[Button:play=播放][Button:pause=暂停][Button:reload=重新加载][Button:stop=停止][Label:quote=Live][Label:time=00:00/00:00]||[Button:capture=截图][Button:mute=静音][Button:unmute=取消静音][Slider:volumebar=80][Select:definition=清晰度][Button:fullscreen=全屏][Button:exitfullscreen=退出全屏]",
-              autohide: false,
-              visibility: true,
-            },
-          ],
-        });
+        // videoPlayerNode.current.innerHTML = "";
+        // videoPlayer.current = odd.player.ui.create({ mode: "file" });
+        // videoPlayer.current.addGlobalListener(console.log);
+        // videoPlayer.current.addEventListener("ready", () => {});
+        // videoPlayer.current.addEventListener("click", () => {});
+        // videoPlayer.current.addEventListener("screenshot", () => {});
+        // videoPlayer.current.addEventListener("error", console.error);
+        // videoPlayer.current.setup(videoPlayerNode.current, {
+        //   autoplay: false,
+        //   bufferLength: 0.5, // sec.
+        //   lowlatency: true, // ll-dash, ll-hls, ll-flv/fmp4 (auto reduce latency due to cumulative ack of tcp)
+        //   maxBufferLength: 1.5, // sec.
+        //   maxRetries: 0, // maximum number of retries while some types of error occurs. -1 means always
+        //   mode: "live", // live, vod
+        //   module: "FLV", // SRC, FLV, FMP4, DASH*, HLS*, RTC
+        //   objectfit: "contain", // fill, contain, cover, none, scale-down
+        //   retrying: 0, // ms. retrying interval
+        //   loader: {
+        //     name: "auto",
+        //     mode: "cors", // cors, no-cors, same-origin
+        //     credentials: "omit", // omit, include, same-origin
+        //   },
+        //   plugins: [
+        //     {
+        //       kind: "Poster",
+        //       // file: this.posterUrl,
+        //       cors: "anonymous", // anonymous, use-credentials
+        //       objectfit: "contain", // fill, contain, cover, none, scale-down
+        //       visibility: true,
+        //     },
+        //     {
+        //       kind: "Display",
+        //       layout:
+        //         "[Button:play=][Button:waiting=][Label:error=][Panel:info=][Panel:stats=]",
+        //       ondoubleclick: "fullscreen",
+        //       visibility: true,
+        //     },
+        //     {
+        //       kind: "Controlbar",
+        //       layout:
+        //         "[Slider:timebar=Preview]|[Button:play=播放][Button:pause=暂停][Button:reload=重新加载][Button:stop=停止][Label:quote=Live][Label:time=00:00/00:00]||[Button:capture=截图][Button:mute=静音][Button:unmute=取消静音][Slider:volumebar=80][Select:definition=清晰度][Button:fullscreen=全屏][Button:exitfullscreen=退出全屏]",
+        //       autohide: false,
+        //       visibility: true,
+        //     },
+        //   ],
+        // });
       }
     }
 
@@ -110,9 +109,9 @@ const VideoPlayer: ForwardRefRenderFunction<
   const onPlay = useCallback(() => {
     const player = getVideoPlayer();
     if (type === EVideoType.VideoJs) {
-      player.play();
+      player?.play();
     } else {
-      player.play(source);
+      player?.play(source);
     }
   }, [getVideoPlayer, type, source]);
 
@@ -122,9 +121,9 @@ const VideoPlayer: ForwardRefRenderFunction<
   const onPause = useCallback(() => {
     const player = getVideoPlayer();
     if (type === EVideoType.VideoJs) {
-      player.pause();
+      player?.pause();
     } else {
-      player.pause(source);
+      player?.pause(source);
     }
   }, [getVideoPlayer, type, source]);
 
