@@ -46,7 +46,7 @@ export default function SelectBank({
       label: bankName,
       value: bankCode,
       description: bankCode || "",
-      filterLabel: name + "|" + (bankCode || ""),
+      filterLabel: bankName + "|" + (bankCode || ""),
     }));
   }, []);
 
