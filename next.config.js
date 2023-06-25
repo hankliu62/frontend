@@ -172,7 +172,7 @@ if (isGithubActions) {
   // 这在将应用部署到子目录下时特别有用，因为它允许您指定应用所在的目录
   nextConfig.basePath = `/${repo}`;
 
-  console.log("nextConfig:", nextConfig);
+  console.log("next config:", nextConfig);
 }
 
 module.exports = withTM(removeImports(nextConfig));
