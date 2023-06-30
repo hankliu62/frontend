@@ -32,6 +32,6 @@ jobs:
       - name: 部署 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: out
+          branch: gh-pages # 部署后提交到那个分支
+          folder: .next # 这里填打包好的目录名称
           clean: true
