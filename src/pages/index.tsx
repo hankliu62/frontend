@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 import { navigations } from "@/constants/navigations";
+import { getRoutePrefix } from "@/utils/route";
 
 function useAnchor(navigations) {
   const [currentSection, setCurrentSection] = useState(
@@ -84,7 +85,7 @@ export default function Dashboard() {
           <div className="absolute inset-0">
             <img
               className="h-full w-full object-cover"
-              src="/dashboard/images/bg.png"
+              src={`${getRoutePrefix()}/dashboard/images/bg.png`}
               alt="People working on laptops"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700 mix-blend-multiply" />

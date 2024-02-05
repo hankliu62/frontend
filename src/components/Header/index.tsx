@@ -145,7 +145,7 @@ export default function Header({ className }: IHeaderProps) {
                   <Link href="/">
                     <Image
                       className="h-8 w-8"
-                      src="/logo.svg"
+                      src={`${getRoutePrefix()}/logo.svg`}
                       alt="卡鲁秋"
                       width={32}
                       height={32}
