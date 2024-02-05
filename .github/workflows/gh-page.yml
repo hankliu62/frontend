@@ -28,10 +28,10 @@ jobs:
       - name: 安装依赖 📦
         run: yarn install --frozen-lockfile
       - name: 打包 🏗️
-        run: yarn build
+        run: npm run build && touch ./out/.nojekyll # run: touch ./out/.nojekyll是因为由于 Jekyll 处理,GitHub 默认不提供_next文件夹,.nojekyll文件阻止了这种情况,
       - name: 部署 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # 部署后提交到那个分支
-          folder: .next # 这里填打包好的目录名称
+          folder: out # 这里填打包好的目录名称
           clean: true

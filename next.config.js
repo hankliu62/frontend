@@ -107,6 +107,7 @@ const Languages = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export", // 导出静态文件out
   reactStrictMode: true,
   images: {
     unoptimized: true,
@@ -158,6 +159,9 @@ const nextConfig = {
     ];
   },
   plugins: [require("@tailwindcss/forms")],
+  env: {
+    ROUTE_PREFIX: "",
+  },
 };
 
 // 是否通过github actions部署
@@ -171,6 +175,7 @@ if (isGithubActions) {
   // 用于为应用设置基础路径
   // 这在将应用部署到子目录下时特别有用，因为它允许您指定应用所在的目录
   nextConfig.basePath = `/${repo}`;
+  nextConfig.env.ROUTE_PREFIX = `/${repo}`;
 
   console.log("next config is:", nextConfig);
 }

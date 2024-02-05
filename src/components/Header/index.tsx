@@ -1,3 +1,4 @@
+import { getRoutePrefix } from "@/utils/route";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import {
@@ -189,7 +190,7 @@ export default function Header({ className }: IHeaderProps) {
                         </a>
                       );
                       return item.type === "link" ? (
-                        <Link legacyBehavior key={item.name} href={item.href}>
+                        <Link legacyBehavior key={item.name} href={`${getRoutePrefix()}${item.href}`}>
                           {link}
                         </Link>
                       ) : (
@@ -211,7 +212,7 @@ export default function Header({ className }: IHeaderProps) {
                                 const subLink = (
                                   <a
                                     key={subItem.name}
-                                    href={subItem.href}
+                                    href={`${getRoutePrefix()}${subItem.href}`}
                                     className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                                     onClick={() => {
                                       setOpenSubMenuPopover((prev) => ({
@@ -302,7 +303,7 @@ export default function Header({ className }: IHeaderProps) {
                           <Menu.Item key={item.name}>
                             {({ active }) => (
                               <a
-                                href={item.href}
+                                href={`${getRoutePrefix()}${item.href}`}
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
