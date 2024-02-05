@@ -145,19 +145,20 @@ const nextConfig = {
 
     return config;
   },
-  async headers() {
-    return [
-      {
-        source: "/styles/animate.css/@4.1.1/animate.css",
-        headers: [
-          {
-            key: "cache-control",
-            value: "public, immutable, max-age=31536000",
-          },
-        ],
-      },
-    ];
-  },
+  // 在output: "export" 模式下无法使用rewrites 或者headers 等设置，官方文档列出的完整不支持的功能如下：
+  // async headers() {
+  //   return [
+  //     {
+  //       source: "/styles/animate.css/@4.1.1/animate.css",
+  //       headers: [
+  //         {
+  //           key: "cache-control",
+  //           value: "public, immutable, max-age=31536000",
+  //         },
+  //       ],
+  //     },
+  //   ];
+  // },
   plugins: [require("@tailwindcss/forms")],
   env: {
     ROUTE_PREFIX: "",
