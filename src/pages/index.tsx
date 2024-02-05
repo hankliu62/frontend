@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 
-import { Affix, Avatar, Card, Tooltip } from "antd";
+import { Affix, Avatar, Card, Skeleton, Tooltip } from "antd";
 import classNames from "classnames";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import LazyLoad from "react-lazyload";
 
 import { navigations } from "@/constants/navigations";
 import { getRoutePrefix } from "@/utils/route";
@@ -193,10 +194,24 @@ export default function Dashboard() {
                         >
                           <Card.Meta
                             avatar={
-                              <Avatar
-                                src={item.logoUrl}
-                                className="full object-contain shadow"
-                              />
+                              <LazyLoad
+                                overflow={false}
+                                once={false}
+                                height={30}
+                                offset={50}
+                                placeholder={
+                                  <Skeleton.Avatar
+                                    size={30}
+                                    shape="circle"
+                                    active
+                                  />
+                                }
+                              >
+                                <Avatar
+                                  src={item.logoUrl}
+                                  className="full object-contain shadow"
+                                />
+                              </LazyLoad>
                             }
                             title={
                               <div className="truncate">

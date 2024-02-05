@@ -49,6 +49,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.0",
     "react-hotkeys-hook": "^4.3.8",
+    "react-lazyload": "^3.2.0",
     "react-split-pane": "^2.0.3",
     "sql-formatter": "^12.2.0",
     "turndown": "^7.1.2",
