@@ -89,7 +89,7 @@ export default function Dashboard() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700 mix-blend-multiply" />
           </div>
-          <div className="relative py-16 px-6 sm:py-24 lg:py-32 lg:px-8">
+          <div className="relative px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
             <h1 className="animate__animated animate__bounceInDown text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               <span className="block text-white">前端技术网站</span>
               <span className="block text-indigo-200"></span>
@@ -107,9 +107,9 @@ export default function Dashboard() {
           {/* 左侧导航条 */}
           <div className="hidden lg:relative lg:block lg:flex-none">
             <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
-            <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
-            <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
-            <div className="sticky top-[0] -ml-0.5 overflow-y-auto overflow-x-hidden pt-8 pb-16 pl-0.5">
+            <div className="absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
+            <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-slate-800 dark:block" />
+            <div className="sticky top-[0] -ml-0.5 overflow-y-auto overflow-x-hidden pb-16 pl-0.5 pt-8">
               <nav aria-labelledby="menu" className="w-56">
                 {navigations.length > 0 && (
                   <>
@@ -168,7 +168,7 @@ export default function Dashboard() {
           </div>
 
           {/* body */}
-          <div className="min-w-0 flex-auto px-8 py-8 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-8">
+          <div className="min-w-0 flex-auto px-8 py-8 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-8">
             <ul>
               {navigations?.map((navigation) => (
                 <li

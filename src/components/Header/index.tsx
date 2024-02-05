@@ -1,4 +1,3 @@
-import { getRoutePrefix } from "@/utils/route";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import {
@@ -21,6 +20,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { Fragment, useState } from "react";
+
+import { getRoutePrefix } from "@/utils/route";
 
 const user = {
   name: "Hank Liu",
@@ -190,7 +191,11 @@ export default function Header({ className }: IHeaderProps) {
                         </a>
                       );
                       return item.type === "link" ? (
-                        <Link legacyBehavior key={item.name} href={`${getRoutePrefix()}${item.href}`}>
+                        <Link
+                          legacyBehavior
+                          key={item.name}
+                          href={`${getRoutePrefix()}${item.href}`}
+                        >
                           {link}
                         </Link>
                       ) : (
