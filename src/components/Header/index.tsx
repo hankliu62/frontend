@@ -105,6 +105,8 @@ const navigation = [
   { name: "小练习", href: "/questions", type: "link" },
   { name: "小作文", href: "/compositions", type: "link" },
   { name: "小绘画", href: "/paints", type: "link" },
+  { name: "小动画", href: "/icss", type: "link", withoutPrefix: true },
+  { name: "小复习", href: "/interview", type: "link", withoutPrefix: true },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -194,7 +196,9 @@ export default function Header({ className }: IHeaderProps) {
                         <Link
                           legacyBehavior
                           key={item.name}
-                          href={`${getRoutePrefix()}${item.href}`}
+                          href={`${item.withoutPrefix ? "" : getRoutePrefix()}${
+                            item.href
+                          }`}
                         >
                           {link}
                         </Link>

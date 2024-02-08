@@ -23,6 +23,7 @@ import { ReactElement, ReactNode, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
 import DefaultLayout from "@/layouts/index";
+import { getRoutePrefix } from "@/utils/route";
 
 dayjs.locale("zh_CN");
 
@@ -65,7 +66,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     <>
       <Head>
         <title>卡鲁秋 - 前端小工具集合</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${getRoutePrefix()}/favicon.ico`} />
       </Head>
 
       {getLayout(
