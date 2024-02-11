@@ -102,11 +102,15 @@ const navigation = [
       },
     ],
   },
-  { name: "小练习", href: "/questions", type: "link" },
+  { name: "小习题", href: "/questions", type: "link" },
   { name: "小作文", href: "/compositions", type: "link" },
   { name: "小绘画", href: "/paints", type: "link" },
-  { name: "小动画", href: "/icss", type: "link", withoutPrefix: true },
-  { name: "小复习", href: "/interview", type: "link", withoutPrefix: true },
+  { name: "小动画", href: "https://hankliu62.github.io/icss", type: "link" },
+  {
+    name: "小复习",
+    href: "https://hankliu62.github.io/interview",
+    type: "link",
+  },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -192,85 +196,118 @@ export default function Header({ className }: IHeaderProps) {
                           )}
                         </a>
                       );
-                      return item.type === "link" ? (
-                        <Link
-                          legacyBehavior
-                          key={item.name}
-                          href={`${item.withoutPrefix ? "" : getRoutePrefix()}${
-                            item.href
-                          }`}
-                        >
-                          {link}
-                        </Link>
-                      ) : (
-                        <Popover
-                          open={openSubMenuPopover[item.href]}
-                          onOpenChange={(open) => {
-                            setOpenSubMenuPopover((prev) => ({
-                              ...prev,
-                              [item.href]: open,
-                            }));
-                          }}
-                          trigger="click"
-                          placement="bottomLeft"
-                          arrow={false}
-                          key={item.name}
-                          content={
-                            <div className="relative grid grid-cols-2 gap-4 bg-white px-2 py-3 sm:gap-6 sm:p-4 2xl:grid-cols-3">
-                              {item.children.map((subItem) => {
-                                const subLink = (
-                                  <a
-                                    key={subItem.name}
-                                    href={`${getRoutePrefix()}${subItem.href}`}
-                                    className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
-                                    onClick={() => {
-                                      setOpenSubMenuPopover((prev) => ({
-                                        ...prev,
-                                        [item.href]: false,
-                                      }));
-                                    }}
-                                  >
-                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-                                      <subItem.icon
-                                        className="h-5 w-5"
-                                        aria-hidden="true"
-                                      />
-                                    </div>
-                                    <div className="ml-2 max-w-[150px] truncate">
-                                      <p className="truncate text-sm font-medium text-gray-900">
-                                        {subItem.name}
-                                      </p>
-                                      <p className="mt-1 truncate text-xs text-gray-500">
-                                        <Tooltip
-                                          placement="topLeft"
-                                          title={subItem.description}
-                                        >
-                                          <span>{subItem.description}</span>
-                                        </Tooltip>
-                                      </p>
-                                    </div>
-                                  </a>
-                                );
 
-                                // 判断是否为内部链接
-                                return subItem.href.startsWith(item.href) ? (
-                                  <Link
-                                    legacyBehavior
-                                    key={subItem.name}
-                                    href={subItem.href}
-                                  >
-                                    {subLink}
-                                  </Link>
-                                ) : (
-                                  <span key={subItem.name}>{subLink}</span>
-                                );
-                              })}
-                            </div>
-                          }
-                        >
-                          {link}
-                        </Popover>
-                      );
+                      // 弹出框
+                      if (item.type === "popover") {
+                        return (
+                          <Popover
+                            open={openSubMenuPopover[item.href]}
+                            onOpenChange={(open) => {
+                              setOpenSubMenuPopover((prev) => ({
+                                ...prev,
+                                [item.href]: open,
+                              }));
+                            }}
+                            trigger="click"
+                            placement="bottomLeft"
+                            arrow={false}
+                            key={item.name}
+                            content={
+                              <div className="relative grid grid-cols-2 gap-4 bg-white px-2 py-3 sm:gap-6 sm:p-4 2xl:grid-cols-3">
+                                {item.children.map((subItem) => {
+                                  const subLink = (
+                                    <a
+                                      key={subItem.name}
+                                      href={`${getRoutePrefix()}${
+                                        subItem.href
+                                      }`}
+                                      className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                                      onClick={() => {
+                                        setOpenSubMenuPopover((prev) => ({
+                                          ...prev,
+                                          [item.href]: false,
+                                        }));
+                                      }}
+                                    >
+                                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                        <subItem.icon
+                                          className="h-5 w-5"
+                                          aria-hidden="true"
+                                        />
+                                      </div>
+                                      <div className="ml-2 max-w-[150px] truncate">
+                                        <p className="truncate text-sm font-medium text-gray-900">
+                                          {subItem.name}
+                                        </p>
+                                        <p className="mt-1 truncate text-xs text-gray-500">
+                                          <Tooltip
+                                            placement="topLeft"
+                                            title={subItem.description}
+                                          >
+                                            <span>{subItem.description}</span>
+                                          </Tooltip>
+                                        </p>
+                                      </div>
+                                    </a>
+                                  );
+
+                                  // 判断是否为内部链接
+                                  return subItem.href.startsWith(item.href) ? (
+                                    <Link
+                                      legacyBehavior
+                                      key={subItem.name}
+                                      href={subItem.href}
+                                    >
+                                      {subLink}
+                                    </Link>
+                                  ) : (
+                                    <span key={subItem.name}>{subLink}</span>
+                                  );
+                                })}
+                              </div>
+                            }
+                          >
+                            {link}
+                          </Popover>
+                        );
+                      }
+
+                      if (item.type === "link") {
+                        // 判断是否为外部链接
+                        return /^https?:\/\//.test(item.href) ? (
+                          <a
+                            key={item.name}
+                            target="_blank"
+                            href={item.href}
+                            className={classNames(
+                              (
+                                item.href === "/"
+                                  ? router.asPath === item.href
+                                  : router.asPath.startsWith(item.href)
+                              )
+                                ? "bg-purple-900 text-white"
+                                : "text-gray-300 hover:bg-purple-700 hover:text-white",
+                              "rounded-md px-3 py-2 text-sm font-medium"
+                            )}
+                            aria-current={
+                              (
+                                item.href === "/"
+                                  ? router.asPath === item.href
+                                  : router.asPath.startsWith(item.href)
+                              )
+                                ? "page"
+                                : undefined
+                            }
+                            rel="noreferrer"
+                          >
+                            {item.name}
+                          </a>
+                        ) : (
+                          <Link legacyBehavior key={item.name} href={item.href}>
+                            {link}
+                          </Link>
+                        );
+                      }
                     })}
                   </div>
                 </div>

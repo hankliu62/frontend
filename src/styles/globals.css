@@ -1,3 +1,4 @@
+/* stylelint-disable selector-combinator-space-before */
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable indentation */
 /* stylelint-disable selector-descendant-combinator-no-non-space */
@@ -60,4 +61,34 @@ body > #__next {
 
 .ant-select .ant-select-selector .ant-select-selection-item .description {
   @apply hidden;
+}
+
+.issues-card
+  .issues-list.ant-list-vertical
+  .ant-list-item
+  .ant-list-item-meta
+  .ant-list-item-meta-title {
+  @apply mb-2;
+}
+
+.issues-card
+  .issues-list.ant-list.ant-list-vertical
+  .ant-list-item
+  .ant-list-item-action {
+  @apply mt-2;
+}
+
+.issues-card
+  .issues-list.ant-list-vertical
+  .ant-list-item:hover
+  .ant-list-item-meta
+  .ant-list-item-meta-title
+  .issue-title {
+  @apply underline;
+}
+
+.question-menus-collapse.ant-collapse
+  .ant-collapse-content
+  > .ant-collapse-content-box {
+  @apply px-0;
 }
