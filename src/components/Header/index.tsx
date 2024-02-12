@@ -6,6 +6,7 @@ import {
   BellIcon,
   CircleStackIcon,
   CodeBracketSquareIcon,
+  CommandLineIcon,
   DocumentTextIcon,
   HashtagIcon,
   IdentificationIcon,
@@ -99,6 +100,13 @@ const navigation = [
           "身份证号码生成器是按身份证验证规则生成虚拟身份证号，非真实身份证，仅供测试使用，请勿用于非法用途。",
         href: "/toolboxes/id-no",
         icon: IdentificationIcon,
+      },
+      {
+        name: "TypeScript 类型生成器",
+        description:
+          "TypeScript 类型生成器工具将JSON数据转换为TypeScript类型定义，从而让TypeScript项目更高效的开发。",
+        href: "/toolboxes/json2ts",
+        icon: CommandLineIcon,
       },
     ],
   },

@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useMemo, useState } from "react";
 
+import MarkdownPreview from "@/components/MarkdownPreview";
 import { GithubOrigin, GithubOwner, GithubRepo } from "@/constants/backend";
 import useAnchor from "@/hooks/useAnchor";
 import {
@@ -16,9 +17,9 @@ import {
   fetchIssueByStaticProps,
 } from "@/lib/issues";
 
-const MarkdownPreview = dynamic(() => import("@uiw/react-markdown-preview"), {
-  ssr: false,
-});
+// const MarkdownPreview = dynamic(() => import("@uiw/react-markdown-preview"), {
+//   ssr: false,
+// });
 
 interface IIssueMenu {
   id: string;
@@ -161,7 +162,7 @@ export default function PostPage({
             </section>
 
             <section>
-              <MarkdownPreview source={issue.body || ""} />
+              <MarkdownPreview source={issue.body || ""} showLoading />
             </section>
           </article>
         </Card>

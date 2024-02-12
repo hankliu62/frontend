@@ -281,6 +281,7 @@ export default function Questions({
             )}
           />
           <LoadMore
+            className={classNames({ invisible: page === 1 })}
             disabled={isFetching}
             visible={!isEnd}
             onEnter={onLoadMore}
