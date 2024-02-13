@@ -111,7 +111,7 @@ const navigation = [
     ],
   },
   { name: "小习题", href: "/questions", type: "link" },
-  { name: "小作文", href: "/compositions", type: "link" },
+  { name: "小博客", href: "/articles", type: "link" },
   { name: "小绘画", href: "/paints", type: "link" },
   { name: "小动画", href: "https://hankliu62.github.io/icss", type: "link" },
   {

@@ -20,13 +20,15 @@ export default function MarkdownPreview({
   // 是否已经触发Load事件
   const loaded = useRef<boolean>(false);
 
+  const rootElement = useRef<HTMLDivElement>();
+
   // 是否正在渲染Markdown预览器
   const [loadingMarkdownPreview, setLoadingMarkdownPreview] =
     useState<boolean>(true);
 
   useLayoutEffect(() => {
     function checkMDPreviewLoaded() {
-      const preview = document?.querySelectorAll(".wmde-markdown");
+      const preview = rootElement.current?.querySelectorAll(".wmde-markdown");
       if (preview && preview.length > 0) {
         if (!loaded.current) {
           setLoadingMarkdownPreview(false);
@@ -43,9 +45,9 @@ export default function MarkdownPreview({
   }, [onLoad]);
 
   return (
-    <>
+    <div ref={rootElement}>
       <MDPreview {...otherProps} />
       {showLoading && loadingMarkdownPreview && <Skeleton active />}
-    </>
+    </div>
   );
 }

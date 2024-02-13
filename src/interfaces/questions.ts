@@ -1,5 +1,5 @@
 // github 标签
-export interface TLabel {
+export interface ILabel {
   id: number;
   node_id: string;
   url: string;
@@ -11,7 +11,7 @@ export interface TLabel {
 }
 
 // github 问题
-export interface TIssue {
+export interface IIssue {
   url: string;
   repository_url: string;
   labels_url: string;
@@ -22,12 +22,12 @@ export interface TIssue {
   node_id: string;
   number: number;
   title: string;
-  user: TAssignee;
-  labels: TLabel[];
+  user: IAssignee;
+  labels: ILabel[];
   state: string;
   locked: boolean;
-  assignee: TAssignee;
-  assignees: TAssignee[];
+  assignee: IAssignee;
+  assignees: IAssignee[];
   milestone: null;
   comments: number;
   created_at: Date;
@@ -43,7 +43,7 @@ export interface TIssue {
 }
 
 // github 分配者
-export interface TAssignee {
+export interface IAssignee {
   login: string;
   id: number;
   node_id: string;

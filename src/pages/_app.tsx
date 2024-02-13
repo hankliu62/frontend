@@ -11,7 +11,11 @@ import "@uiw/react-markdown-preview/markdown.css";
 import "dayjs/locale/zh-cn";
 
 import { StyleProvider } from "@ant-design/cssinjs";
-import { ConfigProvider as AntdConfigProvider, Watermark } from "antd";
+import {
+  ConfigProvider as AntdConfigProvider,
+  FloatButton,
+  Watermark,
+} from "antd";
 import zhCN from "antd/locale/zh_CN";
 import dayjs from "dayjs";
 import { NextPage } from "next";
@@ -79,6 +83,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
             >
               <Component {...pageProps} />
             </Watermark>
+            <FloatButton.BackTop />
           </AntdConfigProvider>
           <Toaster />
         </StyleProvider>
