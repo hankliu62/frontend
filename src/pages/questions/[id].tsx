@@ -3,14 +3,18 @@ import { Affix, Card, Collapse, Space, Tag } from "antd";
 import classNames from "classnames";
 import Dayjs from "dayjs";
 import { InferGetStaticPropsType } from "next";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import ErrorPage from "next/error";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useMemo, useState } from "react";
 
 import MarkdownPreview from "@/components/MarkdownPreview";
-import { GithubOrigin, GithubOwner, GithubRepo } from "@/constants/backend";
+import {
+  GithubInterviewRepo,
+  GithubOrigin,
+  GithubOwner,
+} from "@/constants/backend";
 import useAnchor from "@/hooks/useAnchor";
 import {
   fetchAllIssuesByStaticProps,
@@ -113,7 +117,7 @@ export default function PostPage({
                   e?.stopPropagation && e.stopPropagation();
                   e?.preventDefault && e.preventDefault();
                   window.open(
-                    `${GithubOrigin}/${GithubOwner}/${GithubRepo}/issues/${issue?.number}`,
+                    `${GithubOrigin}/${GithubOwner}/${GithubInterviewRepo}/issues/${issue?.number}`,
                     "_blank"
                   );
                 }}
@@ -132,14 +136,14 @@ export default function PostPage({
                   e?.stopPropagation && e.stopPropagation();
                   e?.preventDefault && e.preventDefault();
                   window.open(
-                    `${GithubOrigin}/${issue?.assignee?.login}`,
+                    `${GithubOrigin}/${issue?.user?.login}`,
                     "_blank"
                   );
                 }}
                 className="group cursor-pointer"
               >
                 <span className="group-hover:text-sky-500">
-                  {issue?.assignee?.login}
+                  {issue?.user?.login}
                 </span>
               </Space>
 

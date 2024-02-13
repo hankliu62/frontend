@@ -3,10 +3,10 @@ import { Octokit } from "octokit";
 import {
   GithubAccessToken,
   GitHubApiVersion,
+  GithubInterviewRepo,
   GithubOwner,
-  GithubRepo,
 } from "@/constants/backend";
-import { TLabel } from "@/interfaces/questions";
+import { ILabel } from "@/interfaces/questions";
 
 const auth = GithubAccessToken.join("");
 
@@ -17,20 +17,21 @@ const auth = GithubAccessToken.join("");
  * @returns
  */
 export const fetchLabels = async (
-  page?: number,
+  repo: string,
+  page: number,
   options = {}
-): Promise<TLabel[]> => {
+): Promise<ILabel[]> => {
   const octokit = new Octokit({
     auth: auth,
   });
 
   const res = await octokit.request(
-    `GET /repos/${GithubOwner}/${GithubRepo}/labels`,
+    `GET /repos/${GithubOwner}/${repo}/labels`,
     {
       owner: GithubOwner,
-      repo: GithubRepo,
+      repo: repo,
       per_page: 100,
-      page: page || 1,
+      page: page,
       headers: {
         "X-GitHub-Api-Version": GitHubApiVersion,
       },

@@ -5,7 +5,7 @@ import {
   InteractionOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Card, Collapse, List, Space, Tag } from "antd";
+import { Affix, Card, Collapse, List, Space, Tag } from "antd";
 import classNames from "classnames";
 import Dayjs from "dayjs";
 import { InferGetStaticPropsType } from "next";
@@ -13,9 +13,13 @@ import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
 
 import LoadMore from "@/components/LoadMore";
-import { GithubOrigin, GithubOwner, GithubRepo } from "@/constants/backend";
+import {
+  GithubInterviewRepo,
+  GithubOrigin,
+  GithubOwner,
+} from "@/constants/backend";
 import useAsyncEffect from "@/hooks/useAsyncEffect";
-import { TIssue, TLabel } from "@/interfaces/questions";
+import { IIssue, ILabel } from "@/interfaces/questions";
 import { fetchIssues } from "@/lib/issues";
 import { fetchLabels } from "@/lib/labels";
 
@@ -36,6 +40,7 @@ const LabelOrders = {
   handwritten: 13,
   visualization: 14,
   other: 15,
+  "no answer": 16,
 };
 
 const IconText = ({
@@ -68,7 +73,7 @@ export default function Questions({
   // 是否获取完所有面试题
   const [isEnd, setIsEnd] = useState<boolean>(true);
   // 面试题列表
-  const [issues, setIssues] = useState<TIssue[]>([]);
+  const [issues, setIssues] = useState<IIssue[]>([]);
   // 分页-当前页数
   const [page, setPage] = useState<number>(1);
 
@@ -83,8 +88,8 @@ export default function Questions({
       setIsEnd(false);
     }
     console.log("fetch issues", page, label);
-    const issues = await fetchIssues(page, {
-      labels: ["interview questions", label].filter(Boolean).join(","),
+    const issues = await fetchIssues(GithubInterviewRepo, page, {
+      labels: [label].filter(Boolean).join(","),
     });
     setIsFetching(false);
     setPage(page);
@@ -100,7 +105,7 @@ export default function Questions({
     }
   };
 
-  const onChangeLabel = (label?: TLabel) => {
+  const onChangeLabel = (label?: ILabel) => {
     setSelectedLabel(label?.name);
     getIssues(1, label?.name);
     const newQuery = label
@@ -125,70 +130,74 @@ export default function Questions({
   return (
     <div className="flex space-x-6 bg-white p-6">
       <div className="w-64">
-        <Collapse
-          defaultActiveKey={["labels"]}
-          onChange={(key) => {
-            setExpanded(key.includes("labels"));
-          }}
-          expandIconPosition="end"
-          items={[
-            {
-              key: "labels",
-              label: (
-                <span
-                  className="cursor-pointer text-base font-bold underline-offset-2 hover:text-[#1171ee] hover:underline"
-                  onClick={(e) => {
-                    e?.preventDefault && e.preventDefault();
-                    e?.stopPropagation && e.stopPropagation();
-                    // 清空选择的标签
-                    onChangeLabel();
-                  }}
-                  aria-hidden="true"
-                >
-                  标签
-                </span>
-              ),
-              children: (
-                <div>
-                  {(labels || []).map((item) => (
-                    <div
-                      className={classNames(
-                        "group flex space-x-4 rounded-md p-2 hover:cursor-pointer hover:bg-[#f7f8fa]",
-                        {
-                          "bg-[#eaf2ff] hover:bg-[#eaf2ff]":
-                            item.name === selectedLabel,
-                        }
-                      )}
-                      key={item.id}
-                      onClick={() => onChangeLabel(item)}
-                      aria-hidden="true"
-                    >
-                      <div className="flex flex-col justify-center">
-                        <InteractionOutlined
-                          rev={undefined}
-                          style={{ color: `#${item.color}` }}
-                          className="text-lg font-medium"
-                        />
-                      </div>
+        <Affix offsetTop={24}>
+          <Collapse
+            defaultActiveKey={["labels"]}
+            onChange={(key) => {
+              setExpanded(key.includes("labels"));
+            }}
+            expandIconPosition="end"
+            items={[
+              {
+                key: "labels",
+                label: (
+                  <span
+                    className="cursor-pointer text-base font-bold underline-offset-2 hover:text-[#1171ee] hover:underline"
+                    onClick={(e) => {
+                      e?.preventDefault && e.preventDefault();
+                      e?.stopPropagation && e.stopPropagation();
+                      // 清空选择的标签
+                      onChangeLabel();
+                    }}
+                    aria-hidden="true"
+                  >
+                    标签
+                  </span>
+                ),
+                children: (
+                  <div>
+                    {(labels || []).map((item) => (
                       <div
                         className={classNames(
-                          "text-base font-normal text-[#515767] group-hover:text-[#1171ee]",
+                          "group flex space-x-4 rounded-md p-2 hover:cursor-pointer hover:bg-[#f7f8fa]",
                           {
-                            "text-[#1e80ff] group-hover:text-[#1e80ff]":
+                            "bg-[#eaf2ff] hover:bg-[#eaf2ff]":
                               item.name === selectedLabel,
                           }
                         )}
+                        key={item.id}
+                        onClick={() => onChangeLabel(item)}
+                        aria-hidden="true"
                       >
-                        {item.title}
+                        <div className="flex flex-col justify-center">
+                          <InteractionOutlined
+                            rev={undefined}
+                            style={{ color: `#${item.color}` }}
+                            className="text-lg font-medium"
+                          />
+                        </div>
+                        <div
+                          className={classNames(
+                            "text-base font-normal text-[#515767] group-hover:text-[#1171ee]",
+                            {
+                              "text-[#1e80ff] group-hover:text-[#1e80ff]":
+                                item.name === selectedLabel,
+                            }
+                          )}
+                        >
+                          {item.title}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              ),
-              extra: <div className="-mr-2">{expanded ? "收起" : "展开"}</div>,
-            },
-          ]}
-        />
+                    ))}
+                  </div>
+                ),
+                extra: (
+                  <div className="-mr-2">{expanded ? "收起" : "展开"}</div>
+                ),
+              },
+            ]}
+          />
+        </Affix>
       </div>
       <div className="flex-1 overflow-hidden">
         <Card size="small" className="issues-card min-h-full !border-[#d9d9d9]">
@@ -210,7 +219,7 @@ export default function Questions({
                       e?.stopPropagation && e.stopPropagation();
                       e?.preventDefault && e.preventDefault();
                       window.open(
-                        `${GithubOrigin}/${GithubOwner}/${GithubRepo}/issues/${item.number}`,
+                        `${GithubOrigin}/${GithubOwner}/${GithubInterviewRepo}/issues/${item.number}`,
                         "_blank"
                       );
                     }}
@@ -228,7 +237,7 @@ export default function Questions({
                       e?.stopPropagation && e.stopPropagation();
                       e?.preventDefault && e.preventDefault();
                       window.open(
-                        `${GithubOrigin}/${item.assignee.login}`,
+                        `${GithubOrigin}/${item.user.login}`,
                         "_blank"
                       );
                     }}
@@ -239,7 +248,7 @@ export default function Questions({
                       rev={undefined}
                     />
                     <span className="group-hover:text-[#1171ee]">
-                      {item.assignee.login}
+                      {item.user.login}
                     </span>
                   </Space>,
                   <IconText
@@ -293,18 +302,22 @@ export default function Questions({
 }
 
 export async function getStaticProps() {
-  const labels = await fetchLabels();
+  const labels = await fetchLabels(GithubInterviewRepo, 1);
 
   const sortedLabels = labels
-    .filter((item) =>
-      /^面试题-(.*)相关$|^面试题-(.*)$/.test(item.description || "")
-    )
+    // .filter((item) =>
+    //   /^面试题-(.*)相关$|^面试题-(.*)$/.test(item.description || "")
+    // )
+    // .map((item) => ({
+    //   ...item,
+    //   title: item.description.replace(
+    //     /^面试题-(.*)相关$|^面试题-(.*)$/,
+    //     "$1$2"
+    //   ),
+    // }))
     .map((item) => ({
       ...item,
-      title: item.description.replace(
-        /^面试题-(.*)相关$|^面试题-(.*)$/,
-        "$1$2"
-      ),
+      title: item.description.replace(/相关$/, ""),
     }))
     .sort((pre, next) => {
       return (

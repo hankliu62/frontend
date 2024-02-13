@@ -47,6 +47,10 @@ export const GithubOrigin = "https://github.com";
 
 export const GithubOwner = "hankliu62";
 
-export const GithubRepo = "hankliu62.github.com";
+// 个人博客仓库
+export const GithubBlogRepo = "hankliu62.github.com";
+
+// interview仓库
+export const GithubInterviewRepo = "interview";
 
 export const GitHubApiVersion = "2022-11-28";
