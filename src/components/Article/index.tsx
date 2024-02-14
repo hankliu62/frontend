@@ -1,8 +1,9 @@
 import { BranchesOutlined } from "@ant-design/icons";
-import { Card, Divider, Space, Tag } from "antd";
+import { Divider, Skeleton, Space, Tag } from "antd";
 import classNames from "classnames";
 import Dayjs from "dayjs";
-import React, { useCallback } from "react";
+import React from "react";
+import LazyLoad from "react-lazyload";
 
 import MarkdownPreview from "@/components/MarkdownPreview";
 import { GithubBlogRepo, GithubOrigin, GithubOwner } from "@/constants/backend";
@@ -87,7 +88,18 @@ export default function Article({ className, article }: IArticleProps) {
       <Divider className="!my-3 !border-[#bfc3c7]" />
 
       <section>
-        <MarkdownPreview source={article.body || ""} showLoading />
+        <LazyLoad
+          overflow={false}
+          once={false}
+          height={30}
+          offset={50}
+          placeholder={<Skeleton active />}
+        >
+          <MarkdownPreview
+            source={(article.body || "").replace(/^---([\S\s]*?)---/, "")}
+            showLoading
+          />
+        </LazyLoad>
       </section>
     </article>
   );

@@ -237,7 +237,7 @@ export default function ArticlePage({
 
   return (
     <div className="flex space-x-6 bg-white p-6">
-      <div className="flex-1">
+      <div className="flex-1 overflow-x-hidden">
         <Card className="article-card min-h-full !border-[#d9d9d9]">
           <article>
             {/* 基础信息 */}
@@ -411,19 +411,22 @@ export default function ArticlePage({
             <Divider className="!mt-0 !border-[#bfc3c7]" />
 
             <section>
-              <MarkdownPreview source={article.body || ""} showLoading />
+              <MarkdownPreview
+                source={(article.body || "").replace(/^---([\S\s]*?)---/, "")}
+                showLoading
+              />
             </section>
           </article>
         </Card>
       </div>
 
       <div className="w-64 bg-white">
-        <Affix offsetTop={60}>
+        <Affix offsetTop={24}>
           <Collapse
             className="question-menus-collapse"
             defaultActiveKey={["menu"]}
             onChange={(key) => {
-              setExpanded(key.includes("labels"));
+              setExpanded(key.includes("menu"));
             }}
             expandIconPosition="end"
             items={[
@@ -431,7 +434,7 @@ export default function ArticlePage({
                 key: "menu",
                 label: <span className="text-base">目录</span>,
                 children: (
-                  <ul className="max-h-[520px] list-none space-y-3 overflow-y-auto text-slate-500 dark:text-slate-400">
+                  <ul className="max-h-[620px] list-none space-y-3 overflow-y-auto text-slate-500 dark:text-slate-400">
                     {articleMenus.map((menu) => (
                       <li
                         key={menu.title}

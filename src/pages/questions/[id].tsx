@@ -173,7 +173,7 @@ export default function PostPage({
       </div>
 
       <div className="w-64 bg-white">
-        <Affix offsetTop={60}>
+        <Affix offsetTop={24}>
           <Collapse
             className="question-menus-collapse"
             defaultActiveKey={["menu"]}
@@ -186,7 +186,7 @@ export default function PostPage({
                 key: "menu",
                 label: <span className="text-base">目录</span>,
                 children: (
-                  <ul className="max-h-[520px] list-none space-y-3 overflow-y-auto text-slate-500 dark:text-slate-400">
+                  <ul className="max-h-[620px] list-none space-y-3 overflow-y-auto text-slate-500 dark:text-slate-400">
                     {issueMenus.map((menu) => (
                       <li
                         key={menu.title}

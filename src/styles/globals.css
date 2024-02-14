@@ -151,3 +151,15 @@ body > #__next {
 .media-wrapper.image-media-wrapper {
   box-shadow: -25px 30px 72px 0 #0000001a;
 }
+
+.articles-collapse.ant-collapse
+  .ant-collapse-content
+  > .ant-collapse-content-box {
+  @apply p-0;
+}
+
+.questions-collapse.ant-collapse
+  .ant-collapse-content
+  > .ant-collapse-content-box {
+  @apply p-0;
+}

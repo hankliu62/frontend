@@ -136,6 +136,7 @@ export default function Questions({
       <div className="w-64">
         <Affix offsetTop={24}>
           <Collapse
+            className="articles-collapse"
             defaultActiveKey={["labels"]}
             onChange={(key) => {
               setExpanded(key.includes("labels"));
@@ -159,7 +160,7 @@ export default function Questions({
                   </span>
                 ),
                 children: (
-                  <div>
+                  <div className="max-h-[620px] overflow-y-auto p-[16px]">
                     {(labels || []).map((item) => (
                       <div
                         className={classNames(
