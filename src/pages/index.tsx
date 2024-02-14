@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 
-import { Affix, Avatar, Card, Skeleton, Tooltip } from "antd";
+import { Affix, Avatar, Card, Collapse, Skeleton, Tooltip } from "antd";
 import classNames from "classnames";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
@@ -61,6 +61,9 @@ function useAnchor(navigations) {
 export default function Dashboard() {
   const currentSection = useAnchor(navigations);
 
+  // 是否展开
+  const [expanded, setExpanded] = useState<boolean>(true);
+
   function isActive(section) {
     if (section.id === currentSection) {
       return true;
@@ -111,7 +114,7 @@ export default function Dashboard() {
             <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
             <div className="absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
             <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-slate-800 dark:block" />
-            <div className="sticky top-[0] -ml-0.5 overflow-y-auto overflow-x-hidden pb-16 pl-0.5 pt-8">
+            {/*<div className="sticky top-[0] -ml-0.5 overflow-y-auto overflow-x-hidden pb-16 pl-0.5 pt-8">
               <nav aria-labelledby="menu" className="w-56">
                 {navigations.length > 0 && (
                   <>
@@ -166,6 +169,60 @@ export default function Dashboard() {
                   </>
                 )}
               </nav>
+            </div>
+            */}
+            <div className="relative top-[0] z-10 overflow-y-auto overflow-x-hidden pb-16 pl-0.5 pt-8 lg:-ml-4 lg:pr-4 xl:-ml-6 xl:pr-6">
+              <Affix offsetTop={24}>
+                <Collapse
+                  className="question-menus-collapse w-56"
+                  defaultActiveKey={["menu"]}
+                  onChange={(key) => {
+                    setExpanded(key.includes("labels"));
+                  }}
+                  expandIconPosition="end"
+                  items={[
+                    {
+                      key: "menu",
+                      label: <span className="text-base">技术分类</span>,
+                      children: (
+                        <ul className="list-none space-y-2 overflow-y-auto text-slate-500 dark:text-slate-400">
+                          {navigations.map((navigation) => (
+                            <li
+                              key={navigation.label}
+                              id={navigation.label}
+                              className={classNames(
+                                "border-0 !border-l-2 border-solid border-transparent px-[16px] text-base",
+                                {
+                                  "!border-sky-500": isActive(navigation),
+                                }
+                              )}
+                            >
+                              <Link
+                                href={`#${navigation.id}`}
+                                className={classNames(
+                                  "w-full overflow-hidden !text-[#515767]",
+                                  isActive(navigation)
+                                    ? "!text-sky-500"
+                                    : "!hover:text-slate-600 !dark:hover:text-slate-300"
+                                )}
+                              >
+                                <div className="truncate">
+                                  {navigation.label}
+                                </div>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ),
+                      extra: (
+                        <div className="-mr-2">
+                          {expanded ? "收起" : "展开"}
+                        </div>
+                      ),
+                    },
+                  ]}
+                />
+              </Affix>
             </div>
           </div>
 
