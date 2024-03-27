@@ -71,6 +71,15 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <Head>
         <title>卡鲁秋 - 前端小工具集合</title>
         <link rel="icon" href={`${getRoutePrefix()}/favicon.ico`} />
+        <meta
+          name="description"
+          content="卡鲁秋的前端工具网站，提供了一系列实用的前端开发工具和功能，技术网站汇总，旨在帮助开发者更加高效地进行前端开发。"
+        />
+        <meta
+          name="keywords"
+          content="前端工具,前端开发,前端开发工具,前端开发工具集合,toolbox,frontend,卡鲁秋"
+        />
+        <meta name="author" content="Hank.Liu" />
       </Head>
 
       {getLayout(

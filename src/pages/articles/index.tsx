@@ -17,8 +17,8 @@ import LoadMore from "@/components/LoadMore";
 import { GithubBlogRepo, GithubOrigin, GithubOwner } from "@/constants/backend";
 import useAsyncEffect from "@/hooks/useAsyncEffect";
 import { IIssue, ILabel } from "@/interfaces/questions";
-import { fetchIssues } from "@/lib/backend/issues";
-import { fetchLabels } from "@/lib/frontend/labels";
+import { fetchLabelsByStaticProps } from "@/lib/backend/labels";
+import { fetchIssues } from "@/lib/frontend/issues";
 
 // 标签排序
 const LabelOrders = {
@@ -209,7 +209,7 @@ export default function Questions({
 }
 
 export async function getStaticProps() {
-  const labels = await fetchLabels(GithubBlogRepo, 1);
+  const labels = await fetchLabelsByStaticProps(GithubBlogRepo, 1);
 
   const sortedLabels = labels
     .filter((item) =>

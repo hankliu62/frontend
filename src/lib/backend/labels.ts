@@ -2,12 +2,12 @@ import { Octokit } from "octokit";
 
 import {
   GitHubApiVersion,
-  GithubFrontendToken,
+  GithubBackendToken,
   GithubOwner,
 } from "@/constants/backend";
 import { ILabel } from "@/interfaces/questions";
 
-const auth = GithubFrontendToken.join("");
+const auth = GithubBackendToken.join("");
 
 /**
  * 根据获取所有的标签
@@ -15,7 +15,7 @@ const auth = GithubFrontendToken.join("");
  * @param {*} page
  * @returns
  */
-export const fetchLabels = async (
+export const fetchLabelsByStaticProps = async (
   repo: string,
   page: number,
   options = {}

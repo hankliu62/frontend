@@ -1,42 +1,55 @@
 # toolbox-frontend
 
-前端工具库网站
+## 简介
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+本项目是一个前端工具网站，提供了一系列实用的前端开发工具和功能，技术网站汇总，旨在帮助开发者更加高效地进行前端开发。
 
-## Getting Started
+## 环境依赖
 
-First, run the development server:
+- Node.js：v16.13.2 及以上版本
+- Yarn：v1.22.19 及以上版本
+- 浏览器：Chrome、Firefox、Safari 等现代浏览器
+
+## 安装步骤
+
+1. 克隆项目代码到本地
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/hankliu62/toolbox-frontend.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. 进入项目目录
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+cd toolbox-frontend
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. 安装项目依赖
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. 启动项目
 
-## Learn More
+```bash
+yarn run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 使用方法
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+访问 `http://localhost:3000` 即可看到前端工具网站的首页。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+在首页上可以选择需要的工具进行使用。
 
-## Deploy on Vercel
+工具的具体使用方法和参数可以参考每个工具的文档说明。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 贡献指南
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 遵循项目的代码风格和规范。
+- 在提交代码前进行充分的测试，确保代码的质量和稳定性。
+- 提交代码时附上详细的注释和说明，方便其他开发者理解和维护。
+
+## 许可证
+
+本项目采用 MIT 许可证，详见 LICENSE 文件。
