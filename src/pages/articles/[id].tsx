@@ -13,7 +13,7 @@ import useAnchor from "@/hooks/useAnchor";
 import {
   fetchAllArticlesByStaticProps,
   fetchArticleByStaticProps,
-} from "@/lib/issues";
+} from "@/lib/backend/issues";
 import { isMobile } from "@/utils/doc";
 import { getRoutePrefix } from "@/utils/route";
 

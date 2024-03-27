@@ -108,6 +108,12 @@ export const navigations = [
         logoUrl: getRoutePrefix() + "/dashboard/logo/framework/nuxtjs.svg",
         siteUrl: "https://www.nuxtjs.org.cn/",
       },
+      {
+        title: "nuejs",
+        desc: "Nue 是一个更接近于底层的的框架，采用了极简主义和网络标准。它结构简洁，速度极快。",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/framework/nuejs.png",
+        siteUrl: "https://nuejs.org/",
+      },
     ],
   },
   {
@@ -125,7 +131,7 @@ export const navigations = [
       {
         title: "gitee",
         desc: "Gitee.com（码云） 是 OSCHINA.NET 推出的代码托管平台，支持 Git 和 SVN，提供免费的私有仓库托管。目前已有超过 800 万的开发者选择 Gitee。",
-        logoUrl: getRoutePrefix() + "/dashboard/logo/community/github.svg",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/community/gitee.svg",
         siteUrl: "https://gitee.com/",
       },
       {
@@ -626,6 +632,13 @@ export const navigations = [
         siteUrl: "https://www.antdv.com/docs/vue/introduce-cn",
       },
       {
+        title: "Ant Motion",
+        desc: "使用 Ant Motion 能够快速在 React 框架中使用动画。我们提供了单项，组合动画，以及整套解决方案。",
+        logoUrl:
+          getRoutePrefix() + "/dashboard/logo/ui-components/antd-motion.svg",
+        siteUrl: "https://motion.ant.design/index-cn",
+      },
+      {
         title: "Chakra-UI",
         desc: "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
         logoUrl: getRoutePrefix() + "/dashboard/logo/ui-components/chakra.svg",
@@ -725,7 +738,7 @@ export const navigations = [
     children: [
       {
         title: "webpack",
-        desc: "webpack主要目的是捆绑JavaScript文件以在浏览器中使用，但它也能够转换、捆绑或打包几乎任何资源或资产。",
+        desc: "webpack 主要目的是编译打包 JavaScript 文件以在浏览器中使用，但它也能够转换、捆绑或打包几乎任何资源或资产。",
         logoUrl: getRoutePrefix() + "/dashboard/logo/build/webpack.svg",
         siteUrl: "https://webpack.js.org/",
       },
@@ -746,6 +759,18 @@ export const navigations = [
         desc: "esbuild - 极速 JavaScript 打包器",
         logoUrl: getRoutePrefix() + "/dashboard/logo/build/esbuild.svg",
         siteUrl: "https://esbuild.docschina.org/",
+      },
+      {
+        title: "Turbopack",
+        desc: "Turbopack 是一个可以取代 Webpack 的新开源打包工具，使用 Rust 编写，针对 JavaScript 和 TypeScript 进行了优化。",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/build/turbopack.svg",
+        siteUrl: "https://rolldown.rs/",
+      },
+      {
+        title: "Rolldown",
+        desc: "Rolldown 可以看作是 Rollup 的替代品。它提供与 Rollup 兼容的应用程序接口和插件接口，使用 Rust 编写，作为 Vite 未来使用的打包工具",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/build/rolldown.svg",
+        siteUrl: "https://rolldown.rs/",
       },
     ],
   },

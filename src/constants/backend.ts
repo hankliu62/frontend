@@ -1,5 +1,11 @@
-export const GithubAccessToken = [
-  ...(process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN || ""),
+// 前端github token
+export const GithubFrontendToken = [
+  ...(process.env.NEXT_GITHUB_FRONTEND_TOKEN || ""),
+];
+
+// 仓库action触发时，github action的token
+export const GithubBackendToken = [
+  ...(process.env.NEXT_GITHUB_BACKEND_TOKEN || ""),
 ];
 
 export const GithubApi = "https://api.github.com";

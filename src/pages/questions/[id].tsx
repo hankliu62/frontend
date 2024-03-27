@@ -19,7 +19,7 @@ import useAnchor from "@/hooks/useAnchor";
 import {
   fetchAllIssuesByStaticProps,
   fetchIssueByStaticProps,
-} from "@/lib/issues";
+} from "@/lib/backend/issues";
 
 // const MarkdownPreview = dynamic(() => import("@uiw/react-markdown-preview"), {
 //   ssr: false,

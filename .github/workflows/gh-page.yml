@@ -29,7 +29,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: 打包 🏗️
         env:
-          NEXT_PUBLIC_GITHUB_ACCESS_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          NEXT_GITHUB_BACKEND_TOKEN: ${{ secrets.BACKEND_TOKEN }}
+          NEXT_GITHUB_FRONTEND_TOKEN: ${{ secrets.FRONTEND_TOKEN }}
         run: npm run build && touch ./out/.nojekyll # run: touch ./out/.nojekyll是因为由于 Jekyll 处理,GitHub 默认不提供_next文件夹,.nojekyll文件阻止了这种情况,
       - name: 部署 🚀
         uses: JamesIves/github-pages-deploy-action@v4

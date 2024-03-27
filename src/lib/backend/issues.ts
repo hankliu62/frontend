@@ -2,16 +2,16 @@ import fetch from "isomorphic-fetch";
 import { Octokit } from "octokit";
 
 import {
-  GithubAccessToken,
   GithubApi,
   GitHubApiVersion,
+  GithubBackendToken,
   GithubBlogRepo,
   GithubInterviewRepo,
   GithubOwner,
 } from "@/constants/backend";
 import { IIssue } from "@/interfaces/questions";
 
-const auth = GithubAccessToken.join("");
+const auth = GithubBackendToken.join("");
 
 /**
  * 获取面试题详情

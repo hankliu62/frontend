@@ -1,14 +1,13 @@
 import { Octokit } from "octokit";
 
 import {
-  GithubAccessToken,
   GitHubApiVersion,
-  GithubInterviewRepo,
+  GithubFrontendToken,
   GithubOwner,
 } from "@/constants/backend";
 import { ILabel } from "@/interfaces/questions";
 
-const auth = GithubAccessToken.join("");
+const auth = GithubFrontendToken.join("");
 
 /**
  * 根据获取所有的标签

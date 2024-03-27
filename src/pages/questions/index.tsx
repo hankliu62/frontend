@@ -20,8 +20,8 @@ import {
 } from "@/constants/backend";
 import useAsyncEffect from "@/hooks/useAsyncEffect";
 import { IIssue, ILabel } from "@/interfaces/questions";
-import { fetchIssues } from "@/lib/issues";
-import { fetchLabels } from "@/lib/labels";
+import { fetchIssues } from "@/lib/backend/issues";
+import { fetchLabels } from "@/lib/frontend/labels";
 
 // 标签排序
 const LabelOrders = {
