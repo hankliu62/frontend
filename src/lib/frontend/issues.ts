@@ -25,7 +25,6 @@ export const fetchIssues = async (
 ): Promise<IIssue[]> => {
   let url = `${GithubApi}/repos/${GithubOwner}/${repo}/issues`;
 
-  console.log(GithubFrontendToken, GithubBackendToken, "----------------");
   // 添加参数
   url += `?creator=${GithubOwner}&per_page=10&page=${page || 1}`;
 

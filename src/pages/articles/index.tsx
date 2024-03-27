@@ -1,20 +1,13 @@
-import {
-  BranchesOutlined,
-  CheckSquareOutlined,
-  ClockCircleOutlined,
-  InteractionOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import { Affix, Card, Collapse, List, Space, Tag } from "antd";
+import { InteractionOutlined } from "@ant-design/icons";
+import { Affix, Card, Collapse } from "antd";
 import classNames from "classnames";
-import Dayjs from "dayjs";
 import { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
 
 import Article from "@/components/Article";
 import LoadMore from "@/components/LoadMore";
-import { GithubBlogRepo, GithubOrigin, GithubOwner } from "@/constants/backend";
+import { GithubBlogRepo } from "@/constants/backend";
 import useAsyncEffect from "@/hooks/useAsyncEffect";
 import { IIssue, ILabel } from "@/interfaces/questions";
 import { fetchLabelsByStaticProps } from "@/lib/backend/labels";

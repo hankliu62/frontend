@@ -186,7 +186,7 @@ if (isGithubActions) {
     env: { NEXT_GITHUB_FRONTEND_TOKEN, ...envs },
     ...conf
   } = nextConfig;
-  console.log("next config is:", { ...conf, env: { envs } });
+  console.log("next config is:", { ...conf, env: { ...envs } });
 }
 
 module.exports = withTM(removeImports(nextConfig));
