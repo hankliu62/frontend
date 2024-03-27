@@ -162,6 +162,7 @@ const nextConfig = {
   plugins: [require("@tailwindcss/forms")],
   env: {
     ROUTE_PREFIX: "",
+    NEXT_GITHUB_FRONTEND_TOKEN: process.env.NEXT_GITHUB_FRONTEND_TOKEN,
   },
 };
 
