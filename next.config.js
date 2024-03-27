@@ -162,7 +162,9 @@ const nextConfig = {
   plugins: [require("@tailwindcss/forms")],
   env: {
     ROUTE_PREFIX: "",
-    NEXT_GITHUB_FRONTEND_TOKEN: process.env.NEXT_GITHUB_FRONTEND_TOKEN,
+    NEXT_GITHUB_FRONTEND_TOKEN: [
+      ...(process.env.NEXT_GITHUB_FRONTEND_TOKEN || ""),
+    ],
   },
 };
 
@@ -179,7 +181,12 @@ if (isGithubActions) {
   nextConfig.basePath = `/${repo}`;
   nextConfig.env.ROUTE_PREFIX = `/${repo}`;
 
-  console.log("next config is:", nextConfig);
+  const {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    env: { NEXT_GITHUB_FRONTEND_TOKEN, ...envs },
+    ...conf
+  } = nextConfig;
+  console.log("next config is:", { ...conf, env: { envs } });
 }
 
 module.exports = withTM(removeImports(nextConfig));
