@@ -1,5 +1,5 @@
 import { InteractionOutlined } from "@ant-design/icons";
-import { Affix, Card, Collapse } from "antd";
+import { Affix, Card, Collapse, Input } from "antd";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
@@ -11,7 +11,7 @@ import { GithubBlogRepo } from "@/constants/backend";
 import useAsyncEffect from "@/hooks/useAsyncEffect";
 import { IIssue, ILabel } from "@/interfaces/questions";
 import { fetchLabelsByStaticProps } from "@/lib/backend/labels";
-import { fetchIssues } from "@/lib/frontend/issues";
+import { searchIssues } from "@/lib/frontend/issues";
 
 // 标签排序
 const LabelOrders = {
@@ -51,19 +51,25 @@ export default function Questions({
   const [articles, setArticles] = useState<IIssue[]>([]);
   // 分页-当前页数
   const [page, setPage] = useState<number>(1);
+  // 搜索关键词
+  const [searchKeyWord, setSearchKeyWord] = useState<string>();
 
   useAsyncEffect(async () => {
-    getArticles(1, router.query.label as string);
+    getArticles(1, searchKeyWord, router.query.label as string);
   }, []);
 
   // 获取面试题
-  const getArticles = async (page: number, label?: string) => {
+  const getArticles = async (
+    page: number,
+    keyword?: string,
+    label?: string
+  ) => {
     setIsFetching(true);
     if (page === 1) {
       setIsEnd(false);
     }
     console.log("fetch articles", page, label);
-    const articles = await fetchIssues(GithubBlogRepo, page, {
+    const articles = await searchIssues(GithubBlogRepo, page, keyword, {
       labels: ["blog", label].filter(Boolean).join(","),
     });
     setIsFetching(false);
@@ -80,27 +86,38 @@ export default function Questions({
     }
   };
 
-  const onChangeLabel = (label?: ILabel) => {
-    setSelectedLabel(label?.name);
-    getArticles(1, label?.name);
-    const newQuery = label
-      ? { ...router.query, label: label.name }
-      : { ...router.query };
+  const onChangeLabel = useCallback(
+    (label?: ILabel) => {
+      setSelectedLabel(label?.name);
+      getArticles(1, searchKeyWord, label?.name);
+      const newQuery = label
+        ? { ...router.query, label: label.name }
+        : { ...router.query };
 
-    if (!label) {
-      delete newQuery.label;
-    }
+      if (!label) {
+        delete newQuery.label;
+      }
 
-    // 重写路由并传递更新后的查询参数
-    router.replace({
-      pathname: router.pathname,
-      query: newQuery,
-    });
-  };
+      // 重写路由并传递更新后的查询参数
+      router.replace({
+        pathname: router.pathname,
+        query: newQuery,
+      });
+    },
+    [router, searchKeyWord]
+  );
 
   const onLoadMore = useCallback(() => {
-    getArticles(page + 1, selectedLabel);
-  }, [page, selectedLabel]);
+    getArticles(page + 1, searchKeyWord, selectedLabel);
+  }, [page, searchKeyWord, selectedLabel]);
+
+  const onSearch = useCallback(
+    (value) => {
+      setSearchKeyWord(value);
+      getArticles(1, value, selectedLabel);
+    },
+    [selectedLabel]
+  );
 
   return (
     <div className="flex space-x-6 bg-white p-6">
@@ -128,6 +145,13 @@ export default function Questions({
       </div>
       <div className="w-64">
         <Affix offsetTop={24}>
+          <Input.Search
+            placeholder="输入关键词，按回车搜索"
+            className="mb-4 w-full"
+            onSearch={onSearch}
+            size="large"
+            allowClear
+          />
           <Collapse
             className="articles-collapse"
             defaultActiveKey={["labels"]}
@@ -224,4 +248,7 @@ export async function getStaticProps() {
       labels: sortedLabels,
     },
   };
+}
+function setIsEnd(arg0: boolean) {
+  throw new Error("Function not implemented.");
 }

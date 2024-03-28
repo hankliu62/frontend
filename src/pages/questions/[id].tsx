@@ -1,5 +1,5 @@
 import { BranchesOutlined } from "@ant-design/icons";
-import { Affix, Card, Collapse, Space, Tag } from "antd";
+import { Affix, Card, Collapse, Rate, Space, Tag, Tooltip } from "antd";
 import classNames from "classnames";
 import Dayjs from "dayjs";
 import { InferGetStaticPropsType } from "next";
@@ -162,6 +162,18 @@ export default function PostPage({
                     </Tag>
                   ))}
                 </div>
+              </Space>
+
+              <Space key="list-difficulty">
+                <Tooltip
+                  title={`难度: ${
+                    issue.milestone?.number
+                      ? issue.milestone?.number + "颗🌟"
+                      : "未设置"
+                  }`}
+                >
+                  <Rate defaultValue={issue.milestone?.number || 0} disabled />
+                </Tooltip>
               </Space>
             </section>
 

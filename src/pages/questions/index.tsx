@@ -5,7 +5,17 @@ import {
   InteractionOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Affix, Card, Collapse, List, Space, Tag } from "antd";
+import {
+  Affix,
+  Card,
+  Collapse,
+  Input,
+  List,
+  Rate,
+  Space,
+  Tag,
+  Tooltip,
+} from "antd";
 import classNames from "classnames";
 import Dayjs from "dayjs";
 import { InferGetStaticPropsType } from "next";
@@ -21,7 +31,7 @@ import {
 import useAsyncEffect from "@/hooks/useAsyncEffect";
 import { IIssue, ILabel } from "@/interfaces/questions";
 import { fetchLabelsByStaticProps } from "@/lib/backend/labels";
-import { fetchIssues } from "@/lib/frontend/issues";
+import { searchIssues } from "@/lib/frontend/issues";
 
 // 标签排序
 const LabelOrders = {
@@ -76,19 +86,21 @@ export default function Questions({
   const [issues, setIssues] = useState<IIssue[]>([]);
   // 分页-当前页数
   const [page, setPage] = useState<number>(1);
+  // 搜索关键词
+  const [searchKeyWord, setSearchKeyWord] = useState<string>();
 
   useAsyncEffect(async () => {
-    getIssues(1, router.query.label as string);
+    getIssues(1, searchKeyWord, router.query.label as string);
   }, []);
 
   // 获取面试题
-  const getIssues = async (page: number, label?: string) => {
+  const getIssues = async (page: number, keyword?: string, label?: string) => {
     setIsFetching(true);
     if (page === 1) {
       setIsEnd(false);
     }
     console.log("fetch issues", page, label);
-    const issues = await fetchIssues(GithubInterviewRepo, page, {
+    const issues = await searchIssues(GithubInterviewRepo, page, keyword, {
       labels: [label].filter(Boolean).join(","),
     });
     setIsFetching(false);
@@ -105,32 +117,50 @@ export default function Questions({
     }
   };
 
-  const onChangeLabel = (label?: ILabel) => {
-    setSelectedLabel(label?.name);
-    getIssues(1, label?.name);
-    const newQuery = label
-      ? { ...router.query, label: label.name }
-      : { ...router.query };
+  const onChangeLabel = useCallback(
+    (label?: ILabel) => {
+      setSelectedLabel(label?.name);
+      getIssues(1, searchKeyWord, label?.name);
+      const newQuery = label
+        ? { ...router.query, label: label.name }
+        : { ...router.query };
 
-    if (!label) {
-      delete newQuery.label;
-    }
+      if (!label) {
+        delete newQuery.label;
+      }
 
-    // 重写路由并传递更新后的查询参数
-    router.replace({
-      pathname: router.pathname,
-      query: newQuery,
-    });
-  };
+      // 重写路由并传递更新后的查询参数
+      router.replace({
+        pathname: router.pathname,
+        query: newQuery,
+      });
+    },
+    [router, searchKeyWord]
+  );
 
   const onLoadMore = useCallback(() => {
-    getIssues(page + 1, selectedLabel);
-  }, [page, selectedLabel]);
+    getIssues(page + 1, searchKeyWord, selectedLabel);
+  }, [page, searchKeyWord, selectedLabel]);
+
+  const onSearch = useCallback(
+    (value) => {
+      setSearchKeyWord(value);
+      getIssues(1, value, selectedLabel);
+    },
+    [selectedLabel]
+  );
 
   return (
     <div className="flex space-x-6 bg-white p-6">
       <div className="w-64">
         <Affix offsetTop={24}>
+          <Input.Search
+            placeholder="输入关键词，按回车搜索"
+            className="mb-4 w-full"
+            onSearch={onSearch}
+            size="large"
+            allowClear
+          />
           <Collapse
             className="questions-collapse"
             defaultActiveKey={["labels"]}
@@ -262,6 +292,20 @@ export default function Questions({
                     text={item.state}
                     key="list-vertical-status"
                   />,
+                  <Space key="list-difficulty">
+                    <Tooltip
+                      title={`难度: ${
+                        item.milestone?.number
+                          ? item.milestone?.number + "颗🌟"
+                          : "未设置"
+                      }`}
+                    >
+                      <Rate
+                        defaultValue={item.milestone?.number || 0}
+                        disabled
+                      />
+                    </Tooltip>
+                  </Space>,
                 ]}
                 onClick={() => {
                   router.push({

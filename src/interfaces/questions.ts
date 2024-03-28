@@ -10,6 +10,25 @@ export interface ILabel {
   title?: string;
 }
 
+export interface IMilestone {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  title: string;
+  description: string;
+  creator: IAssignee;
+  open_issues: number;
+  closed_issues: number;
+  state: string;
+  created_at: string;
+  updated_at: string;
+  due_on?: any;
+  closed_at?: any;
+}
+
 // github 问题
 export interface IIssue {
   url: string;
@@ -28,7 +47,7 @@ export interface IIssue {
   locked: boolean;
   assignee: IAssignee;
   assignees: IAssignee[];
-  milestone: null;
+  milestone?: IMilestone;
   comments: number;
   created_at: Date;
   updated_at: Date;

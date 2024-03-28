@@ -111,14 +111,12 @@ const navigation = [
     ],
   },
   { name: "小习题", href: "/questions", type: "link" },
-  { name: "小博客", href: "/articles", type: "link" },
-  { name: "小绘画", href: "/paints", type: "link" },
-  { name: "小动画", href: "https://hankliu62.github.io/icss", type: "link" },
-  {
-    name: "小复习",
-    href: "https://hankliu62.github.io/interview",
-    type: "link",
-  },
+  { name: "小文章", href: "/articles", type: "link" },
+  // { name: "小绘画", href: "/paints", type: "link" },
+  { name: "小动画", href: "/icss", type: "link" },
+  { name: "小复习", href: "/interview", type: "link" },
+  { name: "小简历", href: "https://hankliu62.github.io/resume", type: "link" },
+  { name: "小博客", href: "https://hankliu62.github.io", type: "link" },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
