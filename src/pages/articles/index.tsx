@@ -249,6 +249,3 @@ export async function getStaticProps() {
     },
   };
 }
-function setIsEnd(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}

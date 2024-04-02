@@ -165,6 +165,7 @@ const nextConfig = {
     NEXT_GITHUB_FRONTEND_TOKEN: [
       ...(process.env.NEXT_GITHUB_FRONTEND_TOKEN || ""),
     ],
+    TIANAPI_KEY: process.env.TIANAPI_KEY,
   },
 };
 

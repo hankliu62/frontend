@@ -247,7 +247,7 @@ export default function ArticlePage({
                 <div
                   id="banner"
                   ref={bannerRef}
-                  className="media-wrapper image-media-wrapper w-full rounded-[8px] border-[1px] border-solid border-[#1D2129] lg:ml-0 lg:h-[320px] lg:w-[500px]"
+                  className="media-wrapper image-media-wrapper w-full overflow-hidden rounded-[8px] border-[1px] border-solid border-[#1D2129] lg:ml-0 lg:h-[320px] lg:w-[500px]"
                 >
                   <div
                     className={classNames("hidden", "before")}
