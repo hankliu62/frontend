@@ -1,10 +1,17 @@
-import { PlusCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
+import {
+  EnvironmentOutlined,
+  PlusCircleOutlined,
+  RightCircleOutlined,
+} from "@ant-design/icons";
 import { message } from "antd";
+import AOS from "aos";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
 import router from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import SVG from "react-inlinesvg";
 
 import LazyBgImage from "@/components/LazyBgImage";
 import { fetchChickenSoup } from "@/lib/backend/about";
@@ -18,10 +25,7 @@ const MapSvg = ({ className }: IMapProps) => {
   return (
     <svg
       version="1.1"
-      className={classNames(
-        "china-map w-[min(100%, 600px)] absolute inset-0 z-0 m-auto aspect-[1] translate-x-0 translate-y-0 fill-none stroke-white stroke-[2px] opacity-30 transition-[opacity,scale,translate] delay-[0s,.5s,0s] duration-[1s,1s,1s] ease-[cubic-bezier(.6,_.1,_0,_1),cubic-bezier(.5,_0,_0,_1)]",
-        { [className]: className }
-      )}
+      className={classNames("china-map", { [className]: className })}
       id="china-map"
       pointerEvents="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -568,11 +572,14 @@ const useLazyLoadAnimate = (className: string, animateType: string) => {
 export default function About({
   chickenSoup,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  useLazyLoadAnimate(".info-card", "fadeInUp");
+  // useLazyLoadAnimate(".info-card", "fadeInUp");
   // 是否模糊Banner图片
   const [blurBanner, setBlurBanner] = useState<boolean>(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  // 随机图片
+  const pictureIndex = useRef<number>((new Date().getDay() % 2) + 1);
 
   useEffect(() => {
     const titleRect = titleRef.current.getBoundingClientRect();
@@ -601,6 +608,10 @@ export default function About({
     };
   }, []);
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="flex h-full w-full bg-black text-white/75">
       <header
@@ -617,7 +628,7 @@ export default function About({
             backgroundImage: `url(${getRoutePrefix()}/images/about/banner.jpg)`,
           }}
         ></LazyBgImage>
-        <h2 className="text-shadow-[0_1px_5px_rgb(0_0_0_/_30%)] relative z-10 flex w-[472px] animate-[about-opacity_1.5s_cubic-bezier(.6,_.2,_.25,_1)_3s] items-center justify-center font-[about-title] text-[34px] font-normal text-white/70  mix-blend-color-dodge">
+        <h2 className="text-shadow-[0_1px_5px_rgb(0_0_0_/_30%)] relative z-10 flex w-[472px] animate-[about-opacity_1.5s_cubic-bezier(.6,_.2,_.25,_1)_3s_backwards] items-center justify-center font-[about-title] text-[34px] font-normal text-white/70  mix-blend-color-dodge">
           <p ref={titleRef}>
             “在这个瞬息万变的世界里，能够与你相遇，是我最美好的幸运。”
           </p>
@@ -627,7 +638,14 @@ export default function About({
       <div className="z-20 m-auto mt-[82vh] w-full max-w-[1920px] px-[48px] pb-[64px]">
         <div className="flex flex-wrap gap-[24px]" ref={contentRef}>
           {/* 简介: 带有渐变背景色的盒子 */}
-          <div className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>您好</div>
               <div className="opacity-50">me</div>
@@ -698,7 +716,14 @@ export default function About({
           </div>
 
           {/* 玄学: 不带有渐变背景色的盒子 */}
-          <div className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>玄学</div>
               <div className="opacity-50">divination</div>
@@ -711,7 +736,7 @@ export default function About({
             <div className="flex items-center justify-between gap-2">
               <div className="flex flex-col justify-between gap-1">
                 <div className="text-[14px]">星座</div>
-                <div className="text-[18px]">天秤座</div>
+                <div className="text-[18px]">双子座</div>
               </div>
 
               <div className="flex flex-col justify-between gap-1">
@@ -727,7 +752,14 @@ export default function About({
           </div>
 
           {/* 身份: 带有渐变背景色的盒子 */}
-          <div className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>身份</div>
               <div className="opacity-50">identity</div>
@@ -751,7 +783,16 @@ export default function About({
           </div>
 
           {/* 事业: 不带有渐变背景色的盒子 */}
-          <div className="info-card flex min-h-[240px] w-[calc(33.33%-12px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]">
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card flex min-h-[240px] w-[calc(33.33%-12px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>事业</div>
               <div className="opacity-50">occupation</div>
@@ -774,25 +815,49 @@ export default function About({
             </div>
           </div>
 
-          {/* 位置: 不带有渐变背景色的盒子 */}
-          <div className="info-card china-map-wrapper group relative flex min-h-[240px] w-[calc(66.66%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-[rgb(66_73_102_/_70%)] p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]">
+          {/* 休闲: 不带有渐变背景色的盒子 */}
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card game-card group relative flex min-h-[240px] w-[calc(66.66%-16px)] flex-col content-between justify-between overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(0_0_0_/_30%)] to-[rgb(0_0_0_/_30%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
-              <div>位置</div>
-              <div className="opacity-50">occupation</div>
+              <div>休闲</div>
+              <div className="opacity-50">game</div>
             </h5>
 
-            <MapSvg className="group-hover:translate-x-[-6%] group-hover:translate-y-[-5%] group-hover:opacity-70 group-hover:delay-[0s,0s,.5s] group-hover:ease-[cubic-bezier(.6,_.1,_0,_1),cubic-bezier(.5,_0,_0,_1),cubic-bezier(.6,_.1,_0,_1)]" />
-
-            <div className="opacity-1 flex items-center justify-between gap-2 transition-opacity delay-[1s] group-hover:opacity-0">
-              <div className="flex flex-col justify-between gap-1">
-                <div className="text-[18px]">湖南省</div>
-                <div className="text-[18px]">娄底市</div>
+            <div className="z-10 flex flex-1 items-center justify-between gap-2">
+              <div className="-ml-[25px] -mr-[25px] w-full flex-1 transition-all group-hover:scale-[1.01]">
+                <SVG
+                  className="h-auto w-full"
+                  src={`${getRoutePrefix()}/images/about/snake.svg`}
+                />
               </div>
+            </div>
+
+            <div className="z-10 flex items-center justify-between gap-2">
+              <p className="word-break mb-0 max-w-full text-[13px]">
+                娱乐艺术是人类创造力的一种表现形式，可以为我们带来无限的灵感和欢乐。
+              </p>
             </div>
           </div>
 
           {/* 简介: 不带有渐变背景色的盒子 */}
-          <div className="info-card group relative flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-[rgb(66_73_102_/_75%)] p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]">
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card group relative flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-[rgb(66_73_102_/_75%)] p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>简介</div>
               <div className="opacity-50">introduction</div>
@@ -848,7 +913,16 @@ export default function About({
           </div>
 
           {/* 每日毒鸡汤: 不带有渐变背景色的盒子 */}
-          <div className="info-card flex min-h-[240px] w-[calc(50%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]">
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card flex min-h-[240px] w-[calc(50%-12px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>每日毒鸡汤</div>
               <div className="opacity-50">word</div>
@@ -875,6 +949,85 @@ export default function About({
                 </span>
                 <RightCircleOutlined rev={undefined} />
               </a>
+            </div>
+          </div>
+
+          {/* 每日一图: 不带有渐变背景色的盒子 */}
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card group relative flex min-h-[240px] w-[calc(50%-12px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
+            <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
+              <div>每日一图</div>
+              <div className="opacity-50">picture</div>
+            </h5>
+
+            <img
+              className="absolute inset-0 z-0 h-full w-full object-cover blur-[0] brightness-75 transition-all group-hover:scale-125 group-hover:blur-none group-hover:brightness-100"
+              alt="每日一图"
+              src={`${getRoutePrefix()}/images/about/picture${
+                pictureIndex.current
+              }.jpg`}
+            />
+
+            <div className="z-10 flex items-center justify-between gap-2">
+              <a
+                className="group/more flex cursor-pointer items-center justify-between gap-2 opacity-70"
+                target="_blank"
+                rel="noreferrer"
+                href="https://500px.com.cn/hankliu"
+                aria-hidden
+              >
+                <span className="bg-gradient-to-r from-[rgb(255_255_255_/_50%)] to-[rgb(255_255_255_/_50%)] bg-[length:0_1px] bg-[left_100%] bg-no-repeat text-[12px] leading-[18px] transition-all group-hover/more:bg-[length:100%_1px]">
+                  查看更多
+                </span>
+                <RightCircleOutlined rev={undefined} />
+              </a>
+            </div>
+          </div>
+
+          {/* 位置: 不带有渐变背景色的盒子 */}
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card china-map-wrapper group relative flex min-h-[320px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-[rgb(66_73_102_/_70%)] p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
+            <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
+              <div>位置</div>
+              <div className="opacity-50">occupation</div>
+            </h5>
+
+            <MapSvg className="w-[min(100%, 600px)] absolute inset-0 z-0 m-auto aspect-[1] translate-x-0 translate-y-0 fill-none stroke-white stroke-[2px] opacity-30 transition-[opacity,scale,translate] delay-[0s,.5s,0s] duration-[1s,1s,1s] ease-[cubic-bezier(.6,_.1,_0,_1),cubic-bezier(.5,_0,_0,_1),cubic-bezier(.5,_0,_0,_1)] group-hover:translate-x-[-6%] group-hover:translate-y-[-5%] group-hover:opacity-70 group-hover:delay-[0s,0s,.5s] group-hover:ease-[cubic-bezier(.6,_.1,_0,_1),cubic-bezier(.5,_0,_0,_1),cubic-bezier(.6,_.1,_0,_1)]" />
+
+            <div className="opacity-1 group-hover:opacity-1 flex items-center justify-between gap-2 transition-opacity delay-[1s]">
+              <div className="flex flex-col justify-between gap-1">
+                <div className="text-[18px]">湖南省</div>
+                <div className="text-[18px]">
+                  <a
+                    className="group/more flex cursor-pointer items-center justify-between gap-2"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://map.baidu.com/search/%E5%A8%84%E5%BA%95%E5%B8%82/@12468086,3191561.2500000005,13z?querytype=s&da_src=shareurl&wd=%E5%A8%84%E5%BA%95&c=221&src=0&pn=0&sug=0&l=14&b=(12460869.421294013,3187750.310880837;12475551.877860459,3195256.742613471)&from=webmap&biz_forward=%7B%22scaler%22:2,%22styles%22:%22pl%22%7D&device_ratio=2"
+                    aria-hidden
+                  >
+                    <span className="bg-gradient-to-r from-[rgb(255_255_255_/_50%)] to-[rgb(255_255_255_/_50%)] bg-[length:0_1px] bg-[left_100%] bg-no-repeat text-[18px] leading-[24px] transition-all group-hover/more:bg-[length:100%_1px]">
+                      娄底市
+                    </span>
+                    <EnvironmentOutlined rev={undefined} />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

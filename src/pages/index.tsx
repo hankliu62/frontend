@@ -96,8 +96,10 @@ export default function Dashboard() {
           </div>
           <div className="relative px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
             <h1 className="animate__animated animate__bounceInDown text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              <span className="block text-white">前端技术网站</span>
-              <span className="block text-indigo-200"></span>
+              <span className="block font-[hanchengwang] text-white">
+                前端技术网站分享
+              </span>
+              <span className="block font-[hanchengwang] text-indigo-200"></span>
             </h1>
             <p className="animate__animated animate__bounceInLeft mx-auto mt-6 max-w-2xl break-all text-center text-xl text-indigo-200 sm:max-w-3xl">
               <span>

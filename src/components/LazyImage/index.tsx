@@ -34,7 +34,7 @@ interface ILazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 
 const LazyImage = ({
   src,
-  fallbackSrc = `${getRoutePrefix()}/images/resume/loading.gif`,
+  fallbackSrc = `${getRoutePrefix()}/images/about/loading.gif`,
   ...props
 }: ILazyImageProps) => {
   const { imgRef } = useLazyLoad(src);

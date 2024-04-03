@@ -157,7 +157,7 @@ export default function Header({ className }: IHeaderProps) {
                 <div className="flex-shrink-0">
                   <Link href="/">
                     <Image
-                      className="h-8 w-8"
+                      className="h-8 w-8 rounded bg-white"
                       src={`${getRoutePrefix()}/logo.svg`}
                       alt="卡鲁秋"
                       width={32}

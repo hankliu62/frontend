@@ -9,6 +9,8 @@ import "nprogress/nprogress.css";
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import "dayjs/locale/zh-cn";
+// 页面滚动元素动画
+import "aos/dist/aos.css";
 
 import { StyleProvider } from "@ant-design/cssinjs";
 import {
@@ -86,7 +88,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <StyleProvider hashPriority="high">
           <AntdConfigProvider locale={zhCN}>
             <Watermark
-              content="HankLiu Toolbox"
+              // content="HankLiu Toolbox"
+              content={""}
               font={{ color: "rgba(0, 0, 0, 0.1)" }}
               className="flex h-full flex-1 flex-col"
             >

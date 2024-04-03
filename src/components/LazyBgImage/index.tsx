@@ -35,7 +35,7 @@ interface ILazyBgImageProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 
 const LazyBgImage = ({
   style = {},
-  fallbackSrc = `${getRoutePrefix()}/images/resume/background.png`,
+  fallbackSrc = `${getRoutePrefix()}/images/about/background.png`,
   children,
   ...props
 }: ILazyBgImageProps) => {
