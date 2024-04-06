@@ -168,8 +168,16 @@ body > #__next {
 }
 
 /* 关于里面map样式 */
+
+/* 不是使用transform的scale属性，所以不能使用 tailwind */
 .china-map {
-  scale: 1;
+  scale: 0.6;
+}
+
+@media (max-width: 768px) {
+  .china-map {
+    scale: 1.32;
+  }
 }
 
 .china-map-wrapper:hover .china-map {

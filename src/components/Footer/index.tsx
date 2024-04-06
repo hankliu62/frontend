@@ -35,44 +35,69 @@ export default function Footer({ className }: { className?: string }) {
               工具提升效率，创建美好未来
             </span>
           </div>
-          <div className="mt-16 hidden grid-cols-1 gap-8 md:grid xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-5 md:gap-8">
+          <div className="mt-6 grid grid-cols-1 gap-2 md:mt-16 md:grid md:gap-8 xl:col-span-2 xl:mt-0">
+            <div className="gap-2 md:grid md:grid-cols-5 md:gap-8">
               <div className="md:col-span-2">
                 <h3 className="text-sm font-normal leading-6 text-[#C4C4C4] md:text-base">
                   矩阵产品
                 </h3>
-                <ul className="mt-6 space-y-4">
-                  <li className="font-wix font-normal">
-                    <a
-                      href="https://hankliu62.github.io/icss"
-                      className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
-                    >
-                      HankAnimate - 设计动画
-                    </a>
+                <ul className="grid grid-cols-1 md:grid-cols-2">
+                  <li className="col-span-1">
+                    <ul className="mt-2 space-y-1 md:mt-6 md:space-y-4">
+                      <li className="font-wix font-normal">
+                        <a
+                          href="https://hankliu62.github.io/icss"
+                          className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
+                        >
+                          设计动画
+                        </a>
+                      </li>
+                      <li className="font-wix font-normal">
+                        <a
+                          href="https://hankliu62.github.io/resume/"
+                          className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
+                        >
+                          个人简历
+                        </a>
+                      </li>
+                      <li className="font-wix font-normal">
+                        <a
+                          href="https://hankliu62.github.io/interview/"
+                          className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
+                        >
+                          面试宝典
+                        </a>
+                      </li>
+                    </ul>
                   </li>
-                  <li className="font-wix font-normal">
-                    <a
-                      href="https://hankliu62.github.io/resume/"
-                      className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
-                    >
-                      HankResume - 个人简历
-                    </a>
-                  </li>
-                  <li className="font-wix font-normal">
-                    <a
-                      href="https://hankliu62.github.io/interview/"
-                      className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
-                    >
-                      HankInterview - 面试宝典
-                    </a>
+
+                  <li className="col-span-1">
+                    <ul className="mt-1 space-y-1 md:mt-6 md:space-y-4">
+                      <li className="font-wix font-normal">
+                        <a
+                          href="https://hankliu62.github.io/what-lunch/"
+                          className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
+                        >
+                          中午吃什么
+                        </a>
+                      </li>
+                      <li className="font-wix font-normal">
+                        <a
+                          href="https://github.com/hankliu62/lucky-choose/"
+                          className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
+                        >
+                          懒人选择器
+                        </a>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </div>
-              <div className="mt-10 md:col-span-2 md:mt-0">
+              <div className="mt-5 md:col-span-2 md:mt-0">
                 <h3 className="text-sm font-normal leading-6 text-[#C4C4C4] md:text-base">
                   联系我们
                 </h3>
-                <ul className="mt-6 space-y-4">
+                <ul className="mt-2 space-y-1 md:mt-6 md:space-y-4">
                   <li className="font-wix font-normal">
                     <a
                       className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
@@ -118,11 +143,11 @@ export default function Footer({ className }: { className?: string }) {
                   </li>
                 </ul>
               </div>
-              <div className="mt-10 md:col-span-1 md:mt-0">
+              <div className="mt-5 md:col-span-1 md:mt-0">
                 <h3 className="text-sm font-normal leading-6 text-[#C4C4C4] md:text-base">
                   关于产品
                 </h3>
-                <ul className="mt-6 space-y-4">
+                <ul className="mt-2 space-y-1 md:mt-6 md:space-y-4">
                   <li className="font-wix font-normal">
                     <Link
                       className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
@@ -144,11 +169,11 @@ export default function Footer({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="mt-6 hidden border-b-0 border-l-0 border-r-0 border-t border-solid border-white/60 pt-6 md:flex md:items-center md:justify-center md:space-x-3">
-          <p className="mt-6 text-center text-xs leading-5 text-white/40 md:order-1 md:mt-0">
+        <div className="mt-6 flex items-center justify-center space-x-3 border-b-0 border-l-0 border-r-0 border-t border-solid border-white/60 pt-6">
+          <p className="mt-0 text-center text-xs leading-5 text-white/40 md:order-1 md:mt-0">
             &copy; {new Date().getFullYear()} 卡鲁秋, Inc.
           </p>
-          <p className="mt-3 flex items-center space-x-1 text-center text-xs leading-5 text-white/40 md:order-1 md:ml-0 md:mt-0">
+          <p className="mt-0 flex items-center justify-center space-x-1 text-center text-xs leading-5 text-white/40 md:order-1 md:ml-0 md:mt-0 md:justify-start">
             All rights reserved.
           </p>
         </div>

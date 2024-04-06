@@ -14,6 +14,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import SVG from "react-inlinesvg";
 
 import LazyBgImage from "@/components/LazyBgImage";
+import useAsyncEffect from "@/hooks/useAsyncEffect";
 import { fetchChickenSoup } from "@/lib/backend/about";
 import { getRoutePrefix } from "@/utils/route";
 
@@ -581,8 +582,26 @@ export default function About({
   // 随机图片
   const pictureIndex = useRef<number>((new Date().getDay() % 2) + 1);
 
-  useEffect(() => {
-    const titleRect = titleRef.current.getBoundingClientRect();
+  useAsyncEffect(async () => {
+    async function getTitleBoundingClientRect(): Promise<DOMRect> {
+      return new Promise((resolve) => {
+        function loopGetBoundingClientRect() {
+          const titleRect = titleRef.current.getBoundingClientRect();
+          const titleTop = titleRect.top;
+
+          if (titleTop > 0) {
+            resolve(titleRect);
+            return;
+          }
+
+          setTimeout(loopGetBoundingClientRect, 500);
+        }
+
+        loopGetBoundingClientRect();
+      });
+    }
+
+    const titleRect = await getTitleBoundingClientRect();
     const titleHeight = titleRect.height;
     const titleTop = titleRect.top;
 
@@ -623,7 +642,7 @@ export default function About({
         )}
       >
         <LazyBgImage
-          className="absolute left-0 top-0 z-0 h-full w-full bg-[#4d5e8f] bg-current bg-cover bg-no-repeat"
+          className="absolute left-0 top-0 z-0 h-full w-full bg-[#4d5e8f] bg-current bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${getRoutePrefix()}/images/about/banner.jpg)`,
           }}
@@ -635,7 +654,7 @@ export default function About({
         </h2>
       </header>
 
-      <div className="z-20 m-auto mt-[82vh] w-full max-w-[1920px] px-[48px] pb-[64px]">
+      <div className="z-20 m-auto mt-[82vh] w-full max-w-[1920px] px-[24px] pb-[64px] md:px-[48px]">
         <div className="flex flex-wrap gap-[24px]" ref={contentRef}>
           {/* 简介: 带有渐变背景色的盒子 */}
           <div
@@ -644,7 +663,7 @@ export default function About({
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="true"
-            className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+            className="info-card flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(33.33%-16px)]"
           >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>您好</div>
@@ -722,7 +741,7 @@ export default function About({
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="true"
-            className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+            className="info-card flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(33.33%-16px)]"
           >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>玄学</div>
@@ -758,7 +777,7 @@ export default function About({
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="true"
-            className="info-card flex min-h-[240px] w-[calc(33.33%-16px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+            className="info-card flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(33.33%-16px)]"
           >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>身份</div>
@@ -769,15 +788,17 @@ export default function About({
               就像是一本未完的小说，每一章节都充满了未知与转折。它不仅仅是个人在社会中的定位，更是一种情感、一种历史、一种文化的交织与碰撞。它反映了人的多重面貌，时而明亮如阳光，时而深沉如黑夜。
             </div>
 
-            <div className="flex items-center justify-between gap-2">
-              <div className="flex flex-col justify-between gap-1">
+            <div className="flex items-center justify-between gap-2 truncate">
+              <div className="flex flex-col justify-between gap-1 truncate">
                 <div className="text-[14px]">生活角色</div>
-                <div className="text-[18px]">父母的孩子</div>
+                <div className="truncate text-[18px]">父母的孩子</div>
               </div>
 
-              <div className="flex flex-col justify-between gap-1">
+              <div className="flex flex-1 flex-col justify-between gap-1 truncate md:flex-none">
                 <div className="text-[14px]">社会角色</div>
-                <div className="text-[18px]">程序员 摄影爱好者 Citywalk</div>
+                <div className="truncate text-[18px]">
+                  程序员 摄影爱好者 Citywalk
+                </div>
               </div>
             </div>
           </div>
@@ -791,7 +812,7 @@ export default function About({
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="true"
-            className="info-card flex min-h-[240px] w-[calc(33.33%-12px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+            className="info-card flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(33.33%-12px)]"
           >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>事业</div>
@@ -824,7 +845,7 @@ export default function About({
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="true"
-            className="info-card game-card group relative flex min-h-[240px] w-[calc(66.66%-16px)] flex-col content-between justify-between overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(0_0_0_/_30%)] to-[rgb(0_0_0_/_30%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+            className="info-card game-card group relative flex min-h-[240px] w-full flex-col content-between justify-between overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(0_0_0_/_30%)] to-[rgb(0_0_0_/_30%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(66.66%-16px)]"
           >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>休闲</div>
@@ -844,6 +865,63 @@ export default function About({
               <p className="word-break mb-0 max-w-full text-[13px]">
                 娱乐艺术是人类创造力的一种表现形式，可以为我们带来无限的灵感和欢乐。
               </p>
+            </div>
+          </div>
+
+          {/* 技术栈: 不带有渐变背景色的盒子 */}
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card group relative flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
+            <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
+              <div>技术栈</div>
+              <div className="opacity-50">code</div>
+            </h5>
+
+            <div className="flex flex-col items-center justify-between space-x-[0] space-y-[10px] overflow-auto md:flex-row md:items-stretch md:space-x-[24px] md:space-y-[0]">
+              <div className="order-1 text-[0] md:order-1">
+                <img
+                  className="h-[200px] object-contain transition-all"
+                  alt="技能"
+                  src="https://camo.githubusercontent.com/21872ed7850e89df789706113922336145a1a99f6f8915f0c12782a90759f169/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d68616e6b6c69753632267468656d653d746f6b796f6e69676874"
+                />
+              </div>
+
+              <div className="order-2 text-[0] md:order-2">
+                <SVG
+                  className="h-[200px] rounded-[4px] object-contain transition-all"
+                  src={`${getRoutePrefix()}/images/about/leetcode.svg`}
+                />
+              </div>
+
+              <div className="order-3 text-[0] md:order-3">
+                <img
+                  className="h-[200px] w-auto object-contain transition-all"
+                  alt="提交量"
+                  src="https://camo.githubusercontent.com/72241e49a73f615327a534577c4127a3a59fe4a12fb0f68d7cee3d5baab8e5db/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d68616e6b6c697536322673686f775f69636f6e733d74727565267468656d653d746f6b796f6e69676874"
+                />
+              </div>
+            </div>
+
+            <div className="z-10 flex items-center justify-between gap-2">
+              <a
+                className="group/more flex cursor-pointer items-center justify-between gap-2 opacity-70"
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/hankliu62"
+                aria-hidden
+              >
+                <span className="bg-gradient-to-r from-[rgb(255_255_255_/_50%)] to-[rgb(255_255_255_/_50%)] bg-[length:0_1px] bg-[left_100%] bg-no-repeat text-[12px] leading-[18px] transition-all group-hover/more:bg-[length:100%_1px]">
+                  查看更多
+                </span>
+                <RightCircleOutlined rev={undefined} />
+              </a>
             </div>
           </div>
 
@@ -900,7 +978,7 @@ export default function About({
             </div>
 
             {/* 右侧的球 */}
-            <div className="earth absolute inset-[20%_-40%_auto_auto] z-[1] aspect-[1_/_1] h-auto w-full rounded-[50%_50%_0_0] bg-white/10 shadow-[0_5px_24px_0-hsl(0deg_0%_15%_/_10%)] backdrop-blur-[5px] transition-all duration-500 ease-[cubic-bezier(.5,_0,_0,_1)] group-hover:right-[-45%] group-hover:top-[15%] group-hover:w-[110%]" />
+            <div className="earth absolute inset-[auto_auto_0_0] z-[1] aspect-[1_/_1] h-[62px] w-full rounded-[50%_50%_0_0] bg-white/10 shadow-[0_5px_24px_0-hsl(0deg_0%_15%_/_10%)] backdrop-blur-[5px] transition-all duration-500 ease-[cubic-bezier(.5,_0,_0,_1)] group-hover:right-[-45%] group-hover:top-[15%] group-hover:w-[110%] md:inset-[20%_-40%_auto_auto] md:h-auto" />
             {/* 流星 */}
             <div className="stars-wrapper absolute left-0 top-0 h-full w-full -rotate-[135deg]">
               <div className="flex h-full w-full animate-[about-starts_10s_linear_infinite] flex-col justify-around">
@@ -921,7 +999,7 @@ export default function About({
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="true"
-            className="info-card flex min-h-[240px] w-[calc(50%-12px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+            className="info-card flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(50%-12px)]"
           >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>每日毒鸡汤</div>
@@ -961,7 +1039,7 @@ export default function About({
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="true"
-            className="info-card group relative flex min-h-[240px] w-[calc(50%-12px)] flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+            className="info-card group relative flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(50%-12px)]"
           >
             <h5 className="z-10 flex w-full justify-between text-[14px] font-semibold uppercase">
               <div>每日一图</div>
