@@ -1,4 +1,4 @@
-# toolbox-frontend
+# toolkit
 
 ## 简介
 
@@ -15,13 +15,13 @@
 1. 克隆项目代码到本地
 
 ```bash
-git clone https://github.com/hankliu62/toolbox-frontend.git
+git clone https://github.com/hankliu62/toolkit.git
 ```
 
 2. 进入项目目录
 
 ```bash
-cd toolbox-frontend
+cd toolkit
 ```
 
 3. 安装项目依赖

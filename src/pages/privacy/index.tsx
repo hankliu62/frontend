@@ -142,8 +142,8 @@ export default function Privacy() {
                 <td align="left">手机号、微信授权信息、网页浏览记录</td>
                 <td align="left">注册/登录；接收服务通知</td>
                 <td align="left">
-                  <a href="https://hankliu62.github.io/toolbox-frontend">
-                    https://hankliu62.github.io/toolbox-frontend
+                  <a href="https://hankliu62.github.io/toolkit">
+                    https://hankliu62.github.io/toolkit
                   </a>
                 </td>
               </tr>

@@ -6,7 +6,7 @@ import { useCallback, useState } from "react";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
-const Demo = `# toolbox-frontend
+const Demo = `# toolkit
 
 前端工具库网站
 

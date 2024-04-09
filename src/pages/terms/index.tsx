@@ -34,8 +34,8 @@ export default function Terms() {
           </p>
           <ul>
             <li>
-              <a href="https://hankliu62.github.io/toolbox-frontend">
-                https://hankliu62.github.io/toolbox-frontend
+              <a href="https://hankliu62.github.io/toolkit">
+                https://hankliu62.github.io/toolkit
               </a>
             </li>
             <li>一个前端小工具网站。</li>
