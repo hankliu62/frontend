@@ -46,7 +46,7 @@ export default function Footer({ className }: { className?: string }) {
                     <ul className="mt-2 space-y-1 md:mt-6 md:space-y-4">
                       <li className="font-wix font-normal">
                         <a
-                          href="https://hankliu62.github.io/icss"
+                          href="https://hankliu62.github.io/icss/"
                           className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
                         >
                           设计动画
@@ -83,7 +83,7 @@ export default function Footer({ className }: { className?: string }) {
                       </li>
                       <li className="font-wix font-normal">
                         <a
-                          href="https://github.com/hankliu62/lucky-choose/"
+                          href="https://hankliu62.github.io/lucky-choose/"
                           className="text-sm leading-6 text-white transition-colors hover:text-white/80 md:text-base"
                         >
                           懒人选择器

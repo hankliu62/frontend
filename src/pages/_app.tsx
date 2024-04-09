@@ -71,7 +71,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <Head>
-        <title>卡鲁秋 - 前端小工具集合</title>
+        <title>卡鲁秋 - 前端小工具</title>
         <link rel="icon" href={`${getRoutePrefix()}/favicon.ico`} />
         <meta
           name="description"
@@ -79,7 +79,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         />
         <meta
           name="keywords"
-          content="前端工具,前端开发,前端开发工具,前端开发工具集合,toolbox,frontend,卡鲁秋"
+          content="前端工具,前端开发,前端开发工具,前端开发工具集合,toolbox,frontend,卡鲁秋,Hank,HankLiu"
         />
         <meta name="author" content="Hank.Liu" />
       </Head>
