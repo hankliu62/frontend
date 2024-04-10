@@ -88,8 +88,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <StyleProvider hashPriority="high">
           <AntdConfigProvider locale={zhCN}>
             <Watermark
-              // content="HankLiu Toolbox"
-              content={""}
+              content="HankLiu Toolbox"
               font={{ color: "rgba(0, 0, 0, 0.1)" }}
               className="flex h-full flex-1 flex-col"
             >

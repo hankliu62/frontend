@@ -597,7 +597,7 @@ export default function About({
           setTimeout(loopGetBoundingClientRect, 500);
         }
 
-        loopGetBoundingClientRect();
+        setTimeout(loopGetBoundingClientRect, 3000);
       });
     }
 
