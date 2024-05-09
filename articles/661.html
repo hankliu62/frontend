@@ -1,0 +1,997 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>卡鲁秋 - 前端小工具</title><link rel="icon" href="/frontend/favicon.ico"/><meta name="description" content="卡鲁秋的前端工具网站，提供了一系列实用的前端开发工具和功能，技术网站汇总，旨在帮助开发者更加高效地进行前端开发。"/><meta name="keywords" content="前端工具,前端开发,前端开发工具,前端开发工具集合,toolbox,frontend,卡鲁秋,Hank,HankLiu"/><meta name="author" content="Hank.Liu"/><meta name="next-head-count" content="7"/><link rel="stylesheet" href="/frontend/styles/animate.css/@4.1.1/animate.css"/><link rel="preload" href="/frontend/_next/static/css/7d86e7558ae79ddf.css" as="style"/><link rel="stylesheet" href="/frontend/_next/static/css/7d86e7558ae79ddf.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/frontend/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/frontend/_next/static/chunks/webpack-00cff57fe07f0499.js" defer=""></script><script src="/frontend/_next/static/chunks/framework-305cb810cde7afac.js" defer=""></script><script src="/frontend/_next/static/chunks/main-b293406bcb5e388b.js" defer=""></script><script src="/frontend/_next/static/chunks/pages/_app-06ea5a3e03de3a16.js" defer=""></script><script src="/frontend/_next/static/chunks/753-a6d5bea35a34c9d2.js" defer=""></script><script src="/frontend/_next/static/chunks/63-1df325007cb4daf2.js" defer=""></script><script src="/frontend/_next/static/chunks/pages/articles/%5Bid%5D-eab77429d5eaa728.js" defer=""></script><script src="/frontend/_next/static/qrQp_9Hjq-HbdXTrdq60c/_buildManifest.js" defer=""></script><script src="/frontend/_next/static/qrQp_9Hjq-HbdXTrdq60c/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="flex h-full min-h-[100vh] w-full flex-col" style="flex-direction:column;min-height:100vh"><main class="flex flex-1 grow-[1] flex-col" style="flex:1"><div class="flex h-full flex-1 flex-col" style="position:relative"><div class="flex space-x-6 bg-white p-6"><div class="flex-1 overflow-x-hidden"><div class="ant-card ant-card-bordered article-card min-h-full !border-[#d9d9d9] css-12jzuas"><div class="ant-card-body"><article><div class="mx-auto mb-[36px] max-w-[1045px] px-[30px] lg:mb-[52px] lg:flex lg:px-0"><div id="banner" class="media-wrapper image-media-wrapper w-full overflow-hidden rounded-[8px] border-[1px] border-solid border-[#1D2129] lg:ml-0 lg:h-[320px] lg:w-[500px]"><div class="hidden before"></div><div class="hidden after"></div><div class="scale-103 h-full w-full border-[8px] border-solid border-white lg:scale-100 cover-wrapper"><img class="h-full w-full rounded-md object-cover cover" src="/frontend/dashboard/images/banner.png" alt=""/></div></div><div class="mt-[60px] overflow-hidden lg:ml-[32px] lg:mt-0 lg:flex-1"><h1 class="leading-130 montserrat-bold mb-[9px] text-[36px] font-medium text-[#1D2129] lg:mb-[8px]">跨浏览器标签页进行通讯的方式简介</h1><div class="mb-[9px] flex whitespace-nowrap lg:mb-[10px]"><div class="leading-120 cursor-pointer truncate text-[24px] font-normal text-[#1D2129] underline-offset-2 hover:underline lg:text-[20px]" aria-hidden="true"># VOL.<!-- -->661</div><div class="leading-120 ml-[48px] text-[24px] font-normal text-[#1D2129] lg:ml-[32px] lg:text-[20px]">2024/04/27</div></div><div class="mb-[12px] flex flex-wrap lg:mb-0"><div class="leading-150 mb-[12px] mr-[18px] rounded-[30px] border border-solid border-[#1D2129] px-[24px] py-[6px] text-[20px] font-normal text-[#1D2129] lg:mb-[12px] lg:mr-[10px] lg:rounded-[20px] lg:px-[16px] lg:py-[4px] lg:text-[14px]">blog</div><div class="leading-150 mb-[12px] mr-[18px] rounded-[30px] border border-solid border-[#1D2129] px-[24px] py-[6px] text-[20px] font-normal text-[#1D2129] lg:mb-[12px] lg:mr-[10px] lg:rounded-[20px] lg:px-[16px] lg:py-[4px] lg:text-[14px]">html</div></div><div class="my-[30px] hidden w-[213px] border border-[#1D2129] lg:mb-[20px] lg:mt-[8px] lg:block"></div><div class="lg:rounded-0 rounded-[12px] bg-white/30 p-[36px] lg:flex lg:bg-transparent lg:p-0"><div class="float-left h-[118px] w-[118px] lg:float-none lg:h-[112px] lg:w-[112px]"><img src="https://avatars.githubusercontent.com/u/8088864?v=4" class="h-full w-full rounded-[8px] object-cover lg:rounded-[12px]" alt=""/></div><div class="lg:ml-[32px] lg:flex-1 lg:overflow-hidden"><div class="mb-[10px] flex h-[118px] flex-col justify-center pl-[36px] lg:h-auto lg:flex-row lg:items-center lg:justify-between lg:pl-0"><div class="leading-130 montserrat-bold mb-[12px] w-full truncate text-[30px] font-medium text-[#1D2129] lg:mb-0 lg:flex-1 lg:text-[24px]">hankliu62</div><a class="leading-170 ml-0 whitespace-pre-wrap text-[20px] font-normal !text-[#1D2129] !underline hover:!text-[#1D2129] hover:!underline focus:!text-[#1D2129] lg:ml-[5px] lg:text-[14px]" href="https://github.com/hankliu62" target="_blank" rel="noreferrer">TA的个人名片</a></div><div class="leading-170 text-[20px] font-normal text-[#4E5969] lg:text-[14px]">HankLiu前端开发工程师，精通前端，涉猎后端，对前端有着浓厚的兴趣，希望能够在前端这条路上一直走下去。努力去听风的声音，不必在意风的方向。</div></div></div></div></div><div class="ant-divider css-12jzuas ant-divider-horizontal !mt-0 !border-[#bfc3c7]" role="separator"></div><section><div><div class="ant-skeleton ant-skeleton-active css-12jzuas"><div class="ant-skeleton-content"><h3 class="ant-skeleton-title" style="width:38%"></h3><ul class="ant-skeleton-paragraph"><li></li><li></li><li style="width:61%"></li></ul></div></div></div></section></article></div></div></div><div class="w-64 bg-white"><div><div class=""><div class="ant-collapse ant-collapse-icon-position-end question-menus-collapse css-12jzuas"><div class="ant-collapse-item ant-collapse-item-active"><div class="ant-collapse-header" aria-expanded="true" aria-disabled="false" role="button" tabindex="0"><div class="ant-collapse-expand-icon"><span role="img" aria-label="right" class="anticon anticon-right ant-collapse-arrow"><svg viewBox="64 64 896 896" focusable="false" style="-ms-transform:rotate(90deg);transform:rotate(90deg)" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path></svg></span></div><span class="ant-collapse-header-text"><span class="text-base">目录</span></span><div class="ant-collapse-extra"><div class="-mr-2">收起</div></div></div><div class="ant-collapse-content ant-collapse-content-active"><div class="ant-collapse-content-box"><ul class="max-h-[620px] list-none space-y-3 overflow-y-auto text-slate-500 dark:text-slate-400"><li id="## 跨浏览器标签页进行通讯的方式简介
+
+在现代 `Web` 应用程序中，跨浏览器标签页之间进行通讯是一项重要的功能。无论是在多标签页应用程序中同步状态，还是在不同浏览器窗口之间共享数据，实现跨标签页通讯都是必不可少的。在本文中，我们将探讨跨浏览器标签页进行通讯的各种方式，并详细介绍每种方式的 `API` 和使用场景。
+
+### 所有方法
+
+1. 使用 `Web Storage API`
+2. 使用 `Broadcast Channel API`
+3. 使用 `SharedWorker`
+4. 使用 `Service Worker`
+5. 使用 `WebSocket`
+6. 使用 `PostMessage API`
+7. 使用 `IndexedDB`
+
+### Web Storage API
+
+#### 简介
+
+- **简介**：`Web Storage API` 提供了一种在客户端存储数据的方法，包括 `localStorage` 和 `sessionStorage` 两种方式。它们可以在不同的浏览器标签页之间共享数据，而不受页面刷新或关闭的影响。
+- **优点**：简单易用，支持持久化存储。
+- **缺点**：只能存储字符串类型的数据，且容量有限。
+- **适用场景**：适合存储小型数据，如用户偏好设置或临时状态。
+
+#### API
+
+- **localStorage**: 保存的数据没有过期时间，可以一直存在于浏览器中。
+- **sessionStorage**: 保存的数据在浏览器会话结束时被清除，适合临时存储数据。
+
+#### 使用场景
+
+- 在同一浏览器的不同标签页中共享数据。
+- 存储用户首选项或状态信息。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Web Storage Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;saveData()&quot;&gt;Save Data&lt;/button&gt;
+    &lt;button onclick=&quot;getData()&quot;&gt;Get Data&lt;/button&gt;
+
+    &lt;script&gt;
+        function saveData() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            localStorage.setItem(&#x27;data&#x27;, input);
+        }
+
+        function getData() {
+            const data = localStorage.getItem(&#x27;data&#x27;);
+            alert(data);
+        }
+
+        window.addEventListener(&#x27;storage&#x27;, event =&gt; {
+            alert(&#x27;Data changed in another tab: &#x27; + event.newValue);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- another-page.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Another Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button onclick=&quot;getData()&quot;&gt;Get Data from Main Page&lt;/button&gt;
+
+    &lt;script&gt;
+        function getData() {
+            const data = localStorage.getItem(&#x27;data&#x27;);
+            alert(data);
+        }
+
+        window.addEventListener(&#x27;storage&#x27;, event =&gt; {
+            alert(&#x27;Data changed in another tab: &#x27; + event.newValue);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。同时，当一个标签页修改了 localStorage 的值，另一个标签页也会收到通知。
+
+### Broadcast Channel API
+
+#### 简介
+
+- **简介**：`Broadcast Channel API` 允许在不同的浏览器标签页之间进行实时通信，通过创建一个共享的消息通道来传递数据。
+- **优点**：支持实时通信，消息发送和接收都非常简单。
+- **缺点**：不支持 `IE` 浏览器。
+- **适用场景**：适合需要实时通讯的场景，如多标签页间的数据同步。
+
+#### API
+- **BroadcastChannel**: 创建一个用于跨文档通信的通道。
+
+#### 使用场景
+- 在不同的浏览器标签页之间传递消息。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Broadcast Channel Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        const channel = new BroadcastChannel(&#x27;channel&#x27;);
+
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            channel.postMessage(input);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- another-page.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Another Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id=&quot;message&quot;&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+        const channel = new BroadcastChannel(&#x27;channel&#x27;);
+
+        channel.onmessage = event =&gt; {
+            document.getElementById(&#x27;message&#x27;).textContent = event.data;
+        };
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入消息并发送，在另一个页面中接收并显示消息。
+
+### SharedWorker
+
+#### 简介
+
+- **简介**：`SharedWorker` 允许在多个浏览器上下文之间共享同一个 `Worker` 实例，提供了一种全局范围的通讯机制。
+- **优点**：支持多标签页之间的实时通信，可以与所有标签页共享相同的数据。
+- **缺点**：不支持 `IE` 浏览器。
+- **适用场景**：适合需要共享状态或实现实时通讯的场景。
+
+#### API
+- **SharedWorker**: 创建一个共享的 `Web Worker` 实例，可以被多个浏览上下文共享。
+
+#### 使用场景
+
+- 在不同浏览器标签页之间共享数据或进行通讯。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;SharedWorker Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        const worker = new SharedWorker(&#x27;worker.js&#x27;);
+
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            worker.port.postMessage(input);
+        }
+
+        worker.port.onmessage = event =&gt; {
+            alert(event.data);
+        };
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+``` javascript
+// worker.js
+const ports = [];
+
+onconnect = event =&gt; {
+    const port = event.ports[0];
+    ports.push(port);
+    port.onmessage = event =&gt; {
+        const message = event.data;
+        ports.forEach(port =&gt; port.postMessage(message));
+    };
+};
+```
+
+在一个页面中输入消息并发送，在另一个页面中接收并显示消息。
+
+### Service Worker
+
+#### 简介
+- **简介**：`Service Worker` 是一种在浏览器后台运行的脚本，可以拦截和处理网络请求，并实现离线缓存和推送通知等功能。
+- **优点**：支持后台运行，可以拦截网络请求，实现离线缓存和推送通知。
+- **缺点**：只能用于现代浏览器，且需要 `HTTPS` 支持。
+- **适用场景**：适合需要离线访问或推送通知的场景，如聊天应用或离线应用。
+
+#### API
+
+- **Service Worker**: 在后台运行的脚本，可以拦截和处理网络请求，并进行推送通知等功能。
+
+#### 使用场景
+
+- 在不同标签页之间共享数据或进行通讯。
+- 实现离线缓存和推送通知。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Service Worker Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        // 注册 Service Worker
+        navigator.serviceWorker.register(&#x27;sw.js&#x27;);
+
+        // 发送消息
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            navigator.serviceWorker.controller.postMessage(input);
+        }
+
+        // 监听消息
+        navigator.serviceWorker.addEventListener(&#x27;message&#x27;, event =&gt; {
+            alert(event.data);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+``` javascript
+// sw.js
+self.addEventListener(&#x27;message&#x27;, event =&gt; {
+    const message = event.data;
+    clients.matchAll().then(clients =&gt; {
+        clients.forEach(client =&gt; client.postMessage(message));
+    });
+});
+```
+
+在一个页面中输入消息并发送，在另一个页面中接收并显示消息。
+
+### WebSocket
+
+#### 简介
+
+- **简介**：`WebSocket` 提供了一种在客户端和服务器之间建立持久连接的方式，实现了双向通信。
+- **优点**：支持双向通信，可以实现实时通讯。
+- **缺点**：需要在服务器端实现 `WebSocket` 服务，且不支持跨域请求。
+- **适用场景**：适合实时通讯场景，如聊天应用或在线游戏。
+
+#### API
+- **WebSocket**: 在客户端和服务器之间建立持久连接，实现双向通信。
+
+#### 使用场景
+
+在不同浏览器标签页之间进行实时通讯。
+
+```javascript
+// server.js
+const WebSocket = require(&#x27;ws&#x27;);
+
+const wss = new WebSocket.Server({ port: 8080 });
+
+wss.on(&#x27;connection&#x27;, ws =&gt; {
+    ws.on(&#x27;message&#x27;, message =&gt; {
+        wss.clients.forEach(client =&gt; {
+            if (client !== ws &amp;&amp; client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            }
+        });
+    });
+});
+```
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;WebSocket Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        const socket = new WebSocket(&#x27;ws://localhost:8080&#x27;);
+
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            socket.send(input);
+        }
+
+        socket.onmessage = event =&gt; {
+            alert(event.data);
+        };
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入消息并发送，在另一个页面中接收并显示消息。
+
+### PostMessage API
+
+#### 简介
+
+- **简介**：`PostMessage API` 允许跨文档之间安全地传递消息，可以实现跨域通信。
+- **优点**：支持跨域通信，使用简单。
+- **缺点**：需要对接收消息的文档进行信任验证，存在安全风险。
+- **适用场景**：适合不同域名之间的数据交换或通信。
+
+#### API
+- **window.postMessage()**: 向其他窗口发送消息。
+
+#### 使用场景
+
+- 在不同窗口之间进行跨域通信。
+
+```html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;PostMessage Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        const popup = window.open(&#x27;another-page.html&#x27;);
+
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            popup.postMessage(input, &#x27;*&#x27;);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- another-page.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Another Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id=&quot;message&quot;&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+        window.addEventListener(&#x27;message&#x27;, event =&gt; {
+            document.getElementById(&#x27;message&#x27;).textContent = event.data;
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。
+
+### IndexedDB
+
+#### 简介
+
+- **简介**：`IndexedDB` 提供了一个异步的、事务型的数据库，适用于存储大量结构化数据。
+- **优点**：支持存储大量结构化数据，数据存储在客户端本地。
+- **缺点**：使用复杂，需要学习 `IndexedDB` 的 `API`。
+- **适用场景**：适合需要存储大量结构化数据的场景，如离线应用或数据分析应用。
+
+#### API
+
+- **IndexedDB**: 提供了一个异步的、事务型的数据库。
+
+#### 使用场景
+
+- 存储大量结构化数据，如离线应用程序的数据。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;IndexedDB Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;saveData()&quot;&gt;Save Data&lt;/button&gt;
+    &lt;button onclick=&quot;getData()&quot;&gt;Get Data&lt;/button&gt;
+
+    &lt;script&gt;
+        const request = indexedDB.open(&#x27;myDatabase&#x27;);
+
+        request.onupgradeneeded = event =&gt; {
+            const db = event.target.result;
+            const objectStore = db.createObjectStore(&#x27;data&#x27;, { keyPath: &#x27;id&#x27; });
+        };
+
+        function saveData() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            const db = request.result;
+            const transaction = db.transaction(&#x27;data&#x27;, &#x27;readwrite&#x27;);
+            const objectStore = transaction.objectStore(&#x27;data&#x27;);
+            objectStore.add({ id: 1, data: input });
+        }
+
+        function getData() {
+            const db = request.result;
+            const transaction = db.transaction(&#x27;data&#x27;, &#x27;readonly&#x27;);
+            const objectStore = transaction.objectStore(&#x27;data&#x27;);
+            const request = objectStore.get(1);
+            request.onsuccess = event =&gt; {
+                const data = event.target.result;
+                alert(data.data);
+            };
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- another-page.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Another Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button onclick=&quot;getData()&quot;&gt;Get Data from Main Page&lt;/button&gt;
+
+    &lt;script&gt;
+        function getData() {
+            const request = indexedDB.open(&#x27;myDatabase&#x27;);
+            request.onsuccess = event =&gt; {
+                const db = event.target.result;
+                const transaction = db.transaction(&#x27;data&#x27;, &#x27;readonly&#x27;);
+                const objectStore = transaction.objectStore(&#x27;data&#x27;);
+                const request = objectStore.get(1);
+                request.onsuccess = event =&gt; {
+                    const data = event.target.result;
+                    alert(data.data);
+                };
+            };
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。
+
+### 总结
+
+在本文中，我们介绍了跨浏览器标签页进行通讯的多种方式，并提供了详细的 `API` 和使用场景。根据您的具体需求和项目要求" class="border-0 !border-l-2 border-solid border-transparent pr-[16px] text-base !border-sky-500"><a class="w-full overflow-hidden !text-[#515767] !text-sky-500" href="/frontend/articles/661#%E8%B7%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E8%BF%9B%E8%A1%8C%E9%80%9A%E8%AE%AF%E7%9A%84%E6%96%B9%E5%BC%8F%E7%AE%80%E4%BB%8B--%E5%9C%A8%E7%8E%B0%E4%BB%A3-%60web%60-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%B7%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E8%BF%9B%E8%A1%8C%E9%80%9A%E8%AE%AF%E6%98%AF%E4%B8%80%E9%A1%B9%E9%87%8D%E8%A6%81%E7%9A%84%E5%8A%9F%E8%83%BD%E6%97%A0%E8%AE%BA%E6%98%AF%E5%9C%A8%E5%A4%9A%E6%A0%87%E7%AD%BE%E9%A1%B5%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%90%8C%E6%AD%A5%E7%8A%B6%E6%80%81%E8%BF%98%E6%98%AF%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E5%AE%9E%E7%8E%B0%E8%B7%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%80%9A%E8%AE%AF%E9%83%BD%E6%98%AF%E5%BF%85%E4%B8%8D%E5%8F%AF%E5%B0%91%E7%9A%84%E5%9C%A8%E6%9C%AC%E6%96%87%E4%B8%AD%E6%88%91%E4%BB%AC%E5%B0%86%E6%8E%A2%E8%AE%A8%E8%B7%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E8%BF%9B%E8%A1%8C%E9%80%9A%E8%AE%AF%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%B9%B6%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E6%AF%8F%E7%A7%8D%E6%96%B9%E5%BC%8F%E7%9A%84-%60api%60-%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF--###-%E6%89%80%E6%9C%89%E6%96%B9%E6%B3%95--1.-%E4%BD%BF%E7%94%A8-%60web-storage-api%60-2.-%E4%BD%BF%E7%94%A8-%60broadcast-channel-api%60-3.-%E4%BD%BF%E7%94%A8-%60sharedworker%60-4.-%E4%BD%BF%E7%94%A8-%60service-worker%60-5.-%E4%BD%BF%E7%94%A8-%60websocket%60-6.-%E4%BD%BF%E7%94%A8-%60postmessage-api%60-7.-%E4%BD%BF%E7%94%A8-%60indexeddb%60--###-web-storage-api--####-%E7%AE%80%E4%BB%8B----**%E7%AE%80%E4%BB%8B**%60web-storage-api%60-%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E7%A7%8D%E5%9C%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95%E5%8C%85%E6%8B%AC-%60localstorage%60-%E5%92%8C-%60sessionstorage%60-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%AE%83%E4%BB%AC%E5%8F%AF%E4%BB%A5%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E8%80%8C%E4%B8%8D%E5%8F%97%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E6%88%96%E5%85%B3%E9%97%AD%E7%9A%84%E5%BD%B1%E5%93%8D---**%E4%BC%98%E7%82%B9**%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E6%94%AF%E6%8C%81%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8---**%E7%BC%BA%E7%82%B9**%E5%8F%AA%E8%83%BD%E5%AD%98%E5%82%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B8%94%E5%AE%B9%E9%87%8F%E6%9C%89%E9%99%90---**%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF**%E9%80%82%E5%90%88%E5%AD%98%E5%82%A8%E5%B0%8F%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%A6%82%E7%94%A8%E6%88%B7%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE%E6%88%96%E4%B8%B4%E6%97%B6%E7%8A%B6%E6%80%81--####-api----**localstorage**:-%E4%BF%9D%E5%AD%98%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B2%A1%E6%9C%89%E8%BF%87%E6%9C%9F%E6%97%B6%E9%97%B4%E5%8F%AF%E4%BB%A5%E4%B8%80%E7%9B%B4%E5%AD%98%E5%9C%A8%E4%BA%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD---**sessionstorage**:-%E4%BF%9D%E5%AD%98%E7%9A%84%E6%95%B0%E6%8D%AE%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%9A%E8%AF%9D%E7%BB%93%E6%9D%9F%E6%97%B6%E8%A2%AB%E6%B8%85%E9%99%A4%E9%80%82%E5%90%88%E4%B8%B4%E6%97%B6%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE--####-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF----%E5%9C%A8%E5%90%8C%E4%B8%80%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%B8%8D%E5%90%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%AD%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE---%E5%AD%98%E5%82%A8%E7%94%A8%E6%88%B7%E9%A6%96%E9%80%89%E9%A1%B9%E6%88%96%E7%8A%B6%E6%80%81%E4%BF%A1%E6%81%AF--%60%60%60-html-%3C!---index.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Eweb-storage-example%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cinput-type=%22text%22-id=%22input%22%3E-----%3Cbutton-onclick=%22savedata()%22%3Esave-data%3C/button%3E-----%3Cbutton-onclick=%22getdata()%22%3Eget-data%3C/button%3E------%3Cscript%3E---------function-savedata()-{-------------const-input-=-document.getelementbyid(&#x27;input&#x27;).value;-------------localstorage.setitem(&#x27;data&#x27;,-input);---------}----------function-getdata()-{-------------const-data-=-localstorage.getitem(&#x27;data&#x27;);-------------alert(data);---------}----------window.addeventlistener(&#x27;storage&#x27;,-event-=%3E-{-------------alert(&#x27;data-changed-in-another-tab:-&#x27;-+-event.newvalue);---------});-----%3C/script%3E-%3C/body%3E-%3C/html%3E--%3C!---another-page.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Eanother-page%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cbutton-onclick=%22getdata()%22%3Eget-data-from-main-page%3C/button%3E------%3Cscript%3E---------function-getdata()-{-------------const-data-=-localstorage.getitem(&#x27;data&#x27;);-------------alert(data);---------}----------window.addeventlistener(&#x27;storage&#x27;,-event-=%3E-{-------------alert(&#x27;data-changed-in-another-tab:-&#x27;-+-event.newvalue);---------});-----%3C/script%3E-%3C/body%3E-%3C/html%3E-%60%60%60--%E5%9C%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E5%B9%B6%E4%BF%9D%E5%AD%98%E7%84%B6%E5%90%8E%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E5%90%8C%E6%97%B6%E5%BD%93%E4%B8%80%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%BF%AE%E6%94%B9%E4%BA%86-localstorage-%E7%9A%84%E5%80%BC%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%9F%E4%BC%9A%E6%94%B6%E5%88%B0%E9%80%9A%E7%9F%A5--###-broadcast-channel-api--####-%E7%AE%80%E4%BB%8B----**%E7%AE%80%E4%BB%8B**%60broadcast-channel-api%60-%E5%85%81%E8%AE%B8%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E8%BF%9B%E8%A1%8C%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1%E9%80%9A%E8%BF%87%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B1%E4%BA%AB%E7%9A%84%E6%B6%88%E6%81%AF%E9%80%9A%E9%81%93%E6%9D%A5%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE---**%E4%BC%98%E7%82%B9**%E6%94%AF%E6%8C%81%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1%E6%B6%88%E6%81%AF%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E9%83%BD%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95---**%E7%BC%BA%E7%82%B9**%E4%B8%8D%E6%94%AF%E6%8C%81-%60ie%60-%E6%B5%8F%E8%A7%88%E5%99%A8---**%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF**%E9%80%82%E5%90%88%E9%9C%80%E8%A6%81%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF%E7%9A%84%E5%9C%BA%E6%99%AF%E5%A6%82%E5%A4%9A%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%97%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5--####-api---**broadcastchannel**:-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8E%E8%B7%A8%E6%96%87%E6%A1%A3%E9%80%9A%E4%BF%A1%E7%9A%84%E9%80%9A%E9%81%93--####-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF---%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E6%B6%88%E6%81%AF--%60%60%60-html-%3C!---index.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Ebroadcast-channel-example%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cinput-type=%22text%22-id=%22input%22%3E-----%3Cbutton-onclick=%22sendmessage()%22%3Esend-message%3C/button%3E------%3Cscript%3E---------const-channel-=-new-broadcastchannel(&#x27;channel&#x27;);----------function-sendmessage()-{-------------const-input-=-document.getelementbyid(&#x27;input&#x27;).value;-------------channel.postmessage(input);---------}-----%3C/script%3E-%3C/body%3E-%3C/html%3E--%3C!---another-page.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Eanother-page%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cp-id=%22message%22%3E%3C/p%3E------%3Cscript%3E---------const-channel-=-new-broadcastchannel(&#x27;channel&#x27;);----------channel.onmessage-=-event-=%3E-{-------------document.getelementbyid(&#x27;message&#x27;).textcontent-=-event.data;---------};-----%3C/script%3E-%3C/body%3E-%3C/html%3E-%60%60%60--%E5%9C%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%BE%93%E5%85%A5%E6%B6%88%E6%81%AF%E5%B9%B6%E5%8F%91%E9%80%81%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%8E%A5%E6%94%B6%E5%B9%B6%E6%98%BE%E7%A4%BA%E6%B6%88%E6%81%AF--###-sharedworker--####-%E7%AE%80%E4%BB%8B----**%E7%AE%80%E4%BB%8B**%60sharedworker%60-%E5%85%81%E8%AE%B8%E5%9C%A8%E5%A4%9A%E4%B8%AA%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E5%90%8C%E4%B8%80%E4%B8%AA-%60worker%60-%E5%AE%9E%E4%BE%8B%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E7%A7%8D%E5%85%A8%E5%B1%80%E8%8C%83%E5%9B%B4%E7%9A%84%E9%80%9A%E8%AE%AF%E6%9C%BA%E5%88%B6---**%E4%BC%98%E7%82%B9**%E6%94%AF%E6%8C%81%E5%A4%9A%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1%E5%8F%AF%E4%BB%A5%E4%B8%8E%E6%89%80%E6%9C%89%E6%A0%87%E7%AD%BE%E9%A1%B5%E5%85%B1%E4%BA%AB%E7%9B%B8%E5%90%8C%E7%9A%84%E6%95%B0%E6%8D%AE---**%E7%BC%BA%E7%82%B9**%E4%B8%8D%E6%94%AF%E6%8C%81-%60ie%60-%E6%B5%8F%E8%A7%88%E5%99%A8---**%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF**%E9%80%82%E5%90%88%E9%9C%80%E8%A6%81%E5%85%B1%E4%BA%AB%E7%8A%B6%E6%80%81%E6%88%96%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF%E7%9A%84%E5%9C%BA%E6%99%AF--####-api---**sharedworker**:-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B1%E4%BA%AB%E7%9A%84-%60web-worker%60-%E5%AE%9E%E4%BE%8B%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%A4%9A%E4%B8%AA%E6%B5%8F%E8%A7%88%E4%B8%8A%E4%B8%8B%E6%96%87%E5%85%B1%E4%BA%AB--####-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF----%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E6%88%96%E8%BF%9B%E8%A1%8C%E9%80%9A%E8%AE%AF--%60%60%60-html-%3C!---index.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Esharedworker-example%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cinput-type=%22text%22-id=%22input%22%3E-----%3Cbutton-onclick=%22sendmessage()%22%3Esend-message%3C/button%3E------%3Cscript%3E---------const-worker-=-new-sharedworker(&#x27;worker.js&#x27;);----------function-sendmessage()-{-------------const-input-=-document.getelementbyid(&#x27;input&#x27;).value;-------------worker.port.postmessage(input);---------}----------worker.port.onmessage-=-event-=%3E-{-------------alert(event.data);---------};-----%3C/script%3E-%3C/body%3E-%3C/html%3E-%60%60%60--%60%60%60-javascript-/-worker.js-const-ports-=-[];--onconnect-=-event-=%3E-{-----const-port-=-event.ports[0];-----ports.push(port);-----port.onmessage-=-event-=%3E-{---------const-message-=-event.data;---------ports.foreach(port-=%3E-port.postmessage(message));-----};-};-%60%60%60--%E5%9C%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%BE%93%E5%85%A5%E6%B6%88%E6%81%AF%E5%B9%B6%E5%8F%91%E9%80%81%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%8E%A5%E6%94%B6%E5%B9%B6%E6%98%BE%E7%A4%BA%E6%B6%88%E6%81%AF--###-service-worker--####-%E7%AE%80%E4%BB%8B---**%E7%AE%80%E4%BB%8B**%60service-worker%60-%E6%98%AF%E4%B8%80%E7%A7%8D%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E7%9A%84%E8%84%9A%E6%9C%AC%E5%8F%AF%E4%BB%A5%E6%8B%A6%E6%88%AA%E5%92%8C%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%B9%B6%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E7%BC%93%E5%AD%98%E5%92%8C%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E7%AD%89%E5%8A%9F%E8%83%BD---**%E4%BC%98%E7%82%B9**%E6%94%AF%E6%8C%81%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%AF%E4%BB%A5%E6%8B%A6%E6%88%AA%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E7%BC%93%E5%AD%98%E5%92%8C%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5---**%E7%BC%BA%E7%82%B9**%E5%8F%AA%E8%83%BD%E7%94%A8%E4%BA%8E%E7%8E%B0%E4%BB%A3%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%94%E9%9C%80%E8%A6%81-%60https%60-%E6%94%AF%E6%8C%81---**%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF**%E9%80%82%E5%90%88%E9%9C%80%E8%A6%81%E7%A6%BB%E7%BA%BF%E8%AE%BF%E9%97%AE%E6%88%96%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E7%9A%84%E5%9C%BA%E6%99%AF%E5%A6%82%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E6%88%96%E7%A6%BB%E7%BA%BF%E5%BA%94%E7%94%A8--####-api----**service-worker**:-%E5%9C%A8%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E7%9A%84%E8%84%9A%E6%9C%AC%E5%8F%AF%E4%BB%A5%E6%8B%A6%E6%88%AA%E5%92%8C%E5%A4%84%E7%90%86%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E7%AD%89%E5%8A%9F%E8%83%BD--####-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF----%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E6%88%96%E8%BF%9B%E8%A1%8C%E9%80%9A%E8%AE%AF---%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E7%BC%93%E5%AD%98%E5%92%8C%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5--%60%60%60-html-%3C!---index.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Eservice-worker-example%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cinput-type=%22text%22-id=%22input%22%3E-----%3Cbutton-onclick=%22sendmessage()%22%3Esend-message%3C/button%3E------%3Cscript%3E---------/-%E6%B3%A8%E5%86%8C-service-worker---------navigator.serviceworker.register(&#x27;sw.js&#x27;);----------/-%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF---------function-sendmessage()-{-------------const-input-=-document.getelementbyid(&#x27;input&#x27;).value;-------------navigator.serviceworker.controller.postmessage(input);---------}----------/-%E7%9B%91%E5%90%AC%E6%B6%88%E6%81%AF---------navigator.serviceworker.addeventlistener(&#x27;message&#x27;,-event-=%3E-{-------------alert(event.data);---------});-----%3C/script%3E-%3C/body%3E-%3C/html%3E-%60%60%60--%60%60%60-javascript-/-sw.js-self.addeventlistener(&#x27;message&#x27;,-event-=%3E-{-----const-message-=-event.data;-----clients.matchall().then(clients-=%3E-{---------clients.foreach(client-=%3E-client.postmessage(message));-----});-});-%60%60%60--%E5%9C%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%BE%93%E5%85%A5%E6%B6%88%E6%81%AF%E5%B9%B6%E5%8F%91%E9%80%81%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%8E%A5%E6%94%B6%E5%B9%B6%E6%98%BE%E7%A4%BA%E6%B6%88%E6%81%AF--###-websocket--####-%E7%AE%80%E4%BB%8B----**%E7%AE%80%E4%BB%8B**%60websocket%60-%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E7%A7%8D%E5%9C%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8B%E9%97%B4%E5%BB%BA%E7%AB%8B%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E4%BA%86%E5%8F%8C%E5%90%91%E9%80%9A%E4%BF%A1---**%E4%BC%98%E7%82%B9**%E6%94%AF%E6%8C%81%E5%8F%8C%E5%90%91%E9%80%9A%E4%BF%A1%E5%8F%AF%E4%BB%A5%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF---**%E7%BC%BA%E7%82%B9**%E9%9C%80%E8%A6%81%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%AE%9E%E7%8E%B0-%60websocket%60-%E6%9C%8D%E5%8A%A1%E4%B8%94%E4%B8%8D%E6%94%AF%E6%8C%81%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82---**%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF**%E9%80%82%E5%90%88%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF%E5%9C%BA%E6%99%AF%E5%A6%82%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E6%88%96%E5%9C%A8%E7%BA%BF%E6%B8%B8%E6%88%8F--####-api---**websocket**:-%E5%9C%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8B%E9%97%B4%E5%BB%BA%E7%AB%8B%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5%E5%AE%9E%E7%8E%B0%E5%8F%8C%E5%90%91%E9%80%9A%E4%BF%A1--####-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF--%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E8%BF%9B%E8%A1%8C%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF--%60%60%60javascript-/-server.js-const-websocket-=-require(&#x27;ws&#x27;);--const-wss-=-new-websocket.server({-port:-8080-});--wss.on(&#x27;connection&#x27;,-ws-=%3E-{-----ws.on(&#x27;message&#x27;,-message-=%3E-{---------wss.clients.foreach(client-=%3E-{-------------if-(client-!==-ws-&amp;&amp;-client.readystate-===-websocket.open)-{-----------------client.send(message);-------------}---------});-----});-});-%60%60%60--%60%60%60-html-%3C!---index.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Ewebsocket-example%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cinput-type=%22text%22-id=%22input%22%3E-----%3Cbutton-onclick=%22sendmessage()%22%3Esend-message%3C/button%3E------%3Cscript%3E---------const-socket-=-new-websocket(&#x27;ws:/localhost:8080&#x27;);----------function-sendmessage()-{-------------const-input-=-document.getelementbyid(&#x27;input&#x27;).value;-------------socket.send(input);---------}----------socket.onmessage-=-event-=%3E-{-------------alert(event.data);---------};-----%3C/script%3E-%3C/body%3E-%3C/html%3E-%60%60%60--%E5%9C%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%BE%93%E5%85%A5%E6%B6%88%E6%81%AF%E5%B9%B6%E5%8F%91%E9%80%81%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%8E%A5%E6%94%B6%E5%B9%B6%E6%98%BE%E7%A4%BA%E6%B6%88%E6%81%AF--###-postmessage-api--####-%E7%AE%80%E4%BB%8B----**%E7%AE%80%E4%BB%8B**%60postmessage-api%60-%E5%85%81%E8%AE%B8%E8%B7%A8%E6%96%87%E6%A1%A3%E4%B9%8B%E9%97%B4%E5%AE%89%E5%85%A8%E5%9C%B0%E4%BC%A0%E9%80%92%E6%B6%88%E6%81%AF%E5%8F%AF%E4%BB%A5%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%9F%9F%E9%80%9A%E4%BF%A1---**%E4%BC%98%E7%82%B9**%E6%94%AF%E6%8C%81%E8%B7%A8%E5%9F%9F%E9%80%9A%E4%BF%A1%E4%BD%BF%E7%94%A8%E7%AE%80%E5%8D%95---**%E7%BC%BA%E7%82%B9**%E9%9C%80%E8%A6%81%E5%AF%B9%E6%8E%A5%E6%94%B6%E6%B6%88%E6%81%AF%E7%9A%84%E6%96%87%E6%A1%A3%E8%BF%9B%E8%A1%8C%E4%BF%A1%E4%BB%BB%E9%AA%8C%E8%AF%81%E5%AD%98%E5%9C%A8%E5%AE%89%E5%85%A8%E9%A3%8E%E9%99%A9---**%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF**%E9%80%82%E5%90%88%E4%B8%8D%E5%90%8C%E5%9F%9F%E5%90%8D%E4%B9%8B%E9%97%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%88%96%E9%80%9A%E4%BF%A1--####-api---**window.postmessage()**:-%E5%90%91%E5%85%B6%E4%BB%96%E7%AA%97%E5%8F%A3%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF--####-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF----%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%AA%97%E5%8F%A3%E4%B9%8B%E9%97%B4%E8%BF%9B%E8%A1%8C%E8%B7%A8%E5%9F%9F%E9%80%9A%E4%BF%A1--%60%60%60html-%3C!---index.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Epostmessage-example%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cinput-type=%22text%22-id=%22input%22%3E-----%3Cbutton-onclick=%22sendmessage()%22%3Esend-message%3C/button%3E------%3Cscript%3E---------const-popup-=-window.open(&#x27;another-page.html&#x27;);----------function-sendmessage()-{-------------const-input-=-document.getelementbyid(&#x27;input&#x27;).value;-------------popup.postmessage(input,-&#x27;*&#x27;);---------}-----%3C/script%3E-%3C/body%3E-%3C/html%3E--%3C!---another-page.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Eanother-page%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cp-id=%22message%22%3E%3C/p%3E------%3Cscript%3E---------window.addeventlistener(&#x27;message&#x27;,-event-=%3E-{-------------document.getelementbyid(&#x27;message&#x27;).textcontent-=-event.data;---------});-----%3C/script%3E-%3C/body%3E-%3C/html%3E-%60%60%60--%E5%9C%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E5%B9%B6%E4%BF%9D%E5%AD%98%E7%84%B6%E5%90%8E%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE--###-indexeddb--####-%E7%AE%80%E4%BB%8B----**%E7%AE%80%E4%BB%8B**%60indexeddb%60-%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BC%82%E6%AD%A5%E7%9A%84%E4%BA%8B%E5%8A%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%82%E7%94%A8%E4%BA%8E%E5%AD%98%E5%82%A8%E5%A4%A7%E9%87%8F%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE---**%E4%BC%98%E7%82%B9**%E6%94%AF%E6%8C%81%E5%AD%98%E5%82%A8%E5%A4%A7%E9%87%8F%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%9C%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%AC%E5%9C%B0---**%E7%BC%BA%E7%82%B9**%E4%BD%BF%E7%94%A8%E5%A4%8D%E6%9D%82%E9%9C%80%E8%A6%81%E5%AD%A6%E4%B9%A0-%60indexeddb%60-%E7%9A%84-%60api%60---**%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF**%E9%80%82%E5%90%88%E9%9C%80%E8%A6%81%E5%AD%98%E5%82%A8%E5%A4%A7%E9%87%8F%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9C%BA%E6%99%AF%E5%A6%82%E7%A6%BB%E7%BA%BF%E5%BA%94%E7%94%A8%E6%88%96%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%BA%94%E7%94%A8--####-api----**indexeddb**:-%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BC%82%E6%AD%A5%E7%9A%84%E4%BA%8B%E5%8A%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93--####-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF----%E5%AD%98%E5%82%A8%E5%A4%A7%E9%87%8F%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE%E5%A6%82%E7%A6%BB%E7%BA%BF%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%95%B0%E6%8D%AE--%60%60%60-html-%3C!---index.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Eindexeddb-example%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cinput-type=%22text%22-id=%22input%22%3E-----%3Cbutton-onclick=%22savedata()%22%3Esave-data%3C/button%3E-----%3Cbutton-onclick=%22getdata()%22%3Eget-data%3C/button%3E------%3Cscript%3E---------const-request-=-indexeddb.open(&#x27;mydatabase&#x27;);----------request.onupgradeneeded-=-event-=%3E-{-------------const-db-=-event.target.result;-------------const-objectstore-=-db.createobjectstore(&#x27;data&#x27;,-{-keypath:-&#x27;id&#x27;-});---------};----------function-savedata()-{-------------const-input-=-document.getelementbyid(&#x27;input&#x27;).value;-------------const-db-=-request.result;-------------const-transaction-=-db.transaction(&#x27;data&#x27;,-&#x27;readwrite&#x27;);-------------const-objectstore-=-transaction.objectstore(&#x27;data&#x27;);-------------objectstore.add({-id:-1,-data:-input-});---------}----------function-getdata()-{-------------const-db-=-request.result;-------------const-transaction-=-db.transaction(&#x27;data&#x27;,-&#x27;readonly&#x27;);-------------const-objectstore-=-transaction.objectstore(&#x27;data&#x27;);-------------const-request-=-objectstore.get(1);-------------request.onsuccess-=-event-=%3E-{-----------------const-data-=-event.target.result;-----------------alert(data.data);-------------};---------}-----%3C/script%3E-%3C/body%3E-%3C/html%3E--%3C!---another-page.html---%3E-%3C!doctype-html%3E-%3Chtml-lang=%22en%22%3E-%3Chead%3E-----%3Cmeta-charset=%22utf-8%22%3E-----%3Cmeta-name=%22viewport%22-content=%22width=device-width,-initial-scale=1.0%22%3E-----%3Ctitle%3Eanother-page%3C/title%3E-%3C/head%3E-%3Cbody%3E-----%3Cbutton-onclick=%22getdata()%22%3Eget-data-from-main-page%3C/button%3E------%3Cscript%3E---------function-getdata()-{-------------const-request-=-indexeddb.open(&#x27;mydatabase&#x27;);-------------request.onsuccess-=-event-=%3E-{-----------------const-db-=-event.target.result;-----------------const-transaction-=-db.transaction(&#x27;data&#x27;,-&#x27;readonly&#x27;);-----------------const-objectstore-=-transaction.objectstore(&#x27;data&#x27;);-----------------const-request-=-objectstore.get(1);-----------------request.onsuccess-=-event-=%3E-{---------------------const-data-=-event.target.result;---------------------alert(data.data);-----------------};-------------};---------}-----%3C/script%3E-%3C/body%3E-%3C/html%3E-%60%60%60--%E5%9C%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E5%B9%B6%E4%BF%9D%E5%AD%98%E7%84%B6%E5%90%8E%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE--###-%E6%80%BB%E7%BB%93--%E5%9C%A8%E6%9C%AC%E6%96%87%E4%B8%AD%E6%88%91%E4%BB%AC%E4%BB%8B%E7%BB%8D%E4%BA%86%E8%B7%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E9%A1%B5%E8%BF%9B%E8%A1%8C%E9%80%9A%E8%AE%AF%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%B9%B6%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A6%E7%BB%86%E7%9A%84-%60api%60-%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E6%A0%B9%E6%8D%AE%E6%82%A8%E7%9A%84%E5%85%B7%E4%BD%93%E9%9C%80%E6%B1%82%E5%92%8C%E9%A1%B9%E7%9B%AE%E8%A6%81%E6%B1%82"><div class="truncate" style="padding-left:16px">跨浏览器标签页进行通讯的方式简介
+
+在现代 `Web` 应用程序中，跨浏览器标签页之间进行通讯是一项重要的功能。无论是在多标签页应用程序中同步状态，还是在不同浏览器窗口之间共享数据，实现跨标签页通讯都是必不可少的。在本文中，我们将探讨跨浏览器标签页进行通讯的各种方式，并详细介绍每种方式的 `API` 和使用场景。
+
+### 所有方法
+
+1. 使用 `Web Storage API`
+2. 使用 `Broadcast Channel API`
+3. 使用 `SharedWorker`
+4. 使用 `Service Worker`
+5. 使用 `WebSocket`
+6. 使用 `PostMessage API`
+7. 使用 `IndexedDB`
+
+### Web Storage API
+
+#### 简介
+
+- **简介**：`Web Storage API` 提供了一种在客户端存储数据的方法，包括 `localStorage` 和 `sessionStorage` 两种方式。它们可以在不同的浏览器标签页之间共享数据，而不受页面刷新或关闭的影响。
+- **优点**：简单易用，支持持久化存储。
+- **缺点**：只能存储字符串类型的数据，且容量有限。
+- **适用场景**：适合存储小型数据，如用户偏好设置或临时状态。
+
+#### API
+
+- **localStorage**: 保存的数据没有过期时间，可以一直存在于浏览器中。
+- **sessionStorage**: 保存的数据在浏览器会话结束时被清除，适合临时存储数据。
+
+#### 使用场景
+
+- 在同一浏览器的不同标签页中共享数据。
+- 存储用户首选项或状态信息。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Web Storage Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;saveData()&quot;&gt;Save Data&lt;/button&gt;
+    &lt;button onclick=&quot;getData()&quot;&gt;Get Data&lt;/button&gt;
+
+    &lt;script&gt;
+        function saveData() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            localStorage.setItem(&#x27;data&#x27;, input);
+        }
+
+        function getData() {
+            const data = localStorage.getItem(&#x27;data&#x27;);
+            alert(data);
+        }
+
+        window.addEventListener(&#x27;storage&#x27;, event =&gt; {
+            alert(&#x27;Data changed in another tab: &#x27; + event.newValue);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- another-page.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Another Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button onclick=&quot;getData()&quot;&gt;Get Data from Main Page&lt;/button&gt;
+
+    &lt;script&gt;
+        function getData() {
+            const data = localStorage.getItem(&#x27;data&#x27;);
+            alert(data);
+        }
+
+        window.addEventListener(&#x27;storage&#x27;, event =&gt; {
+            alert(&#x27;Data changed in another tab: &#x27; + event.newValue);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。同时，当一个标签页修改了 localStorage 的值，另一个标签页也会收到通知。
+
+### Broadcast Channel API
+
+#### 简介
+
+- **简介**：`Broadcast Channel API` 允许在不同的浏览器标签页之间进行实时通信，通过创建一个共享的消息通道来传递数据。
+- **优点**：支持实时通信，消息发送和接收都非常简单。
+- **缺点**：不支持 `IE` 浏览器。
+- **适用场景**：适合需要实时通讯的场景，如多标签页间的数据同步。
+
+#### API
+- **BroadcastChannel**: 创建一个用于跨文档通信的通道。
+
+#### 使用场景
+- 在不同的浏览器标签页之间传递消息。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Broadcast Channel Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        const channel = new BroadcastChannel(&#x27;channel&#x27;);
+
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            channel.postMessage(input);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- another-page.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Another Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id=&quot;message&quot;&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+        const channel = new BroadcastChannel(&#x27;channel&#x27;);
+
+        channel.onmessage = event =&gt; {
+            document.getElementById(&#x27;message&#x27;).textContent = event.data;
+        };
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入消息并发送，在另一个页面中接收并显示消息。
+
+### SharedWorker
+
+#### 简介
+
+- **简介**：`SharedWorker` 允许在多个浏览器上下文之间共享同一个 `Worker` 实例，提供了一种全局范围的通讯机制。
+- **优点**：支持多标签页之间的实时通信，可以与所有标签页共享相同的数据。
+- **缺点**：不支持 `IE` 浏览器。
+- **适用场景**：适合需要共享状态或实现实时通讯的场景。
+
+#### API
+- **SharedWorker**: 创建一个共享的 `Web Worker` 实例，可以被多个浏览上下文共享。
+
+#### 使用场景
+
+- 在不同浏览器标签页之间共享数据或进行通讯。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;SharedWorker Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        const worker = new SharedWorker(&#x27;worker.js&#x27;);
+
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            worker.port.postMessage(input);
+        }
+
+        worker.port.onmessage = event =&gt; {
+            alert(event.data);
+        };
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+``` javascript
+// worker.js
+const ports = [];
+
+onconnect = event =&gt; {
+    const port = event.ports[0];
+    ports.push(port);
+    port.onmessage = event =&gt; {
+        const message = event.data;
+        ports.forEach(port =&gt; port.postMessage(message));
+    };
+};
+```
+
+在一个页面中输入消息并发送，在另一个页面中接收并显示消息。
+
+### Service Worker
+
+#### 简介
+- **简介**：`Service Worker` 是一种在浏览器后台运行的脚本，可以拦截和处理网络请求，并实现离线缓存和推送通知等功能。
+- **优点**：支持后台运行，可以拦截网络请求，实现离线缓存和推送通知。
+- **缺点**：只能用于现代浏览器，且需要 `HTTPS` 支持。
+- **适用场景**：适合需要离线访问或推送通知的场景，如聊天应用或离线应用。
+
+#### API
+
+- **Service Worker**: 在后台运行的脚本，可以拦截和处理网络请求，并进行推送通知等功能。
+
+#### 使用场景
+
+- 在不同标签页之间共享数据或进行通讯。
+- 实现离线缓存和推送通知。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Service Worker Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        // 注册 Service Worker
+        navigator.serviceWorker.register(&#x27;sw.js&#x27;);
+
+        // 发送消息
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            navigator.serviceWorker.controller.postMessage(input);
+        }
+
+        // 监听消息
+        navigator.serviceWorker.addEventListener(&#x27;message&#x27;, event =&gt; {
+            alert(event.data);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+``` javascript
+// sw.js
+self.addEventListener(&#x27;message&#x27;, event =&gt; {
+    const message = event.data;
+    clients.matchAll().then(clients =&gt; {
+        clients.forEach(client =&gt; client.postMessage(message));
+    });
+});
+```
+
+在一个页面中输入消息并发送，在另一个页面中接收并显示消息。
+
+### WebSocket
+
+#### 简介
+
+- **简介**：`WebSocket` 提供了一种在客户端和服务器之间建立持久连接的方式，实现了双向通信。
+- **优点**：支持双向通信，可以实现实时通讯。
+- **缺点**：需要在服务器端实现 `WebSocket` 服务，且不支持跨域请求。
+- **适用场景**：适合实时通讯场景，如聊天应用或在线游戏。
+
+#### API
+- **WebSocket**: 在客户端和服务器之间建立持久连接，实现双向通信。
+
+#### 使用场景
+
+在不同浏览器标签页之间进行实时通讯。
+
+```javascript
+// server.js
+const WebSocket = require(&#x27;ws&#x27;);
+
+const wss = new WebSocket.Server({ port: 8080 });
+
+wss.on(&#x27;connection&#x27;, ws =&gt; {
+    ws.on(&#x27;message&#x27;, message =&gt; {
+        wss.clients.forEach(client =&gt; {
+            if (client !== ws &amp;&amp; client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            }
+        });
+    });
+});
+```
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;WebSocket Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        const socket = new WebSocket(&#x27;ws://localhost:8080&#x27;);
+
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            socket.send(input);
+        }
+
+        socket.onmessage = event =&gt; {
+            alert(event.data);
+        };
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入消息并发送，在另一个页面中接收并显示消息。
+
+### PostMessage API
+
+#### 简介
+
+- **简介**：`PostMessage API` 允许跨文档之间安全地传递消息，可以实现跨域通信。
+- **优点**：支持跨域通信，使用简单。
+- **缺点**：需要对接收消息的文档进行信任验证，存在安全风险。
+- **适用场景**：适合不同域名之间的数据交换或通信。
+
+#### API
+- **window.postMessage()**: 向其他窗口发送消息。
+
+#### 使用场景
+
+- 在不同窗口之间进行跨域通信。
+
+```html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;PostMessage Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;sendMessage()&quot;&gt;Send Message&lt;/button&gt;
+
+    &lt;script&gt;
+        const popup = window.open(&#x27;another-page.html&#x27;);
+
+        function sendMessage() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            popup.postMessage(input, &#x27;*&#x27;);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- another-page.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Another Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id=&quot;message&quot;&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+        window.addEventListener(&#x27;message&#x27;, event =&gt; {
+            document.getElementById(&#x27;message&#x27;).textContent = event.data;
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。
+
+### IndexedDB
+
+#### 简介
+
+- **简介**：`IndexedDB` 提供了一个异步的、事务型的数据库，适用于存储大量结构化数据。
+- **优点**：支持存储大量结构化数据，数据存储在客户端本地。
+- **缺点**：使用复杂，需要学习 `IndexedDB` 的 `API`。
+- **适用场景**：适合需要存储大量结构化数据的场景，如离线应用或数据分析应用。
+
+#### API
+
+- **IndexedDB**: 提供了一个异步的、事务型的数据库。
+
+#### 使用场景
+
+- 存储大量结构化数据，如离线应用程序的数据。
+
+``` html
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;IndexedDB Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+    &lt;button onclick=&quot;saveData()&quot;&gt;Save Data&lt;/button&gt;
+    &lt;button onclick=&quot;getData()&quot;&gt;Get Data&lt;/button&gt;
+
+    &lt;script&gt;
+        const request = indexedDB.open(&#x27;myDatabase&#x27;);
+
+        request.onupgradeneeded = event =&gt; {
+            const db = event.target.result;
+            const objectStore = db.createObjectStore(&#x27;data&#x27;, { keyPath: &#x27;id&#x27; });
+        };
+
+        function saveData() {
+            const input = document.getElementById(&#x27;input&#x27;).value;
+            const db = request.result;
+            const transaction = db.transaction(&#x27;data&#x27;, &#x27;readwrite&#x27;);
+            const objectStore = transaction.objectStore(&#x27;data&#x27;);
+            objectStore.add({ id: 1, data: input });
+        }
+
+        function getData() {
+            const db = request.result;
+            const transaction = db.transaction(&#x27;data&#x27;, &#x27;readonly&#x27;);
+            const objectStore = transaction.objectStore(&#x27;data&#x27;);
+            const request = objectStore.get(1);
+            request.onsuccess = event =&gt; {
+                const data = event.target.result;
+                alert(data.data);
+            };
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- another-page.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Another Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button onclick=&quot;getData()&quot;&gt;Get Data from Main Page&lt;/button&gt;
+
+    &lt;script&gt;
+        function getData() {
+            const request = indexedDB.open(&#x27;myDatabase&#x27;);
+            request.onsuccess = event =&gt; {
+                const db = event.target.result;
+                const transaction = db.transaction(&#x27;data&#x27;, &#x27;readonly&#x27;);
+                const objectStore = transaction.objectStore(&#x27;data&#x27;);
+                const request = objectStore.get(1);
+                request.onsuccess = event =&gt; {
+                    const data = event.target.result;
+                    alert(data.data);
+                };
+            };
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。
+
+### 总结
+
+在本文中，我们介绍了跨浏览器标签页进行通讯的多种方式，并提供了详细的 `API` 和使用场景。根据您的具体需求和项目要求</div></a></li></ul></div></div></div></div></div></div></div></div></div><div style="position:fixed;z-index:9999;top:16px;left:16px;right:16px;bottom:16px;pointer-events:none"></div></main></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"url":"https://api.github.com/repos/hankliu62/hankliu62.github.com/issues/661","repository_url":"https://api.github.com/repos/hankliu62/hankliu62.github.com","labels_url":"https://api.github.com/repos/hankliu62/hankliu62.github.com/issues/661/labels{/name}","comments_url":"https://api.github.com/repos/hankliu62/hankliu62.github.com/issues/661/comments","events_url":"https://api.github.com/repos/hankliu62/hankliu62.github.com/issues/661/events","html_url":"https://github.com/hankliu62/hankliu62.github.com/issues/661","id":2266679126,"node_id":"I_kwDOBiJZIc6HGsdW","number":661,"title":"跨浏览器标签页进行通讯的方式简介","user":{"login":"hankliu62","id":8088864,"node_id":"MDQ6VXNlcjgwODg4NjQ=","avatar_url":"https://avatars.githubusercontent.com/u/8088864?v=4","gravatar_id":"","url":"https://api.github.com/users/hankliu62","html_url":"https://github.com/hankliu62","followers_url":"https://api.github.com/users/hankliu62/followers","following_url":"https://api.github.com/users/hankliu62/following{/other_user}","gists_url":"https://api.github.com/users/hankliu62/gists{/gist_id}","starred_url":"https://api.github.com/users/hankliu62/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hankliu62/subscriptions","organizations_url":"https://api.github.com/users/hankliu62/orgs","repos_url":"https://api.github.com/users/hankliu62/repos","events_url":"https://api.github.com/users/hankliu62/events{/privacy}","received_events_url":"https://api.github.com/users/hankliu62/received_events","type":"User","site_admin":false},"labels":[{"id":688950687,"node_id":"MDU6TGFiZWw2ODg5NTA2ODc=","url":"https://api.github.com/repos/hankliu62/hankliu62.github.com/labels/blog","name":"blog","color":"1677ff","default":false,"description":"博客文章"},{"id":6536875857,"node_id":"LA_kwDOBiJZIc8AAAABhaDPUQ","url":"https://api.github.com/repos/hankliu62/hankliu62.github.com/labels/html","name":"html","color":"13c2c2","default":false,"description":"分类-HTML相关"}],"state":"open","locked":false,"assignee":{"login":"hankliu62","id":8088864,"node_id":"MDQ6VXNlcjgwODg4NjQ=","avatar_url":"https://avatars.githubusercontent.com/u/8088864?v=4","gravatar_id":"","url":"https://api.github.com/users/hankliu62","html_url":"https://github.com/hankliu62","followers_url":"https://api.github.com/users/hankliu62/followers","following_url":"https://api.github.com/users/hankliu62/following{/other_user}","gists_url":"https://api.github.com/users/hankliu62/gists{/gist_id}","starred_url":"https://api.github.com/users/hankliu62/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hankliu62/subscriptions","organizations_url":"https://api.github.com/users/hankliu62/orgs","repos_url":"https://api.github.com/users/hankliu62/repos","events_url":"https://api.github.com/users/hankliu62/events{/privacy}","received_events_url":"https://api.github.com/users/hankliu62/received_events","type":"User","site_admin":false},"assignees":[{"login":"hankliu62","id":8088864,"node_id":"MDQ6VXNlcjgwODg4NjQ=","avatar_url":"https://avatars.githubusercontent.com/u/8088864?v=4","gravatar_id":"","url":"https://api.github.com/users/hankliu62","html_url":"https://github.com/hankliu62","followers_url":"https://api.github.com/users/hankliu62/followers","following_url":"https://api.github.com/users/hankliu62/following{/other_user}","gists_url":"https://api.github.com/users/hankliu62/gists{/gist_id}","starred_url":"https://api.github.com/users/hankliu62/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hankliu62/subscriptions","organizations_url":"https://api.github.com/users/hankliu62/orgs","repos_url":"https://api.github.com/users/hankliu62/repos","events_url":"https://api.github.com/users/hankliu62/events{/privacy}","received_events_url":"https://api.github.com/users/hankliu62/received_events","type":"User","site_admin":false}],"milestone":null,"comments":0,"created_at":"2024-04-27T01:09:33Z","updated_at":"2024-04-27T01:09:33Z","closed_at":null,"author_association":"OWNER","active_lock_reason":null,"body":"## 跨浏览器标签页进行通讯的方式简介\n\n在现代 `Web` 应用程序中，跨浏览器标签页之间进行通讯是一项重要的功能。无论是在多标签页应用程序中同步状态，还是在不同浏览器窗口之间共享数据，实现跨标签页通讯都是必不可少的。在本文中，我们将探讨跨浏览器标签页进行通讯的各种方式，并详细介绍每种方式的 `API` 和使用场景。\n\n### 所有方法\n\n1. 使用 `Web Storage API`\n2. 使用 `Broadcast Channel API`\n3. 使用 `SharedWorker`\n4. 使用 `Service Worker`\n5. 使用 `WebSocket`\n6. 使用 `PostMessage API`\n7. 使用 `IndexedDB`\n\n### Web Storage API\n\n#### 简介\n\n- **简介**：`Web Storage API` 提供了一种在客户端存储数据的方法，包括 `localStorage` 和 `sessionStorage` 两种方式。它们可以在不同的浏览器标签页之间共享数据，而不受页面刷新或关闭的影响。\n- **优点**：简单易用，支持持久化存储。\n- **缺点**：只能存储字符串类型的数据，且容量有限。\n- **适用场景**：适合存储小型数据，如用户偏好设置或临时状态。\n\n#### API\n\n- **localStorage**: 保存的数据没有过期时间，可以一直存在于浏览器中。\n- **sessionStorage**: 保存的数据在浏览器会话结束时被清除，适合临时存储数据。\n\n#### 使用场景\n\n- 在同一浏览器的不同标签页中共享数据。\n- 存储用户首选项或状态信息。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eWeb Storage Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"saveData()\"\u003eSave Data\u003c/button\u003e\n    \u003cbutton onclick=\"getData()\"\u003eGet Data\u003c/button\u003e\n\n    \u003cscript\u003e\n        function saveData() {\n            const input = document.getElementById('input').value;\n            localStorage.setItem('data', input);\n        }\n\n        function getData() {\n            const data = localStorage.getItem('data');\n            alert(data);\n        }\n\n        window.addEventListener('storage', event =\u003e {\n            alert('Data changed in another tab: ' + event.newValue);\n        });\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n\n\u003c!-- another-page.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eAnother Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cbutton onclick=\"getData()\"\u003eGet Data from Main Page\u003c/button\u003e\n\n    \u003cscript\u003e\n        function getData() {\n            const data = localStorage.getItem('data');\n            alert(data);\n        }\n\n        window.addEventListener('storage', event =\u003e {\n            alert('Data changed in another tab: ' + event.newValue);\n        });\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。同时，当一个标签页修改了 localStorage 的值，另一个标签页也会收到通知。\n\n### Broadcast Channel API\n\n#### 简介\n\n- **简介**：`Broadcast Channel API` 允许在不同的浏览器标签页之间进行实时通信，通过创建一个共享的消息通道来传递数据。\n- **优点**：支持实时通信，消息发送和接收都非常简单。\n- **缺点**：不支持 `IE` 浏览器。\n- **适用场景**：适合需要实时通讯的场景，如多标签页间的数据同步。\n\n#### API\n- **BroadcastChannel**: 创建一个用于跨文档通信的通道。\n\n#### 使用场景\n- 在不同的浏览器标签页之间传递消息。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eBroadcast Channel Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        const channel = new BroadcastChannel('channel');\n\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            channel.postMessage(input);\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n\n\u003c!-- another-page.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eAnother Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cp id=\"message\"\u003e\u003c/p\u003e\n\n    \u003cscript\u003e\n        const channel = new BroadcastChannel('channel');\n\n        channel.onmessage = event =\u003e {\n            document.getElementById('message').textContent = event.data;\n        };\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入消息并发送，在另一个页面中接收并显示消息。\n\n### SharedWorker\n\n#### 简介\n\n- **简介**：`SharedWorker` 允许在多个浏览器上下文之间共享同一个 `Worker` 实例，提供了一种全局范围的通讯机制。\n- **优点**：支持多标签页之间的实时通信，可以与所有标签页共享相同的数据。\n- **缺点**：不支持 `IE` 浏览器。\n- **适用场景**：适合需要共享状态或实现实时通讯的场景。\n\n#### API\n- **SharedWorker**: 创建一个共享的 `Web Worker` 实例，可以被多个浏览上下文共享。\n\n#### 使用场景\n\n- 在不同浏览器标签页之间共享数据或进行通讯。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eSharedWorker Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        const worker = new SharedWorker('worker.js');\n\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            worker.port.postMessage(input);\n        }\n\n        worker.port.onmessage = event =\u003e {\n            alert(event.data);\n        };\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n``` javascript\n// worker.js\nconst ports = [];\n\nonconnect = event =\u003e {\n    const port = event.ports[0];\n    ports.push(port);\n    port.onmessage = event =\u003e {\n        const message = event.data;\n        ports.forEach(port =\u003e port.postMessage(message));\n    };\n};\n```\n\n在一个页面中输入消息并发送，在另一个页面中接收并显示消息。\n\n### Service Worker\n\n#### 简介\n- **简介**：`Service Worker` 是一种在浏览器后台运行的脚本，可以拦截和处理网络请求，并实现离线缓存和推送通知等功能。\n- **优点**：支持后台运行，可以拦截网络请求，实现离线缓存和推送通知。\n- **缺点**：只能用于现代浏览器，且需要 `HTTPS` 支持。\n- **适用场景**：适合需要离线访问或推送通知的场景，如聊天应用或离线应用。\n\n#### API\n\n- **Service Worker**: 在后台运行的脚本，可以拦截和处理网络请求，并进行推送通知等功能。\n\n#### 使用场景\n\n- 在不同标签页之间共享数据或进行通讯。\n- 实现离线缓存和推送通知。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eService Worker Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        // 注册 Service Worker\n        navigator.serviceWorker.register('sw.js');\n\n        // 发送消息\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            navigator.serviceWorker.controller.postMessage(input);\n        }\n\n        // 监听消息\n        navigator.serviceWorker.addEventListener('message', event =\u003e {\n            alert(event.data);\n        });\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n``` javascript\n// sw.js\nself.addEventListener('message', event =\u003e {\n    const message = event.data;\n    clients.matchAll().then(clients =\u003e {\n        clients.forEach(client =\u003e client.postMessage(message));\n    });\n});\n```\n\n在一个页面中输入消息并发送，在另一个页面中接收并显示消息。\n\n### WebSocket\n\n#### 简介\n\n- **简介**：`WebSocket` 提供了一种在客户端和服务器之间建立持久连接的方式，实现了双向通信。\n- **优点**：支持双向通信，可以实现实时通讯。\n- **缺点**：需要在服务器端实现 `WebSocket` 服务，且不支持跨域请求。\n- **适用场景**：适合实时通讯场景，如聊天应用或在线游戏。\n\n#### API\n- **WebSocket**: 在客户端和服务器之间建立持久连接，实现双向通信。\n\n#### 使用场景\n\n在不同浏览器标签页之间进行实时通讯。\n\n```javascript\n// server.js\nconst WebSocket = require('ws');\n\nconst wss = new WebSocket.Server({ port: 8080 });\n\nwss.on('connection', ws =\u003e {\n    ws.on('message', message =\u003e {\n        wss.clients.forEach(client =\u003e {\n            if (client !== ws \u0026\u0026 client.readyState === WebSocket.OPEN) {\n                client.send(message);\n            }\n        });\n    });\n});\n```\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eWebSocket Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        const socket = new WebSocket('ws://localhost:8080');\n\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            socket.send(input);\n        }\n\n        socket.onmessage = event =\u003e {\n            alert(event.data);\n        };\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入消息并发送，在另一个页面中接收并显示消息。\n\n### PostMessage API\n\n#### 简介\n\n- **简介**：`PostMessage API` 允许跨文档之间安全地传递消息，可以实现跨域通信。\n- **优点**：支持跨域通信，使用简单。\n- **缺点**：需要对接收消息的文档进行信任验证，存在安全风险。\n- **适用场景**：适合不同域名之间的数据交换或通信。\n\n#### API\n- **window.postMessage()**: 向其他窗口发送消息。\n\n#### 使用场景\n\n- 在不同窗口之间进行跨域通信。\n\n```html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003ePostMessage Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        const popup = window.open('another-page.html');\n\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            popup.postMessage(input, '*');\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n\n\u003c!-- another-page.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eAnother Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cp id=\"message\"\u003e\u003c/p\u003e\n\n    \u003cscript\u003e\n        window.addEventListener('message', event =\u003e {\n            document.getElementById('message').textContent = event.data;\n        });\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。\n\n### IndexedDB\n\n#### 简介\n\n- **简介**：`IndexedDB` 提供了一个异步的、事务型的数据库，适用于存储大量结构化数据。\n- **优点**：支持存储大量结构化数据，数据存储在客户端本地。\n- **缺点**：使用复杂，需要学习 `IndexedDB` 的 `API`。\n- **适用场景**：适合需要存储大量结构化数据的场景，如离线应用或数据分析应用。\n\n#### API\n\n- **IndexedDB**: 提供了一个异步的、事务型的数据库。\n\n#### 使用场景\n\n- 存储大量结构化数据，如离线应用程序的数据。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eIndexedDB Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"saveData()\"\u003eSave Data\u003c/button\u003e\n    \u003cbutton onclick=\"getData()\"\u003eGet Data\u003c/button\u003e\n\n    \u003cscript\u003e\n        const request = indexedDB.open('myDatabase');\n\n        request.onupgradeneeded = event =\u003e {\n            const db = event.target.result;\n            const objectStore = db.createObjectStore('data', { keyPath: 'id' });\n        };\n\n        function saveData() {\n            const input = document.getElementById('input').value;\n            const db = request.result;\n            const transaction = db.transaction('data', 'readwrite');\n            const objectStore = transaction.objectStore('data');\n            objectStore.add({ id: 1, data: input });\n        }\n\n        function getData() {\n            const db = request.result;\n            const transaction = db.transaction('data', 'readonly');\n            const objectStore = transaction.objectStore('data');\n            const request = objectStore.get(1);\n            request.onsuccess = event =\u003e {\n                const data = event.target.result;\n                alert(data.data);\n            };\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n\n\u003c!-- another-page.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eAnother Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cbutton onclick=\"getData()\"\u003eGet Data from Main Page\u003c/button\u003e\n\n    \u003cscript\u003e\n        function getData() {\n            const request = indexedDB.open('myDatabase');\n            request.onsuccess = event =\u003e {\n                const db = event.target.result;\n                const transaction = db.transaction('data', 'readonly');\n                const objectStore = transaction.objectStore('data');\n                const request = objectStore.get(1);\n                request.onsuccess = event =\u003e {\n                    const data = event.target.result;\n                    alert(data.data);\n                };\n            };\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。\n\n### 总结\n\n在本文中，我们介绍了跨浏览器标签页进行通讯的多种方式，并提供了详细的 `API` 和使用场景。根据您的具体需求和项目要求","closed_by":null,"reactions":{"url":"https://api.github.com/repos/hankliu62/hankliu62.github.com/issues/661/reactions","total_count":0,"+1":0,"-1":0,"laugh":0,"hooray":0,"confused":0,"heart":0,"rocket":0,"eyes":0},"timeline_url":"https://api.github.com/repos/hankliu62/hankliu62.github.com/issues/661/timeline","performed_via_github_app":null,"state_reason":null},"menus":["## 跨浏览器标签页进行通讯的方式简介\n\n在现代 `Web` 应用程序中，跨浏览器标签页之间进行通讯是一项重要的功能。无论是在多标签页应用程序中同步状态，还是在不同浏览器窗口之间共享数据，实现跨标签页通讯都是必不可少的。在本文中，我们将探讨跨浏览器标签页进行通讯的各种方式，并详细介绍每种方式的 `API` 和使用场景。\n\n### 所有方法\n\n1. 使用 `Web Storage API`\n2. 使用 `Broadcast Channel API`\n3. 使用 `SharedWorker`\n4. 使用 `Service Worker`\n5. 使用 `WebSocket`\n6. 使用 `PostMessage API`\n7. 使用 `IndexedDB`\n\n### Web Storage API\n\n#### 简介\n\n- **简介**：`Web Storage API` 提供了一种在客户端存储数据的方法，包括 `localStorage` 和 `sessionStorage` 两种方式。它们可以在不同的浏览器标签页之间共享数据，而不受页面刷新或关闭的影响。\n- **优点**：简单易用，支持持久化存储。\n- **缺点**：只能存储字符串类型的数据，且容量有限。\n- **适用场景**：适合存储小型数据，如用户偏好设置或临时状态。\n\n#### API\n\n- **localStorage**: 保存的数据没有过期时间，可以一直存在于浏览器中。\n- **sessionStorage**: 保存的数据在浏览器会话结束时被清除，适合临时存储数据。\n\n#### 使用场景\n\n- 在同一浏览器的不同标签页中共享数据。\n- 存储用户首选项或状态信息。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eWeb Storage Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"saveData()\"\u003eSave Data\u003c/button\u003e\n    \u003cbutton onclick=\"getData()\"\u003eGet Data\u003c/button\u003e\n\n    \u003cscript\u003e\n        function saveData() {\n            const input = document.getElementById('input').value;\n            localStorage.setItem('data', input);\n        }\n\n        function getData() {\n            const data = localStorage.getItem('data');\n            alert(data);\n        }\n\n        window.addEventListener('storage', event =\u003e {\n            alert('Data changed in another tab: ' + event.newValue);\n        });\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n\n\u003c!-- another-page.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eAnother Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cbutton onclick=\"getData()\"\u003eGet Data from Main Page\u003c/button\u003e\n\n    \u003cscript\u003e\n        function getData() {\n            const data = localStorage.getItem('data');\n            alert(data);\n        }\n\n        window.addEventListener('storage', event =\u003e {\n            alert('Data changed in another tab: ' + event.newValue);\n        });\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。同时，当一个标签页修改了 localStorage 的值，另一个标签页也会收到通知。\n\n### Broadcast Channel API\n\n#### 简介\n\n- **简介**：`Broadcast Channel API` 允许在不同的浏览器标签页之间进行实时通信，通过创建一个共享的消息通道来传递数据。\n- **优点**：支持实时通信，消息发送和接收都非常简单。\n- **缺点**：不支持 `IE` 浏览器。\n- **适用场景**：适合需要实时通讯的场景，如多标签页间的数据同步。\n\n#### API\n- **BroadcastChannel**: 创建一个用于跨文档通信的通道。\n\n#### 使用场景\n- 在不同的浏览器标签页之间传递消息。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eBroadcast Channel Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        const channel = new BroadcastChannel('channel');\n\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            channel.postMessage(input);\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n\n\u003c!-- another-page.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eAnother Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cp id=\"message\"\u003e\u003c/p\u003e\n\n    \u003cscript\u003e\n        const channel = new BroadcastChannel('channel');\n\n        channel.onmessage = event =\u003e {\n            document.getElementById('message').textContent = event.data;\n        };\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入消息并发送，在另一个页面中接收并显示消息。\n\n### SharedWorker\n\n#### 简介\n\n- **简介**：`SharedWorker` 允许在多个浏览器上下文之间共享同一个 `Worker` 实例，提供了一种全局范围的通讯机制。\n- **优点**：支持多标签页之间的实时通信，可以与所有标签页共享相同的数据。\n- **缺点**：不支持 `IE` 浏览器。\n- **适用场景**：适合需要共享状态或实现实时通讯的场景。\n\n#### API\n- **SharedWorker**: 创建一个共享的 `Web Worker` 实例，可以被多个浏览上下文共享。\n\n#### 使用场景\n\n- 在不同浏览器标签页之间共享数据或进行通讯。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eSharedWorker Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        const worker = new SharedWorker('worker.js');\n\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            worker.port.postMessage(input);\n        }\n\n        worker.port.onmessage = event =\u003e {\n            alert(event.data);\n        };\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n``` javascript\n// worker.js\nconst ports = [];\n\nonconnect = event =\u003e {\n    const port = event.ports[0];\n    ports.push(port);\n    port.onmessage = event =\u003e {\n        const message = event.data;\n        ports.forEach(port =\u003e port.postMessage(message));\n    };\n};\n```\n\n在一个页面中输入消息并发送，在另一个页面中接收并显示消息。\n\n### Service Worker\n\n#### 简介\n- **简介**：`Service Worker` 是一种在浏览器后台运行的脚本，可以拦截和处理网络请求，并实现离线缓存和推送通知等功能。\n- **优点**：支持后台运行，可以拦截网络请求，实现离线缓存和推送通知。\n- **缺点**：只能用于现代浏览器，且需要 `HTTPS` 支持。\n- **适用场景**：适合需要离线访问或推送通知的场景，如聊天应用或离线应用。\n\n#### API\n\n- **Service Worker**: 在后台运行的脚本，可以拦截和处理网络请求，并进行推送通知等功能。\n\n#### 使用场景\n\n- 在不同标签页之间共享数据或进行通讯。\n- 实现离线缓存和推送通知。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eService Worker Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        // 注册 Service Worker\n        navigator.serviceWorker.register('sw.js');\n\n        // 发送消息\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            navigator.serviceWorker.controller.postMessage(input);\n        }\n\n        // 监听消息\n        navigator.serviceWorker.addEventListener('message', event =\u003e {\n            alert(event.data);\n        });\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n``` javascript\n// sw.js\nself.addEventListener('message', event =\u003e {\n    const message = event.data;\n    clients.matchAll().then(clients =\u003e {\n        clients.forEach(client =\u003e client.postMessage(message));\n    });\n});\n```\n\n在一个页面中输入消息并发送，在另一个页面中接收并显示消息。\n\n### WebSocket\n\n#### 简介\n\n- **简介**：`WebSocket` 提供了一种在客户端和服务器之间建立持久连接的方式，实现了双向通信。\n- **优点**：支持双向通信，可以实现实时通讯。\n- **缺点**：需要在服务器端实现 `WebSocket` 服务，且不支持跨域请求。\n- **适用场景**：适合实时通讯场景，如聊天应用或在线游戏。\n\n#### API\n- **WebSocket**: 在客户端和服务器之间建立持久连接，实现双向通信。\n\n#### 使用场景\n\n在不同浏览器标签页之间进行实时通讯。\n\n```javascript\n// server.js\nconst WebSocket = require('ws');\n\nconst wss = new WebSocket.Server({ port: 8080 });\n\nwss.on('connection', ws =\u003e {\n    ws.on('message', message =\u003e {\n        wss.clients.forEach(client =\u003e {\n            if (client !== ws \u0026\u0026 client.readyState === WebSocket.OPEN) {\n                client.send(message);\n            }\n        });\n    });\n});\n```\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eWebSocket Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        const socket = new WebSocket('ws://localhost:8080');\n\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            socket.send(input);\n        }\n\n        socket.onmessage = event =\u003e {\n            alert(event.data);\n        };\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入消息并发送，在另一个页面中接收并显示消息。\n\n### PostMessage API\n\n#### 简介\n\n- **简介**：`PostMessage API` 允许跨文档之间安全地传递消息，可以实现跨域通信。\n- **优点**：支持跨域通信，使用简单。\n- **缺点**：需要对接收消息的文档进行信任验证，存在安全风险。\n- **适用场景**：适合不同域名之间的数据交换或通信。\n\n#### API\n- **window.postMessage()**: 向其他窗口发送消息。\n\n#### 使用场景\n\n- 在不同窗口之间进行跨域通信。\n\n```html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003ePostMessage Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"sendMessage()\"\u003eSend Message\u003c/button\u003e\n\n    \u003cscript\u003e\n        const popup = window.open('another-page.html');\n\n        function sendMessage() {\n            const input = document.getElementById('input').value;\n            popup.postMessage(input, '*');\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n\n\u003c!-- another-page.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eAnother Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cp id=\"message\"\u003e\u003c/p\u003e\n\n    \u003cscript\u003e\n        window.addEventListener('message', event =\u003e {\n            document.getElementById('message').textContent = event.data;\n        });\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。\n\n### IndexedDB\n\n#### 简介\n\n- **简介**：`IndexedDB` 提供了一个异步的、事务型的数据库，适用于存储大量结构化数据。\n- **优点**：支持存储大量结构化数据，数据存储在客户端本地。\n- **缺点**：使用复杂，需要学习 `IndexedDB` 的 `API`。\n- **适用场景**：适合需要存储大量结构化数据的场景，如离线应用或数据分析应用。\n\n#### API\n\n- **IndexedDB**: 提供了一个异步的、事务型的数据库。\n\n#### 使用场景\n\n- 存储大量结构化数据，如离线应用程序的数据。\n\n``` html\n\u003c!-- index.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eIndexedDB Example\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cinput type=\"text\" id=\"input\"\u003e\n    \u003cbutton onclick=\"saveData()\"\u003eSave Data\u003c/button\u003e\n    \u003cbutton onclick=\"getData()\"\u003eGet Data\u003c/button\u003e\n\n    \u003cscript\u003e\n        const request = indexedDB.open('myDatabase');\n\n        request.onupgradeneeded = event =\u003e {\n            const db = event.target.result;\n            const objectStore = db.createObjectStore('data', { keyPath: 'id' });\n        };\n\n        function saveData() {\n            const input = document.getElementById('input').value;\n            const db = request.result;\n            const transaction = db.transaction('data', 'readwrite');\n            const objectStore = transaction.objectStore('data');\n            objectStore.add({ id: 1, data: input });\n        }\n\n        function getData() {\n            const db = request.result;\n            const transaction = db.transaction('data', 'readonly');\n            const objectStore = transaction.objectStore('data');\n            const request = objectStore.get(1);\n            request.onsuccess = event =\u003e {\n                const data = event.target.result;\n                alert(data.data);\n            };\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n\n\u003c!-- another-page.html --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eAnother Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cbutton onclick=\"getData()\"\u003eGet Data from Main Page\u003c/button\u003e\n\n    \u003cscript\u003e\n        function getData() {\n            const request = indexedDB.open('myDatabase');\n            request.onsuccess = event =\u003e {\n                const db = event.target.result;\n                const transaction = db.transaction('data', 'readonly');\n                const objectStore = transaction.objectStore('data');\n                const request = objectStore.get(1);\n                request.onsuccess = event =\u003e {\n                    const data = event.target.result;\n                    alert(data.data);\n                };\n            };\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```\n\n在一个页面中输入数据并保存，然后在另一个页面中点击按钮获取数据。\n\n### 总结\n\n在本文中，我们介绍了跨浏览器标签页进行通讯的多种方式，并提供了详细的 `API` 和使用场景。根据您的具体需求和项目要求"]},"__N_SSG":true},"page":"/articles/[id]","query":{"id":"661"},"buildId":"qrQp_9Hjq-HbdXTrdq60c","assetPrefix":"/frontend","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
