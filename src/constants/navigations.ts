@@ -514,6 +514,12 @@ export const navigations = [
         logoUrl: getRoutePrefix() + "/dashboard/logo/smile/xicons.png",
         siteUrl: "https://www.xicons.org/",
       },
+      {
+        title: "heroicons",
+        desc: "由Tailwind CSS制作者制作的精美手工SVG图标。",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/smile/heroicons.png",
+        siteUrl: "https://heroicons.com/",
+      },
     ],
   },
   {
