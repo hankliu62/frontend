@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-array-for-each */
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 // 需要设置options，只移除@uiw库中的css等文件，不然nomaco-editor无样式
 const removeImports = require("next-remove-imports")({
@@ -7,12 +6,12 @@ const removeImports = require("next-remove-imports")({
 });
 const path = require("node:path");
 
-const withTM = require("next-transpile-modules")([
-  // `monaco-editor` isn't published to npm correctly: it includes both CSS
-  // imports and non-Node friendly syntax, so it needs to be compiled.
-  "highlight.js",
-  "diff2html",
-]);
+// const withTM = require("next-transpile-modules")([
+//   // `monaco-editor` isn't published to npm correctly: it includes both CSS
+//   // imports and non-Node friendly syntax, so it needs to be compiled.
+//   "highlight.js",
+//   "diff2html",
+// ]);
 
 const Languages = [
   "plaintext",
@@ -112,7 +111,16 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  transpilePackages: ["antd"],
+  transpilePackages: [
+    "@ant-design/icons",
+    "antd",
+    "rc-util",
+    "rc-pagination",
+    "rc-picker",
+    "@ant-design/icons-svg",
+    "highlight.js",
+    "diff2html",
+  ],
   webpack: (config, { isServer }) => {
     config.module.rules
       .filter((rule) => rule.oneOf)
@@ -182,11 +190,11 @@ if (isGithubActions) {
   nextConfig.env.ROUTE_PREFIX = `/${repo}`;
 
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     env: { TIANAPI_KEY, NEXT_GITHUB_FRONTEND_TOKEN, ...envs },
     ...conf
   } = nextConfig;
   console.log("next config is:", { ...conf, env: { ...envs } });
 }
 
-module.exports = withTM(removeImports(nextConfig));
+// module.exports = withTM(removeImports(nextConfig));
+module.exports = removeImports(nextConfig);
