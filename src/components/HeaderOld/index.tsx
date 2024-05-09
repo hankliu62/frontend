@@ -31,8 +31,85 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "小链接", href: "/", type: "link" },
-  { name: "小工具", href: "/toolkits", type: "link" },
+  {
+    name: "小链接",
+    href: "/",
+    type: "link",
+  },
+  {
+    name: "小工具",
+    href: "/toolboxes",
+    type: "popover",
+    children: [
+      {
+        name: "内容差异",
+        description: "获得文本的差异，并以类似Github Diff效果的方式展示出来。",
+        href: "/toolboxes/diff",
+        icon: AdjustmentsHorizontalIcon,
+      },
+      {
+        name: "代码编辑器",
+        description:
+          "基于 VS Code 的代码编辑器，运行在浏览器环境中。编辑器提供代码提示，智能建议等功能。供开发人员远程更方便的编写代码。",
+        href: "/toolboxes/monaco-editor",
+        icon: CodeBracketSquareIcon,
+      },
+      {
+        name: "SQL编辑器",
+        description:
+          "基于 VS Code 的SQL编辑器，运行在浏览器环境中。编辑器提供SQL命令提示，智能建议等功能。供开发人员远程更方便的编写SQL。",
+        href: "/toolboxes/sql-editor",
+        icon: CircleStackIcon,
+      },
+      {
+        name: "Markdown 编辑阅读器",
+        description:
+          "Markdown 编辑阅读器，为用户提供了在线编写Markdown文档的平台，用户只需打开网站，就可以在网页上直接编写 Markdown 文档，通过在线编辑器可以让用户快速方便地在线创作、编辑、预览 Markdown 文档，进一步提高编辑效率和文档质量。",
+        href: "/toolboxes/markdown",
+        icon: DocumentTextIcon,
+      },
+      {
+        name: "HTML2Markdown",
+        description: "工具主要实现从HTML转Markdown的方法",
+        href: "/toolboxes/h2d",
+        icon: VariableIcon,
+      },
+      {
+        name: "Yaml2Json",
+        description: "工具主要实现从Yaml转Json的方法",
+        href: "/toolboxes/yaml2json",
+        icon: HashtagIcon,
+      },
+      {
+        name: "QRCode",
+        description:
+          "把二维码技术变成简单实用的产品，让每个人都可以快速复用成功案例经验，免费制作出能高效解决业务问题的二维码。",
+        href: "/toolboxes/qrcode",
+        icon: QrCodeIcon,
+      },
+      {
+        name: "VideoPlayer",
+        description:
+          "支持m3u8格式的在线视频播放器网站提供了便捷的视频播放服务，用户可以在网站上上传或输入m3u8格式的视频链接进行播放，涵盖了丰富的视频分类和资源，满足用户各种需求。同时，该网站还提供了多种播放模式、清晰度选择和画面比例调整等功能，用户可以根据自己的喜好自主进行设置，让视频观看更加舒适，是一款值得推荐的在线视频播放器网站。",
+        href: "/toolboxes/video-player",
+        icon: PlayCircleIcon,
+      },
+      {
+        name: "身份证生成器",
+        description:
+          "身份证号码生成器是按身份证验证规则生成虚拟身份证号，非真实身份证，仅供测试使用，请勿用于非法用途。",
+        href: "/toolboxes/id-no",
+        icon: IdentificationIcon,
+      },
+      {
+        name: "TypeScript 类型生成器",
+        description:
+          "TypeScript 类型生成器工具将JSON数据转换为TypeScript类型定义，从而让TypeScript项目更高效的开发。",
+        href: "/toolboxes/json2ts",
+        icon: CommandLineIcon,
+      },
+    ],
+  },
   { name: "小习题", href: "/questions", type: "link" },
   { name: "小文章", href: "/articles", type: "link" },
   // { name: "小绘画", href: "/paints", type: "link" },
