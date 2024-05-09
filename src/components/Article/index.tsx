@@ -44,10 +44,7 @@ export default function Article({ className, article }: IArticleProps) {
           }}
           className="group cursor-pointer"
         >
-          <BranchesOutlined
-            className="group-hover:text-[#1171ee]"
-            rev={undefined}
-          />
+          <BranchesOutlined className="group-hover:text-[#1171ee]" />
           <span className="group-hover:text-[#1171ee]">{`#${article?.number}`}</span>
         </Space>
 

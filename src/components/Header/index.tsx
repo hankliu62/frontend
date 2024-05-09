@@ -74,7 +74,7 @@ export default function Header({ className }: IHeaderProps) {
     >
       {({ open }) => (
         <>
-          <div className="border-b border-gray-700 shadow-md shadow-slate-900/5 transition duration-500 dark:bg-transparent dark:shadow-none sm:px-6 lg:px-8">
+          <div className="border-b border-gray-700 shadow-md shadow-slate-900/5 transition duration-500 sm:px-6 lg:px-8 dark:bg-transparent dark:shadow-none">
             <div className="flex h-16 items-center justify-between px-4 sm:px-0">
               <div className="flex items-center">
                 <div className="flex-shrink-0">

@@ -15,7 +15,7 @@ export interface LoadMoreProps extends Waypoint.WaypointProps {
 function DefaultLoadMoreIndicator() {
   return (
     <div className="flex justify-center">
-      <SyncOutlined spin className="text-lg text-[#1677ff]" rev={undefined} />
+      <SyncOutlined spin className="text-lg text-[#1677ff]" />
     </div>
   );
 }
