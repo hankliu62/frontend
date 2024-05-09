@@ -1,20 +1,20 @@
 import prettier from "prettier";
-import parserAngular from "prettier/parser-angular";
-import parserBabel from "prettier/parser-babel";
-import parserFlow from "prettier/parser-flow";
-import parserGraphql from "prettier/parser-graphql";
-import parserHtml from "prettier/parser-html";
-import parserMarkdown from "prettier/parser-markdown";
-import parserPostcss from "prettier/parser-postcss";
-import parserTypescript from "prettier/parser-typescript";
-import parserYaml from "prettier/parser-yaml";
+import pluginAngular from "prettier/plugins/angular";
+import pluginBabel from "prettier/plugins/babel";
+import pluginEstree from "prettier/plugins/estree";
+import pluginFlow from "prettier/plugins/flow";
+import pluginGraphql from "prettier/plugins/graphql";
+import pluginHtml from "prettier/plugins/html";
+import pluginMarkdown from "prettier/plugins/markdown";
+import pluginPostcss from "prettier/plugins/postcss";
+import pluginTypescript from "prettier/plugins/typescript";
+import pluginYaml from "prettier/plugins/yaml";
+import pluginJava from "prettier-plugin-java";
+import * as pluginRust from "prettier-plugin-rust";
 import { format as formatSQL } from "sql-formatter";
 
-let current;
-
-const ctx: Worker = self as any;
-
-const langToParser = {
+// 工作线程，不能从主项目中导入
+const LanguagePrettierParser = {
   json: "json",
   javascript: "babel",
   typescript: "typescript",
@@ -27,6 +27,10 @@ const langToParser = {
   html: "html",
   yaml: "yaml",
 };
+
+let current;
+
+const ctx: Worker = self as any;
 
 ctx.addEventListener("message", async (event) => {
   if (event.data._current) {
@@ -45,20 +49,21 @@ ctx.addEventListener("message", async (event) => {
   }
 
   try {
-    if (langToParser[event.data.language]) {
+    if (LanguagePrettierParser[event.data.language]) {
       respond({
-        pretty: prettier.format(event.data.text, {
-          parser: langToParser[event.data.language],
+        pretty: await prettier.format(event.data.text, {
+          parser: LanguagePrettierParser[event.data.language],
           plugins: [
-            parserMarkdown,
-            parserHtml,
-            parserTypescript,
-            parserPostcss,
-            parserAngular,
-            parserBabel,
-            parserGraphql,
-            parserFlow,
-            parserYaml,
+            pluginMarkdown,
+            pluginHtml,
+            pluginTypescript,
+            pluginPostcss,
+            pluginAngular,
+            pluginBabel,
+            pluginGraphql,
+            pluginFlow,
+            pluginYaml,
+            pluginEstree,
           ],
           printWidth: 80,
         }),
@@ -66,7 +71,21 @@ ctx.addEventListener("message", async (event) => {
     } else if (event.data.language === "sql") {
       // SQL格式化工具
       respond({
-        pretty: formatSQL(event.data.text),
+        pretty: await formatSQL(event.data.text),
+      });
+    } else if (event.data.language === "rust") {
+      // rust格式化工具
+      respond({
+        pretty: await prettier.format(event.data.text, {
+          plugins: [pluginRust],
+        }),
+      });
+    } else if (event.data.language === "java") {
+      // java格式化工具
+      respond({
+        pretty: await prettier.format(event.data.text, {
+          plugins: [pluginJava],
+        }),
       });
     }
   } catch (error) {
