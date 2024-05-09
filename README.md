@@ -1,4 +1,4 @@
-# toolkit
+# frontend
 
 ## 简介
 
@@ -6,8 +6,8 @@
 
 ## 环境依赖
 
-- Node.js：v16.13.2 及以上版本
-- Yarn：v1.22.19 及以上版本
+- Node.js：v18 及以上版本
+- Yarn：v1.22.21 及以上版本
 - 浏览器：Chrome、Firefox、Safari 等现代浏览器
 
 ## 安装步骤
@@ -15,13 +15,13 @@
 1. 克隆项目代码到本地
 
 ```bash
-git clone https://github.com/hankliu62/toolkit.git
+git clone https://github.com/hankliu62/frontend.git
 ```
 
 2. 进入项目目录
 
 ```bash
-cd toolkit
+cd frontend
 ```
 
 3. 安装项目依赖
