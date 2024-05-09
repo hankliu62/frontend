@@ -8,9 +8,13 @@ import "nprogress/nprogress.css";
 // markdown-editor
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
-import "dayjs/locale/zh-cn";
 // 页面滚动元素动画
 import "aos/dist/aos.css";
+// footer组件
+import "@hankliu/rc-footer/assets/index.css";
+// exception组件
+import "@hankliu/rc-exception/assets/index.css";
+import "dayjs/locale/zh-cn";
 
 import { StyleProvider } from "@ant-design/cssinjs";
 import {
