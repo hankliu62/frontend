@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { HourglassOutlined } from "@ant-design/icons";
 import {
   Alert,
@@ -113,7 +112,7 @@ export default function IDNoPage() {
 
   return (
     <div className="relative flex h-full flex-1 flex-col bg-white">
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {}
       {/* @ts-ignore */}
       <SplitPane className="flex-1" split="vertical" minSize={50} maxSize={75}>
         <div className="overflow-y-auto">
@@ -222,7 +221,7 @@ export default function IDNoPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<HourglassOutlined rev={undefined} />}
+                icon={<HourglassOutlined />}
                 onClick={onSetExample}
               >
                 案例
@@ -285,8 +284,8 @@ export default function IDNoPage() {
                           {parseIDNoInfoResult.isMale
                             ? "男"
                             : parseIDNoInfoResult.isFemale
-                            ? "女"
-                            : "未知"}
+                              ? "女"
+                              : "未知"}
                         </div>
                         <div className="w-32">
                           {parseIDNoInfoResult.birthday}

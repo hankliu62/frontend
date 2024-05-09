@@ -87,7 +87,7 @@ export default function HTML2Markdown() {
 
   return (
     <div className="relative flex h-full flex-1 flex-col bg-white">
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {}
       {/* @ts-ignore */}
       <SplitPane className="flex-1" split="vertical" minSize={50} maxSize={75}>
         <div className="overflow-y-auto">
@@ -97,7 +97,7 @@ export default function HTML2Markdown() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<FileTextOutlined rev={undefined} />}
+                icon={<FileTextOutlined />}
                 onClick={() => {
                   setHtml(LanguageDemo.html);
                 }}
@@ -112,7 +112,7 @@ export default function HTML2Markdown() {
               >
                 <Button
                   className="!inline-flex items-center"
-                  icon={<CopyOutlined rev={undefined} />}
+                  icon={<CopyOutlined />}
                 >
                   拷贝
                 </Button>
@@ -156,7 +156,7 @@ export default function HTML2Markdown() {
               >
                 <Button
                   className="!inline-flex items-center"
-                  icon={<CopyOutlined rev={undefined} />}
+                  icon={<CopyOutlined />}
                 >
                   拷贝
                 </Button>

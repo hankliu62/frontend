@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { HourglassOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import dynamic from "next/dynamic";
@@ -75,7 +74,7 @@ export default function MarkdownPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<HourglassOutlined rev={undefined} />}
+                icon={<HourglassOutlined />}
                 onClick={onSetExample}
               >
                 案例

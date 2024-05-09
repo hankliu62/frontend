@@ -202,7 +202,6 @@ export default function Questions({
                       >
                         <div className="flex flex-col justify-center">
                           <InteractionOutlined
-                            rev={undefined}
                             style={{ color: `#${item.color}` }}
                             className="text-lg font-medium"
                           />
@@ -256,10 +255,7 @@ export default function Questions({
                     }}
                     className="group cursor-pointer"
                   >
-                    <BranchesOutlined
-                      className="group-hover:text-[#1171ee]"
-                      rev={undefined}
-                    />
+                    <BranchesOutlined className="group-hover:text-[#1171ee]" />
                     <span className="group-hover:text-[#1171ee]">{`#${item.number}`}</span>
                   </Space>,
                   <Space
@@ -274,10 +270,7 @@ export default function Questions({
                     }}
                     className="group cursor-pointer"
                   >
-                    <UserOutlined
-                      className="group-hover:text-[#1171ee]"
-                      rev={undefined}
-                    />
+                    <UserOutlined className="group-hover:text-[#1171ee]" />
                     <span className="group-hover:text-[#1171ee]">
                       {item.user.login}
                     </span>

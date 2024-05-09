@@ -90,7 +90,7 @@ export default function QRCodePage() {
 
           message.success(`${info.file.name} 文件上传成功。`);
         };
-        // eslint-disable-next-line unicorn/prefer-add-event-listener
+
         reader.onerror = (error) => {
           setParsedError(error?.target?.error?.message);
           console.error(error);
@@ -134,7 +134,7 @@ export default function QRCodePage() {
 
   return (
     <div className="relative flex h-full flex-1 flex-col bg-white">
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {}
       {/* @ts-ignore */}
       <SplitPane className="flex-1" split="vertical" minSize={50} maxSize={75}>
         <div className="overflow-y-auto">
@@ -144,7 +144,7 @@ export default function QRCodePage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<FileAddOutlined rev={undefined} />}
+                icon={<FileAddOutlined />}
                 onClick={onCreateQrCode}
               >
                 生成
@@ -189,10 +189,7 @@ export default function QRCodePage() {
                   onClick={() => onDeleteQrCode(index)}
                   aria-hidden="true"
                 >
-                  <DeleteOutlined
-                    className="cursor-pointer text-base group-hover:text-red-600"
-                    rev={undefined}
-                  />
+                  <DeleteOutlined className="cursor-pointer text-base group-hover:text-red-600" />
                 </div>
               </div>
             ))}
@@ -205,7 +202,7 @@ export default function QRCodePage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<FileAddOutlined rev={undefined} />}
+                icon={<FileAddOutlined />}
                 onClick={onParseClipboardImage}
               >
                 粘贴图片
@@ -226,7 +223,7 @@ export default function QRCodePage() {
               showUploadList={false}
             >
               <p className="ant-upload-drag-icon">
-                <UploadOutlined rev={undefined} />
+                <UploadOutlined />
               </p>
               <p className="ant-upload-text">点击选择图片文件 或 拖进来</p>
               <p className="ant-upload-hint">
@@ -267,10 +264,7 @@ export default function QRCodePage() {
                   }}
                 >
                   <div className="group p-2 text-[0px]">
-                    <CopyOutlined
-                      className="cursor-pointer text-base group-hover:text-blue-500"
-                      rev={undefined}
-                    />
+                    <CopyOutlined className="cursor-pointer text-base group-hover:text-blue-500" />
                   </div>
                 </Clipboard>
               </div>

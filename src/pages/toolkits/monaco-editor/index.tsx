@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { HourglassOutlined, ThunderboltOutlined } from "@ant-design/icons";
 import { Button, message, Select } from "antd";
 import type { editor as MonacoEditor } from "monaco-editor";
@@ -89,7 +88,7 @@ export default function MonacoEditorPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<HourglassOutlined rev={undefined} />}
+                icon={<HourglassOutlined />}
                 onClick={onSetExample}
                 disabled={!LanguageDemo[language]}
               >
@@ -98,7 +97,7 @@ export default function MonacoEditorPage() {
 
               <Button
                 className="!inline-flex items-center"
-                icon={<ThunderboltOutlined rev={undefined} />}
+                icon={<ThunderboltOutlined />}
                 onClick={() => {
                   onFormatCode();
                 }}

@@ -57,7 +57,6 @@ export default function ArticlePage({
         .toLowerCase()
         .replace(/\s/g, "-")
         .replace(
-          // eslint-disable-next-line unicorn/better-regex
           /[\u3002\uFF1F\uFF0C\uFF1A\u201C-\u201D\uFF08-\uFF09\u3001\uFF1B\uFF1A]/g,
           ""
         );

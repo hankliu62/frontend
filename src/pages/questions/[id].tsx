@@ -65,7 +65,6 @@ export default function PostPage({
         .toLowerCase()
         .replace(/\s/g, "-")
         .replace(
-          // eslint-disable-next-line unicorn/better-regex
           /[\u3002\uFF1F\uFF0C\uFF1A\u201C-\u201D\uFF08-\uFF09\u3001\uFF1B\uFF1A]/g,
           ""
         );
@@ -123,10 +122,7 @@ export default function PostPage({
                 }}
                 className="group cursor-pointer"
               >
-                <BranchesOutlined
-                  className="group-hover:text-[#1171ee]"
-                  rev={undefined}
-                />
+                <BranchesOutlined className="group-hover:text-[#1171ee]" />
                 <span className="group-hover:text-[#1171ee]">{`#${issue?.number}`}</span>
               </Space>
 

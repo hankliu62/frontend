@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { CopyOutlined, ThunderboltOutlined } from "@ant-design/icons";
 import { Button, message } from "antd";
 import type { editor as MonacoEditor } from "monaco-editor";
@@ -47,7 +46,7 @@ export default function SqlEditorPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<ThunderboltOutlined rev={undefined} />}
+                icon={<ThunderboltOutlined />}
                 onClick={() => {
                   onFormatSQL();
                 }}
@@ -63,7 +62,7 @@ export default function SqlEditorPage() {
               >
                 <Button
                   className="!inline-flex items-center"
-                  icon={<CopyOutlined rev={undefined} />}
+                  icon={<CopyOutlined />}
                 >
                   拷贝
                 </Button>

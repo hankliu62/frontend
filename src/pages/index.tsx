@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-redundant-roles */
-
 import { Affix, Avatar, Card, Collapse, Skeleton, Tooltip } from "antd";
 import classNames from "classnames";
 import Link from "next/link";
@@ -20,7 +18,6 @@ function useAnchor(navigations) {
     //   ...node.children.map((child) => child.title),
     // ])
     return navigations.map(({ id }) => {
-      // eslint-disable-next-line unicorn/prefer-query-selector
       const el = document.getElementById(id);
       if (!el) return;
 

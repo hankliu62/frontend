@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { PlaySquareOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import { useCallback, useRef, useState } from "react";
@@ -54,7 +53,7 @@ export default function VideoPlayerPage() {
             <div className="flex items-center space-x-5">
               <Button
                 className="!inline-flex items-center"
-                icon={<PlaySquareOutlined rev={undefined} />}
+                icon={<PlaySquareOutlined />}
                 onClick={onPlay}
               >
                 立即播放

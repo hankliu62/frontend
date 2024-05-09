@@ -193,7 +193,6 @@ export default function Questions({
                       >
                         <div className="flex flex-col justify-center">
                           <InteractionOutlined
-                            rev={undefined}
                             style={{ color: `#${item.color}` }}
                             className="text-lg font-medium"
                           />

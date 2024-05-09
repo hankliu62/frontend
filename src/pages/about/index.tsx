@@ -920,7 +920,7 @@ export default function About({
                 <span className="bg-gradient-to-r from-[rgb(255_255_255_/_50%)] to-[rgb(255_255_255_/_50%)] bg-[length:0_1px] bg-[left_100%] bg-no-repeat text-[12px] leading-[18px] transition-all group-hover/more:bg-[length:100%_1px]">
                   查看更多
                 </span>
-                <RightCircleOutlined rev={undefined} />
+                <RightCircleOutlined />
               </a>
             </div>
           </div>
@@ -973,7 +973,7 @@ export default function About({
                 <span className="bg-gradient-to-r from-[rgb(255_255_255_/_50%)] to-[rgb(255_255_255_/_50%)] bg-[length:0_1px] bg-[left_100%] bg-no-repeat text-[12px] leading-[18px] transition-all group-hover/more:bg-[length:100%_1px]">
                   更多故事
                 </span>
-                <PlusCircleOutlined rev={undefined} />
+                <PlusCircleOutlined />
               </a>
             </div>
 
@@ -1025,7 +1025,7 @@ export default function About({
                 <span className="bg-gradient-to-r from-[rgb(255_255_255_/_50%)] to-[rgb(255_255_255_/_50%)] bg-[length:0_1px] bg-[left_100%] bg-no-repeat text-[12px] leading-[18px] transition-all group-hover/more:bg-[length:100%_1px]">
                   查看更多
                 </span>
-                <RightCircleOutlined rev={undefined} />
+                <RightCircleOutlined />
               </a>
             </div>
           </div>
@@ -1065,7 +1065,7 @@ export default function About({
                 <span className="bg-gradient-to-r from-[rgb(255_255_255_/_50%)] to-[rgb(255_255_255_/_50%)] bg-[length:0_1px] bg-[left_100%] bg-no-repeat text-[12px] leading-[18px] transition-all group-hover/more:bg-[length:100%_1px]">
                   查看更多
                 </span>
-                <RightCircleOutlined rev={undefined} />
+                <RightCircleOutlined />
               </a>
             </div>
           </div>
@@ -1102,7 +1102,7 @@ export default function About({
                     <span className="bg-gradient-to-r from-[rgb(255_255_255_/_50%)] to-[rgb(255_255_255_/_50%)] bg-[length:0_1px] bg-[left_100%] bg-no-repeat text-[18px] leading-[24px] transition-all group-hover/more:bg-[length:100%_1px]">
                       娄底市
                     </span>
-                    <EnvironmentOutlined rev={undefined} />
+                    <EnvironmentOutlined />
                   </a>
                 </div>
               </div>
