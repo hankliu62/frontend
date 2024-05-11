@@ -75,24 +75,27 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <Head>
-        <title>卡鲁秋 - 前端小工具</title>
+        <title>前端小技术集合 - H.L Frontend</title>
         <link rel="icon" href={`${getRoutePrefix()}/favicon.ico`} />
         <meta
           name="description"
-          content="卡鲁秋的前端工具网站，提供了一系列实用的前端开发工具和功能，技术网站汇总，旨在帮助开发者更加高效地进行前端开发。"
+          content="H.L Frontend，前端技术和工具网站，提供了一系列实用的前端开发工具和功能，技术网站汇总，旨在帮助开发者更加高效地进行前端开发。"
         />
         <meta
           name="keywords"
           content="前端工具,前端开发,前端开发工具,前端开发工具集合,toolbox,frontend,卡鲁秋,Hank,HankLiu"
         />
         <meta name="author" content="Hank.Liu" />
+        <meta name="copyright" content="卡鲁秋" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       </Head>
 
       {getLayout(
         <StyleProvider hashPriority="high">
           <AntdConfigProvider locale={zhCN}>
             <Watermark
-              content="HankLiu Toolbox"
+              content="HankLiu Frontend"
               font={{ color: "rgba(0, 0, 0, 0.1)" }}
               className="flex h-full flex-1 flex-col"
             >
