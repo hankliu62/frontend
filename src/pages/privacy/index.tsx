@@ -16,8 +16,8 @@ export default function Privacy() {
           <p>
             卡鲁秋团队（以下简称“我们”或“卡鲁秋”）一直致力于保护用户的个人信息。根据《中华人民共和国网络安全法》（以下简称“《网络安全法》”）、《个人信息保护法》、GB/T35273《信息技术安全
             个人信息安全规范》以及其他相关的法律规范，我们制定了《隐私政策》（以下简称“本隐私政策”）向您说明我们在您使用我们的产品和/或服务（包括但不限于
-            HankTools、HankAnimate、HankResume、HankInterview 等，以下简称“
-            卡鲁秋
+            HankFrontend、HankToolKits、HankAnimate、HankResume、HankInterview、HankLuckyChoose、HankWhatLunch、HankWhiteboard
+            等，以下简称“ 卡鲁秋
             服务”）时我们将如何收集、使用、共享、转让、披露这些信息，以及我们为您提供的访问、更新、删除和保护这些信息的方式。我们致力于维持您对我们的信任，恪守以下原则，保护您的个人信息：权责一致原则、目的明确原则、选择同意原则、最小必要原则、确保安全原则、主体参与原则、公开透明原则。
           </p>
           <p>
@@ -137,13 +137,13 @@ export default function Privacy() {
             <tbody>
               <tr>
                 <td align="left">
-                  <strong>HankTools</strong>
+                  <strong>HankFrontend</strong>
                 </td>
                 <td align="left">手机号、微信授权信息、网页浏览记录</td>
                 <td align="left">注册/登录；接收服务通知</td>
                 <td align="left">
-                  <a href="https://hankliu62.github.io/toolkit">
-                    https://hankliu62.github.io/toolkit
+                  <a href="https://hankliu62.github.io/frontend">
+                    https://hankliu62.github.io/frontend
                   </a>
                 </td>
               </tr>

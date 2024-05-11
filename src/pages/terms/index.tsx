@@ -27,15 +27,27 @@ export default function Terms() {
           </u>
           <p>
             【卡鲁秋前端小工具】服务包括但不限于
-            HankTools、HankAnimate、HankResume、HankInterview 等。
+            HankFrontend、HankToolKits、HankAnimate、HankResume、HankInterview、HankLuckyChoose、HankWhatLunch、HankWhiteboard
+            等。
           </p>
           <p>
-            <strong>HankTools</strong>
+            <strong>HankFrontend</strong>
           </p>
           <ul>
             <li>
-              <a href="https://hankliu62.github.io/toolkit">
-                https://hankliu62.github.io/toolkit
+              <a href="https://hankliu62.github.io/frontend">
+                https://hankliu62.github.io/frontend
+              </a>
+            </li>
+            <li>一个前端技术集合网站。</li>
+          </ul>
+          <p>
+            <strong>HankToolKits</strong>
+          </p>
+          <ul>
+            <li>
+              <a href="https://hankliu62.github.io/toolkits">
+                https://hankliu62.github.io/toolkits
               </a>
             </li>
             <li>一个前端小工具网站。</li>
@@ -60,7 +72,7 @@ export default function Terms() {
                 https://hankliu62.github.io/resume
               </a>
             </li>
-            <li>个人简历的网站。</li>
+            <li>一个个人简历的网站。</li>
           </ul>
           <p>
             <strong>HankInterview</strong>
@@ -71,7 +83,42 @@ export default function Terms() {
                 https://hankliu62.github.io/interview
               </a>
             </li>
-            <li>面试题的网站。</li>
+            <li>一个面试题的网站。</li>
+          </ul>
+          <p>
+            <strong>HankLuckyChoose</strong>
+          </p>
+          <ul>
+            <li>
+              <a href="https://hankliu62.github.io/lucky-choose">
+                https://hankliu62.github.io/lucky-choose
+              </a>
+            </li>
+            <li>一个懒人自动选择器的网站。</li>
+          </ul>
+          <p>
+            <strong>HankWhatLunch</strong>
+          </p>
+          <ul>
+            <li>
+              <a href="https://hankliu62.github.io/what-lunch">
+                https://hankliu62.github.io/what-lunch
+              </a>
+            </li>
+            <li>一个自动选择中午吃什么的网站。</li>
+          </ul>
+          <p>
+            <strong>HankWhiteboard</strong>
+          </p>
+          <ul>
+            <li>
+              <a href="https://hankliu62.github.io/whiteboard">
+                https://hankliu62.github.io/whiteboard
+              </a>
+            </li>
+            <li>
+              一个在线的虚拟协作白板工具，让您能够轻松地绘制出带有手绘风格的图表。
+            </li>
           </ul>
 
           <h1>账号管理</h1>
