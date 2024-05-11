@@ -1,10 +1,15 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import {
-  Bars3Icon,
-  BellIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+} from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Popover, Tooltip } from "antd";
 import classNames from "classnames";
 import Image from "next/image";
@@ -25,7 +30,7 @@ const navigation = [
   { name: "小工具", href: "/toolkits", type: "link" },
   { name: "小习题", href: "/questions", type: "link" },
   { name: "小文章", href: "/articles", type: "link" },
-  // { name: "小绘画", href: "/paints", type: "link" },
+  { name: "小绘画", href: "/paint", type: "link" },
   { name: "小动画", href: "/icss", type: "link" },
   { name: "小复习", href: "/interview", type: "link" },
   // { name: "小简历", href: "https://hankliu62.github.io/resume", type: "link" },
