@@ -1,6 +1,12 @@
-import React from "react";
+import { ReactElement } from "react";
 
-export default function Interview() {
+import OnlyHeaderLayout from "@/layouts/only-header";
+
+/**
+ * 面试宝典
+ * @returns
+ */
+function InterviewPage() {
   return (
     <div className="flex h-[100vh] w-full">
       <iframe
@@ -13,3 +19,11 @@ export default function Interview() {
     </div>
   );
 }
+
+// 自定义Layout
+InterviewPage.getLayout = function getLayout(page: ReactElement) {
+  return <OnlyHeaderLayout>{page}</OnlyHeaderLayout>;
+};
+
+export default InterviewPage;
+
