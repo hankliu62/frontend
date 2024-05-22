@@ -116,6 +116,6 @@ module.exports = [
       "jsx-a11y/anchor-is-valid": "off",
     },
     files: ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],
-    ignores: ["public/*", "out/*", "docs/*"],
+    ignores: ["public/*", "out/*", "docs/*", "node_modules/*"],
   },
 ];
