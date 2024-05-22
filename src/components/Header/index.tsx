@@ -33,11 +33,10 @@ const navigation = [
   { name: "小绘画", href: "/paint", type: "link" },
   { name: "小动画", href: "/icss", type: "link" },
   { name: "小复习", href: "/interview", type: "link" },
-  // { name: "小简历", href: "https://hankliu62.github.io/resume", type: "link" },
   { name: "小简历", href: "/resume", type: "link" },
-  // { name: "小博客", href: "https://hankliu62.github.io", type: "link" },
   { name: "小博客", href: "/blog", type: "link" },
   { name: "小关于", href: "/about", type: "link" },
+  // { name: "小简历", href: "https://hankliu62.github.io/resume", type: "link" },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
