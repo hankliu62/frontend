@@ -114,6 +114,12 @@ export const navigations = [
         logoUrl: getRoutePrefix() + "/dashboard/logo/framework/nuejs.png",
         siteUrl: "https://nuejs.org/",
       },
+      {
+        title: "lernajs",
+        desc: "Lerna 是一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/framework/lernajs.png",
+        siteUrl: "https://www.lernajs.cn/",
+      },
     ],
   },
   {
@@ -275,6 +281,12 @@ export const navigations = [
         desc: "Browse 1157 short code snippets for all your development needs on 30 seconds of code.",
         logoUrl: getRoutePrefix() + "/dashboard/logo/tools/30secondsofcode.png",
         siteUrl: "https://www.30secondsofcode.org/",
+      },
+      {
+        title: "font-subset",
+        desc: "Font Subset 一个在线字体裁剪工具网站，选择字体支持的汉字，来裁剪字体文件体积大小。",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/tools/font-subset.png",
+        siteUrl: "https://font-subset.disidu.com/",
       },
     ],
   },
@@ -529,6 +541,19 @@ export const navigations = [
     icon: "document",
     children: [
       {
+        title: "wechat-offiaccount",
+        desc: "微信公众平台是运营者通过公众号为微信用户提供资讯和服务的平台，而公众平台开放接口则是提供服务的基础，开发者在公众平台网站中创建公众号、获取接口权限后，可以通过阅读本接口文档来帮助开发。",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/document/wechat.png",
+        siteUrl:
+          "https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html",
+      },
+      {
+        title: "wechat-miniprogram",
+        desc: "微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/document/miniprogram.png",
+        siteUrl: "https://developers.weixin.qq.com/miniprogram/dev/framework/",
+      },
+      {
         title: "es6入门教程",
         desc: "《ECMAScript 6 入门教程》是一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性。",
         logoUrl: getRoutePrefix() + "/dashboard/logo/document/yuanyifeng.jpeg",
@@ -576,6 +601,18 @@ export const navigations = [
         desc: "Vite & Vue powered static site generator.",
         logoUrl: getRoutePrefix() + "/dashboard/logo/document/vitepress.jpeg",
         siteUrl: "https://vitepress.vuejs.org/",
+      },
+      {
+        title: "dumi",
+        desc: "dumi - 为组件研发而生的静态站点框架",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/document/dumi.png",
+        siteUrl: "https://d.umijs.org/",
+      },
+      {
+        title: "jestjs",
+        desc: "Jest 是一款优雅、简洁的 JavaScript 测试框架。",
+        logoUrl: getRoutePrefix() + "/dashboard/logo/document/jestjs.png",
+        siteUrl: "https://jestjs.io/",
       },
     ],
   },
