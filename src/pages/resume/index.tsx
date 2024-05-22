@@ -20,4 +20,4 @@ ResumePage.getLayout = function getLayout(page: ReactElement) {
   return <NoHeaderLayout>{page}</NoHeaderLayout>;
 };
 
-export default ResumePage
+export default ResumePage;

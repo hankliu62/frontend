@@ -26,4 +26,3 @@ InterviewPage.getLayout = function getLayout(page: ReactElement) {
 };
 
 export default InterviewPage;
-
