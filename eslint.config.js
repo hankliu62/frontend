@@ -118,4 +118,18 @@ module.exports = [
     files: ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],
     ignores: ["public/*", "out/*", "docs/*", "node_modules/*"],
   },
+  {
+    rules: {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          vars: "all",
+          args: "after-used",
+          ignoreRestSiblings: false,
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
+    },
+  },
 ];
