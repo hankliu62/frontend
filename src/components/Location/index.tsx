@@ -9,12 +9,15 @@ interface TreeData {
   children?: TreeData[];
 }
 
-export type ILocationCascaderProps = CascaderProps<TreeData>;
+type LocationCascaderProps = CascaderProps<TreeData>;
 
-export default function LocationCascader({
-  placeholder = "省市 / 城市 / 县区",
-  ...rest
-}: ILocationCascaderProps) {
+export default function LocationCascader(props: LocationCascaderProps) {
+  const {
+    placeholder = "省市 / 城市 / 县区",
+    options: _options,
+    ...restProps
+  } = props;
+
   const options = useMemo(() => {
     return convertLocationListToTree(locations);
   }, []);
@@ -24,7 +27,7 @@ export default function LocationCascader({
       className="location-select-cascader"
       options={options}
       placeholder={placeholder}
-      {...rest}
+      {...restProps}
     />
   );
 }
