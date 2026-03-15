@@ -40,3 +40,7 @@ next-env.d.ts
 
 yarn.lock
 
+.claude
+.trae
+.opencode
+opencode
