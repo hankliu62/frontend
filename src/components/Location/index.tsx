@@ -1,4 +1,4 @@
-import { Cascader, CascaderProps } from "antd";
+import { Cascader } from "antd";
 import { useMemo } from "react";
 
 import { locations } from "./location";
@@ -9,13 +9,23 @@ interface TreeData {
   children?: TreeData[];
 }
 
-type LocationCascaderProps = CascaderProps<TreeData>;
+interface LocationCascaderProps {
+  placeholder?: string;
+  className?: string;
+  value?: any;
+  onChange?: (value: any, selectOptions?: any) => void;
+  disabled?: boolean;
+  size?: "small" | "middle" | "large";
+}
 
 export default function LocationCascader(props: LocationCascaderProps) {
   const {
     placeholder = "省市 / 城市 / 县区",
-    options: _options,
-    ...restProps
+    className,
+    value,
+    onChange,
+    disabled,
+    size,
   } = props;
 
   const options = useMemo(() => {
@@ -24,10 +34,14 @@ export default function LocationCascader(props: LocationCascaderProps) {
 
   return (
     <Cascader
-      className="location-select-cascader"
+      className={`location-select-cascader ${className || ""}`}
       options={options}
       placeholder={placeholder}
-      {...restProps}
+      value={value}
+      onChange={onChange}
+      disabled={disabled}
+      size={size}
+      changeOnSelect
     />
   );
 }
