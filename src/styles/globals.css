@@ -236,3 +236,61 @@ body > #__next {
 .game-card:hover .s {
   animation-play-state: paused;
 }
+
+/* 分类导航 Tabs 自定义样式 */
+.category-tabs .ant-tabs-nav {
+  margin-bottom: 0;
+}
+
+.category-tabs .ant-tabs-tab {
+  padding: 12px 0;
+  color: #9ca3af;
+  transition: all 0.2s ease;
+}
+
+.category-tabs .ant-tabs-tab:hover {
+  color: #00f0ff;
+}
+
+.category-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #00f0ff;
+}
+
+.category-tabs .ant-tabs-ink-bar {
+  background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899);
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* 隐藏 tabs 右侧更多按钮 */
+.category-tabs .ant-tabs-more {
+  display: none;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .category-tabs .ant-tabs-nav {
+    padding: 0 8px;
+  }
+
+  .category-tabs .ant-tabs-tab {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+}
+
+/* 淡入动画 */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
