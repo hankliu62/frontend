@@ -26,17 +26,17 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "小链接", href: "/", type: "link" },
-  { name: "小工具", href: "/toolkits", type: "link" },
-  { name: "小习题", href: "/questions", type: "link" },
-  { name: "小文章", href: "/articles", type: "link" },
-  { name: "小绘画", href: "/paint", type: "link" },
-  { name: "小动画", href: "/icss", type: "link" },
-  { name: "小复习", href: "/interview", type: "link" },
-  { name: "小简历", href: "/resume", type: "link" },
-  { name: "小博客", href: "/blog", type: "link" },
-  { name: "小关于", href: "/about", type: "link" },
-  // { name: "小简历", href: "https://hankliu62.github.io/resume", type: "link" },
+  { name: "小枢", href: "/", type: "link" },
+  { name: "小器铺", href: "/toolkits", type: "link" },
+  { name: "小程坊", href: "/devtools", type: "link" },
+  { name: "小试场", href: "/questions", type: "link" },
+  { name: "小书斋", href: "/articles", type: "link" },
+  { name: "小画廊", href: "/paint", type: "link" },
+  { name: "小动坊", href: "/icss", type: "link" },
+  { name: "小复屋", href: "/interview", type: "link" },
+  { name: "小履历", href: "/resume", type: "link" },
+  { name: "小博斋", href: "/blog", type: "link" },
+  { name: "小叙", href: "/about", type: "link" },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
